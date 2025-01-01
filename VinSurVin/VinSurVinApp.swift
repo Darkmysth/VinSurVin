@@ -1,10 +1,3 @@
-//
-//  VinSurVinApp.swift
-//  VinSurVin
-//
-//  Created by Thomas Pelletier on 01/01/2025.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -24,9 +17,32 @@ struct VinSurVinApp: App {
     }()
 
     var body: some Scene {
+        #if os(iOS)
+        WindowGroup {
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Label("Accueil", systemImage: "house")
+                    }
+                FeaturesView()
+                    .tabItem {
+                        Label("Fonctionnalités", systemImage: "square.grid.3x3")
+                    }
+                SettingsView()
+                    .tabItem {
+                        Label("Réglages", systemImage: "gear")
+                    }
+            }
+        }
+        .modelContainer(sharedModelContainer)
+        #elseif os(macOS)
         WindowGroup {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        Settings {
+            SettingsView()
+        }
+        #endif
     }
 }
