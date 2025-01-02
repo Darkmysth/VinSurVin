@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FeaturesView: View {
+struct FonctionnalitesView: View {
     var body: some View {
         VStack {
             Text("Fonctionnalités")
@@ -12,5 +12,5 @@ struct FeaturesView: View {
 }
 
 #Preview {
-    FeaturesView()
+    FonctionnalitesView()
 }

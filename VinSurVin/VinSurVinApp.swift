@@ -24,11 +24,11 @@ struct VinSurVinApp: App {
                     .tabItem {
                         Label("Accueil", systemImage: "house")
                     }
-                FeaturesView()
+                FonctionnalitesView()
                     .tabItem {
                         Label("Fonctionnalités", systemImage: "square.grid.3x3")
                     }
-                SettingsView()
+                ReglagesView()
                     .tabItem {
                         Label("Réglages", systemImage: "gear")
                     }

@@ -1,0 +1,94 @@
+[
+ {
+   "nomClassification": "Premier Grand Cru Classé",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Deuxième Grand Cru Classé",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Troisième Grand Cru Classé",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Quatrième Grand Cru Classé",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Cinquième Grand Cru Classé",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Premier Grand Cru Classé",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomClassification": "Deuxième Grand Cru Classé",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomClassification": "Troisième Grand Cru Classé",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomClassification": "Quatrième Grand Cru Classé",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomClassification": "Cinquième Grand Cru Classé",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomClassification": "Cru Bourgeois Exceptionnel",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Cru Bourgeois Supérieur",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Cru Bourgeois",
+   "parent": "Médoc"
+ },
+ {
+   "nomClassification": "Premier Grand Cru Classé A",
+   "parent": "Saint-Émilion"
+ },
+ {
+   "nomClassification": "Premier Grand Cru Classé B",
+   "parent": "Saint-Émilion"
+ },
+ {
+   "nomClassification": "Grand Cru Classé",
+   "parent": "Saint-Émilion"
+ },
+ {
+   "nomClassification": "Grand Cru",
+   "parent": "Saint-Émilion"
+ },
+ {
+   "nomClassification": "Grand Cru Classé de Graves",
+   "parent": "Graves"
+ },
+ {
+   "nomClassification": "Premier Grand Cru Classé de Graves",
+   "parent": "Graves"
+ },
+ {
+   "nomClassification": "1er Cru",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomClassification": "Grand Cru",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomClassification": "Grand Cru d'Alsace",
+   "parent": "Alsace"
+ },
+ {
+   "nomClassification": "Cru Communal",
+   "parent": "Muscadet Sèvre-et-Maine"
+ }
+]

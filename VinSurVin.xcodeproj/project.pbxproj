@@ -30,11 +30,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		35589EE12D25CC23007163F0 /* VinSurVin */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VinSurVin;
-			sourceTree = "<group>";
-		};
 		35589EF52D25CC25007163F0 /* VinSurVinTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VinSurVinTests;
@@ -43,6 +38,11 @@
 		35589EFF2D25CC25007163F0 /* VinSurVinUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VinSurVinUITests;
+			sourceTree = "<group>";
+		};
+		359E93122D2676CF00E470D8 /* VinSurVin */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VinSurVin;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,7 +75,7 @@
 		35589ED62D25CC23007163F0 = {
 			isa = PBXGroup;
 			children = (
-				35589EE12D25CC23007163F0 /* VinSurVin */,
+				359E93122D2676CF00E470D8 /* VinSurVin */,
 				35589EF52D25CC25007163F0 /* VinSurVinTests */,
 				35589EFF2D25CC25007163F0 /* VinSurVinUITests */,
 				35589EE02D25CC23007163F0 /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				35589EE12D25CC23007163F0 /* VinSurVin */,
+				359E93122D2676CF00E470D8 /* VinSurVin */,
 			);
 			name = VinSurVin;
 			packageProductDependencies = (

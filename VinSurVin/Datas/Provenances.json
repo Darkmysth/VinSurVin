@@ -1,0 +1,2022 @@
+[
+ {
+   "nomProvenance": "France",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Italie",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Espagne",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Allemagne",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Chili",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Etats-Unis",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Afrique du Sud",
+   "typeProvenance": "pays",
+   "parent": ""
+ },
+ {
+   "nomProvenance": "Beaujolais",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Bordeaux",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Bourgogne",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Vallée de la Loire",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Vallée du Rhône",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Provence",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Alsace",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Languedoc-Roussillon",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Jura",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Sud-Ouest",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Corse",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Savoie",
+   "typeProvenance": "region",
+   "parent": "France"
+ },
+ {
+   "nomProvenance": "Médoc",
+   "typeProvenance": "sousRegion",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Entre-deux-Mers",
+   "typeProvenance": "sousRegion",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Graves",
+   "typeProvenance": "sousRegion",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Blayais",
+   "typeProvenance": "sousRegion",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Sauternes et Barsac",
+   "typeProvenance": "sousRegion",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Libournais",
+   "typeProvenance": "sousRegion",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Côte de Beaune",
+   "typeProvenance": "sousRegion",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Côte de Nuits",
+   "typeProvenance": "sousRegion",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Côte Chalonnaise",
+   "typeProvenance": "sousRegion",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Auxerrois",
+   "typeProvenance": "sousRegion",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Mâconnais",
+   "typeProvenance": "sousRegion",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Chablisien",
+   "typeProvenance": "sousRegion",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Ajaccio",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Patrimonio",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Calvi",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Sartène",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Figari",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Porto-Vecchio",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Cap Corse",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Languedoc",
+   "typeProvenance": "sousRegion",
+   "parent": "Languedoc-Roussillon"
+ },
+ {
+   "nomProvenance": "Roussillon",
+   "typeProvenance": "sousRegion",
+   "parent": "Languedoc-Roussillon"
+ },
+ {
+   "nomProvenance": "Côtes de Provence",
+   "typeProvenance": "sousRegion",
+   "parent": "Provence"
+ },
+ {
+   "nomProvenance": "Coteaux du Varois",
+   "typeProvenance": "sousRegion",
+   "parent": "Provence"
+ },
+ {
+   "nomProvenance": "Coteaux d'Aix-en-Provence",
+   "typeProvenance": "sousRegion",
+   "parent": "Provence"
+ },
+ {
+   "nomProvenance": "Coteaux du Pierrevert",
+   "typeProvenance": "sousRegion",
+   "parent": "Provence"
+ },
+ {
+   "nomProvenance": "Coteaux de l'avant-pays Savoyard",
+   "typeProvenance": "sousRegion",
+   "parent": "Savoie"
+ },
+ {
+   "nomProvenance": "Coteaux de la Combe de Savoie et de la Tarentaise",
+   "typeProvenance": "sousRegion",
+   "parent": "Savoie"
+ },
+ {
+   "nomProvenance": "Piémont du Massif Central",
+   "typeProvenance": "sousRegion",
+   "parent": "Sud-Ouest"
+ },
+ {
+   "nomProvenance": "Moyenne Garonne",
+   "typeProvenance": "sousRegion",
+   "parent": "Sud-Ouest"
+ },
+ {
+   "nomProvenance": "Bergeracois et Duras",
+   "typeProvenance": "sousRegion",
+   "parent": "Sud-Ouest"
+ },
+ {
+   "nomProvenance": "Piémont Pyrénéen",
+   "typeProvenance": "sousRegion",
+   "parent": "Sud-Ouest"
+ },
+ {
+   "nomProvenance": "Pays Nantais",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée de la Loire"
+ },
+ {
+   "nomProvenance": "Anjou",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée de la Loire"
+ },
+ {
+   "nomProvenance": "Tourraine",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée de la Loire"
+ },
+ {
+   "nomProvenance": "Centre",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée de la Loire"
+ },
+ {
+   "nomProvenance": "Auvergne",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée de la Loire"
+ },
+ {
+   "nomProvenance": "Vallée du Rhône Septentrionale",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée du Rhône"
+ },
+ {
+   "nomProvenance": "Vallée du Rhône Méridionale",
+   "typeProvenance": "sousRegion",
+   "parent": "Vallée du Rhône"
+ },
+ {
+   "nomProvenance": "Alsace",
+   "typeProvenance": "appellation",
+   "parent": "Alsace"
+ },
+ {
+   "nomProvenance": "Alsace Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Alsace"
+ },
+ {
+   "nomProvenance": "Crémant d'Alsace",
+   "typeProvenance": "appellation",
+   "parent": "Alsace"
+ },
+ {
+   "nomProvenance": "Brouilly",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Côte de Brouilly",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Chénas",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Chiroubles",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Fleurie",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Juliénas",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Morgon",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Moulin-à-Vent",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Régnié",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Saint-Amour",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Beaujolais Nouveau",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Beaujolais Villages",
+   "typeProvenance": "appellation",
+   "parent": "Beaujolais"
+ },
+ {
+   "nomProvenance": "Barsac",
+   "typeProvenance": "appellation",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomProvenance": "Bordeaux",
+   "typeProvenance": "appellation",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Bordeaux Supérieur",
+   "typeProvenance": "appellation",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Cadillac",
+   "typeProvenance": "appellation",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Clairet",
+   "typeProvenance": "appellation",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Côtes de Blaye",
+   "typeProvenance": "appellation",
+   "parent": "Blayais"
+ },
+ {
+   "nomProvenance": "Côtes de Bourg",
+   "typeProvenance": "appellation",
+   "parent": "Blayais"
+ },
+ {
+   "nomProvenance": "Côtes de Castillon",
+   "typeProvenance": "appellation",
+   "parent": "Libournais"
+ },
+ {
+   "nomProvenance": "Côtes de Francs",
+   "typeProvenance": "appellation",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Côtes de Saint-Foy",
+   "typeProvenance": "appellation",
+   "parent": "Entre-deux-Mers"
+ },
+ {
+   "nomProvenance": "Côtes de Saint-Macaire",
+   "typeProvenance": "appellation",
+   "parent": "Entre-deux-Mers"
+ },
+ {
+   "nomProvenance": "Entre-Deux-Mers",
+   "typeProvenance": "appellation",
+   "parent": "Entre-deux-Mers"
+ },
+ {
+   "nomProvenance": "Fronsac",
+   "typeProvenance": "appellation",
+   "parent": "Libournais"
+ },
+ {
+   "nomProvenance": "Graves",
+   "typeProvenance": "appellation",
+   "parent": "Graves"
+ },
+ {
+   "nomProvenance": "Graves de Vayres",
+   "typeProvenance": "appellation",
+   "parent": "Graves"
+ },
+ {
+   "nomProvenance": "Haut-Benauge",
+   "typeProvenance": "appellation",
+   "parent": "Bordeaux"
+ },
+ {
+   "nomProvenance": "Haut-Médoc",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Lalande-de-Pomerol",
+   "typeProvenance": "appellation",
+   "parent": "Libournais"
+ },
+ {
+   "nomProvenance": "Listrac-Médoc",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Margaux",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Médoc",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Moulis-en-Médoc",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Pauillac",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Pessac-Léognan",
+   "typeProvenance": "appellation",
+   "parent": "Graves"
+ },
+ {
+   "nomProvenance": "Pomerol",
+   "typeProvenance": "appellation",
+   "parent": "Libournais"
+ },
+ {
+   "nomProvenance": "Saint-Émilion",
+   "typeProvenance": "appellation",
+   "parent": "Libournais"
+ },
+ {
+   "nomProvenance": "Saint-Estèphe",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Saint-Julien",
+   "typeProvenance": "appellation",
+   "parent": "Médoc"
+ },
+ {
+   "nomProvenance": "Sauternes",
+   "typeProvenance": "appellation",
+   "parent": "Sauternes et Barsac"
+ },
+ {
+   "nomProvenance": "Patrimonioe",
+   "typeProvenance": "appellation",
+   "parent": "Patrimonio"
+ },
+ {
+   "nomProvenance": "Patrimonio",
+   "typeProvenance": "appellation",
+   "parent": "Patrimonio"
+ },
+ {
+   "nomProvenance": "Calvie",
+   "typeProvenance": "appellation",
+   "parent": "Calvi"
+ },
+ {
+   "nomProvenance": "Calvi",
+   "typeProvenance": "appellation",
+   "parent": "Calvi"
+ },
+ {
+   "nomProvenance": "Ajaccioe",
+   "typeProvenance": "appellation",
+   "parent": "Ajaccio"
+ },
+ {
+   "nomProvenance": "Ajaccio",
+   "typeProvenance": "appellation",
+   "parent": "Ajaccio"
+ },
+ {
+   "nomProvenance": "Sartènee",
+   "typeProvenance": "appellation",
+   "parent": "Sartène"
+ },
+ {
+   "nomProvenance": "Sartène",
+   "typeProvenance": "appellation",
+   "parent": "Sartène"
+ },
+ {
+   "nomProvenance": "Figarie",
+   "typeProvenance": "appellation",
+   "parent": "Figari"
+ },
+ {
+   "nomProvenance": "Figari",
+   "typeProvenance": "appellation",
+   "parent": "Figari"
+ },
+ {
+   "nomProvenance": "Porto-Vecchioe",
+   "typeProvenance": "appellation",
+   "parent": "Porto-Vecchio"
+ },
+ {
+   "nomProvenance": "Porto-Vecchio",
+   "typeProvenance": "appellation",
+   "parent": "Porto-Vecchio"
+ },
+ {
+   "nomProvenance": "Bonifacio",
+   "typeProvenance": "appellation",
+   "parent": "Bonifacio"
+ },
+ {
+   "nomProvenance": "Coteaux du Cap Corsee",
+   "typeProvenance": "appellation",
+   "parent": "Cap Corse"
+ },
+ {
+   "nomProvenance": "Coteaux du Cap Corse",
+   "typeProvenance": "appellation",
+   "parent": "Cap Corse"
+ },
+ {
+   "nomProvenance": "Muscat du Cap Corse",
+   "typeProvenance": "appellation",
+   "parent": "Cap Corse"
+ },
+ {
+   "nomProvenance": "Vin de Corsee",
+   "typeProvenance": "appellation",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Vin de Corse",
+   "typeProvenance": "appellation",
+   "parent": "Corse"
+ },
+ {
+   "nomProvenance": "Arbois",
+   "typeProvenance": "appellation",
+   "parent": "Jura"
+ },
+ {
+   "nomProvenance": "Côtes du Jura",
+   "typeProvenance": "appellation",
+   "parent": "Jura"
+ },
+ {
+   "nomProvenance": "L'Étoile",
+   "typeProvenance": "appellation",
+   "parent": "Jura"
+ },
+ {
+   "nomProvenance": "Château-Chalon",
+   "typeProvenance": "appellation",
+   "parent": "Jura"
+ },
+ {
+   "nomProvenance": "Macvin du Jura",
+   "typeProvenance": "appellation",
+   "parent": "Jura"
+ },
+ {
+   "nomProvenance": "Crémant du Jura",
+   "typeProvenance": "appellation",
+   "parent": "Jura"
+ },
+ {
+   "nomProvenance": "Minervois",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Corbières",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Côtes du Roussillon",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Côtes du Roussillon Villages",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Fitou",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Saint-Chinian",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Faugères",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Limoux",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Maury",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Banyuls",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Collioure",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Languedoce",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Languedoc",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Coteaux du Languedoc",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Côtes de Millau",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Côtes de Thongue",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Pic Saint-Loup",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Terrasses du Larzac",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Saint-Saturnin",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "La Clape",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Corbières-Boutenac",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Malepère",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Muscat de Rivesaltes",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Muscat de St-Jean de Minervois",
+   "typeProvenance": "appellation",
+   "parent": "Roussillon"
+ },
+ {
+   "nomProvenance": "Muscat de Lunel",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Muscat de Frontignan",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Muscat de Mireval",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc"
+ },
+ {
+   "nomProvenance": "Côtes de Provence",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Côtes de Provence Sainte-Victoire",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Côtes de Provence Fréjus",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Côtes de Provence La Londe",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Côtes de Provence Pierrefeu",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Côtes de Provence Ste. Baume",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Coteaux d'Aix-en-Provence",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux d'Aix-en-Provence"
+ },
+ {
+   "nomProvenance": "Coteaux Varois en Provence",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux du Varois"
+ },
+ {
+   "nomProvenance": "Les Baux-de-Provence",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux du Varois"
+ },
+ {
+   "nomProvenance": "Bandole",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux du Varois"
+ },
+ {
+   "nomProvenance": "Bandol",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux du Varois"
+ },
+ {
+   "nomProvenance": "Bellete",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Bellet",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Cassise",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Cassis",
+   "typeProvenance": "appellation",
+   "parent": "Côtes de Provence"
+ },
+ {
+   "nomProvenance": "Apremont",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux de l'Avant-Pays Savoyard"
+ },
+ {
+   "nomProvenance": "Chignin",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise"
+ },
+ {
+   "nomProvenance": "Chignin-Bergeron",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise"
+ },
+ {
+   "nomProvenance": "Roussette de Savoie",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise"
+ },
+ {
+   "nomProvenance": "Seyssel",
+   "typeProvenance": "appellation",
+   "parent": "Coteaux de l'Avant-Pays Savoyard"
+ },
+ {
+   "nomProvenance": "Bergerac",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Monbazillac",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Côtes de Montravel",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Pécharmant",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Saussignac",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Côtes de Bergerac",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Montravel",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Haut-Montravel",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Rosette",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Madiran",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Cahors",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Gaillac",
+   "typeProvenance": "appellation",
+   "parent": "Piémont du Massif Central"
+ },
+ {
+   "nomProvenance": "Fronton",
+   "typeProvenance": "appellation",
+   "parent": "Piémont du Massif Central"
+ },
+ {
+   "nomProvenance": "Côtes du Brulhois",
+   "typeProvenance": "appellation",
+   "parent": "Piémont du Massif Central"
+ },
+ {
+   "nomProvenance": "Côtes de Duras",
+   "typeProvenance": "appellation",
+   "parent": "Bergeracois et Duras"
+ },
+ {
+   "nomProvenance": "Buzet",
+   "typeProvenance": "appellation",
+   "parent": "Moyenne Garonne"
+ },
+ {
+   "nomProvenance": "Côtes du Marmandais",
+   "typeProvenance": "appellation",
+   "parent": "Moyenne Garonne"
+ },
+ {
+   "nomProvenance": "Béarn",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Irouléguy",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Jurançon Sec",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Jurançon Liquoreux",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Pacherenc du Vic-Bilh Sec",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Pacherenc du Vic-Bilh Liquoreux",
+   "typeProvenance": "appellation",
+   "parent": "Piémont Pyrénéen"
+ },
+ {
+   "nomProvenance": "Côtes de Gascogne",
+   "typeProvenance": "appellation",
+   "parent": "Sud-Ouest"
+ },
+ {
+   "nomProvenance": "Tursan",
+   "typeProvenance": "appellation",
+   "parent": "Moyenne Garonne"
+ },
+ {
+   "nomProvenance": "Saint-Mont",
+   "typeProvenance": "appellation",
+   "parent": "Moyenne Garonne"
+ },
+ {
+   "nomProvenance": "Côtes du Tarn",
+   "typeProvenance": "appellation",
+   "parent": "Moyenne Garonne"
+ },
+ {
+   "nomProvenance": "Marcillac",
+   "typeProvenance": "appellation",
+   "parent": "Piémont du Massif Central"
+ },
+ {
+   "nomProvenance": "Entraygues-le-Fel",
+   "typeProvenance": "appellation",
+   "parent": "Piémont du Massif Central"
+ },
+ {
+   "nomProvenance": "Estaing",
+   "typeProvenance": "appellation",
+   "parent": "Piémont du Massif Central"
+ },
+ {
+   "nomProvenance": "Anjou",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Anjou Villages",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Anjou-Gamay",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Anjou-Villages-Brissac",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Cabernet d'Anjou",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Rosé d'Anjou",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Aubigny Sec",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Aubigny Liquoreux",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Bonnezeaux",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Coteaux du Layon",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Coteaux du Layon Villages",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Quarts de Chaume",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Savennières Sec",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Savennières Liquoreux",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Savennières-Roche-aux-Moines Sec",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Savennières-Roche-aux-Moines Liquoreux",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Saumur",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Saumur-Champigny",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Saumur Puy-Notre-Dame",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Saumur Brézé",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Saumur-Champigny Les Poyeux",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Crémant de Loire d'Anjou",
+   "typeProvenance": "appellation",
+   "parent": "Anjou"
+ },
+ {
+   "nomProvenance": "Crémant de Loire du Pays Nantais",
+   "typeProvenance": "appellation",
+   "parent": "Pays Nantais"
+ },
+ {
+   "nomProvenance": "Crémant de Loire de Touraine",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine-Amboise",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine Azay-le-Rideau",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine-Chenonceaux",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine-Mesland",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine-Noble Joué",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine Oisly",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine-Amboise Château de l'Aulee",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Touraine-Amboise Clos de la Briderie",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Vouvray Sec",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Vouvray Effervescent",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Montlouis-sur-Loire Sec",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Montlouis-sur-Loire Effervescent",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Muscadet",
+   "typeProvenance": "appellation",
+   "parent": "Pays Nantais"
+ },
+ {
+   "nomProvenance": "Muscadet Sèvre-et-Maine",
+   "typeProvenance": "appellation",
+   "parent": "Pays Nantais"
+ },
+ {
+   "nomProvenance": "Muscadet Coteaux de la Loire",
+   "typeProvenance": "appellation",
+   "parent": "Pays Nantais"
+ },
+ {
+   "nomProvenance": "Muscadet Côtes de Grandlieu",
+   "typeProvenance": "appellation",
+   "parent": "Pays Nantais"
+ },
+ {
+   "nomProvenance": "Pouilly-Fumé",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Pouilly-sur-Loire",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Sancerre",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Menetou-Salon",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Reuilly",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Coteaux du Giennois",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Coteaux de Tannay",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Côtes de la Charité",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Pouilly Fumé",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Sancerre Chavignol",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Bourgueil",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Saint-Nicolas-de-Bourgueil",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Touraine-Azay-le-Rideau",
+   "typeProvenance": "appellation",
+   "parent": "Touraine"
+ },
+ {
+   "nomProvenance": "Quincy",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Chinon",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Chinon Couly-Dutheil",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Chinon La Croix Boissée",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Cheverny",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Cour-Cheverny",
+   "typeProvenance": "appellation",
+   "parent": "Centre"
+ },
+ {
+   "nomProvenance": "Côte Roannaise",
+   "typeProvenance": "appellation",
+   "parent": "Auvergne"
+ },
+ {
+   "nomProvenance": "Côtes du Luberon",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Côtes du Ventoux",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Côte-Rôtie",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Septentrionale"
+ },
+ {
+   "nomProvenance": "Condrieu",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Septentrionale"
+ },
+ {
+   "nomProvenance": "St. Joseph",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Septentrionale"
+ },
+ {
+   "nomProvenance": "Hermitage",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Septentrionale"
+ },
+ {
+   "nomProvenance": "Crozes-Hermitage",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Septentrionale"
+ },
+ {
+   "nomProvenance": "Cornas",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Septentrionale"
+ },
+ {
+   "nomProvenance": "Châteauneuf-du-Pape",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Côtes-du-Rhône",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Côtes-du-Rhône Villages",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Côtes-du-Rhône-Villages Plan de Dieu",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Gigondas",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Vacqueyras",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Rasteau",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Beaumes-de-Venise",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Beaumes-de-Venise Muscat",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Lirac",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Tavel",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Cairanne",
+   "typeProvenance": "appellation",
+   "parent": "Vallée du Rhône Méridionale"
+ },
+ {
+   "nomProvenance": "Irancy",
+   "typeProvenance": "appellation",
+   "parent": "Auxerrois"
+ },
+ {
+   "nomProvenance": "Saint Bris",
+   "typeProvenance": "appellation",
+   "parent": "Auxerrois"
+ },
+ {
+   "nomProvenance": "Bourgogne Aligoté",
+   "typeProvenance": "appellation",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Bourgogne",
+   "typeProvenance": "appellation",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Bourgogne Clairet",
+   "typeProvenance": "appellation",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Bourgogne Grand Ordinaire",
+   "typeProvenance": "appellation",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Bourgogne Mousseux",
+   "typeProvenance": "appellation",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Bourgogne Passe-Tout-Grains",
+   "typeProvenance": "appellation",
+   "parent": "Bourgogne"
+ },
+ {
+   "nomProvenance": "Chablis",
+   "typeProvenance": "appellation",
+   "parent": "Chablisien"
+ },
+ {
+   "nomProvenance": "Chablis Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Chablisien"
+ },
+ {
+   "nomProvenance": "Chablis Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Chablisien"
+ },
+ {
+   "nomProvenance": "Petit Chablis",
+   "typeProvenance": "appellation",
+   "parent": "Chablisien"
+ },
+ {
+   "nomProvenance": "Bouzeron",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise"
+ },
+ {
+   "nomProvenance": "Givry",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise"
+ },
+ {
+   "nomProvenance": "Mercurey",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise"
+ },
+ {
+   "nomProvenance": "Montagnye",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise"
+ },
+ {
+   "nomProvenance": "Rully",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise"
+ },
+ {
+   "nomProvenance": "Aloxe-Corton",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Aloxe-Corton Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Auxey-Duresse",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Auxey-Duresse Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Bâtard-Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Beaune",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Beaune Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Bienvenue-Bâtard-Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Blagny",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Blagny Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Chassagne-Montrachet",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Chassagne-Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Chassagne-Montrachet Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Chevalier-Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Criots-Bâtard-Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Meursault",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Meursault Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Monthélie",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Monthélie Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Pommard",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Pommard Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Puligny-Montrachet",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Puligny-Montrachet Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Puligny-Montrachet Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Rully Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Santenay",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Santenay Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Savigny-lès-Beaune",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Savigny-lès-Beaune Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Volnay",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Volnay Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Bonnes-Mares",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Bonnes-Mares Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Bonnes-Mares Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Chambertin",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Chambertin Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Chambertin Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Chambolle-Musigny",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Chambolle-Musigny Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Chambolle-Musigny Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Charmes-Chambertin",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Charmes-Chambertin Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Charmes-Chambertin Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de la Roche",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de la Roche Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de la Roche Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de Tart",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de Tart Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de Tart Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de Vougeot",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de Vougeot Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos de Vougeot Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos Saint-Denis",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos Saint-Denis Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Clos Saint-Denis Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Corton",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Corton Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Corton Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Corton-Charlemagne",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Corton-Charlemagne Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Corton-Charlemagne Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune"
+ },
+ {
+   "nomProvenance": "Côte de Nuits Village",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Échézeaux",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Échézeaux Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Échézeaux Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Gevrey-Chambertin",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Gevrey-Chambertin Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Grands Échézeaux",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Grands Échézeaux Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Grands Échézeaux Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "La Romanée",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "La Romanée Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "La Romanée Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Latricières-Chambertin",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Latricières-Chambertin Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Latricières-Chambertin Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Mazis-Chambertin",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Mazis-Chambertin Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Mazoyères-Chambertin",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Mazoyères-Chambertin Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Morey-Saint-Denis",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Morey-Saint-Denis Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Musigny",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Musigny Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Musigny Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Nuits-Saint-Georges",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Nuits-Saint-Georges Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Richebourg",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Richebourg Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Richebourg Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Romanée-Saint-Vivant",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Romanée-Saint-Vivant Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Romanée-Saint-Vivant Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Vosne-Romanée",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Vosne-Romanée Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Vosne-Romanée Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits"
+ },
+ {
+   "nomProvenance": "Mâcon",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ },
+ {
+   "nomProvenance": "Mâcon Villages",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ },
+ {
+   "nomProvenance": "Pouilly-Fuissé",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ },
+ {
+   "nomProvenance": "Pouilly-Loché",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ },
+ {
+   "nomProvenance": "Pouilly-Vinzelles",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ },
+ {
+   "nomProvenance": "Saint-Véran",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ },
+ {
+   "nomProvenance": "Viré-Clessé",
+   "typeProvenance": "appellation",
+   "parent": "Mâconnais"
+ }
+]

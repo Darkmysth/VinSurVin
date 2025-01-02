@@ -1,0 +1,52 @@
+[
+ {
+   "nomTaille": "Demi-bouteille",
+   "uniteVolume": "cL",
+   "volume": 37.5
+ },
+ {
+   "nomTaille": "Bouteille",
+   "uniteVolume": "cL",
+   "volume": 75
+ },
+ {
+   "nomTaille": "Magnum",
+   "uniteVolume": "cL",
+   "volume": 150
+ },
+ {
+   "nomTaille": "Jéroboam",
+   "uniteVolume": "cL",
+   "volume": 300
+ },
+ {
+   "nomTaille": "Réhoboam",
+   "uniteVolume": "cL",
+   "volume": 450
+ },
+ {
+   "nomTaille": "Mathusalem",
+   "uniteVolume": "cL",
+   "volume": 600
+ },
+ {
+   "nomTaille": "Salmanazar",
+   "uniteVolume": "cL",
+   "volume": 900
+ },
+ {
+   "nomTaille": "Balthazar",
+   "uniteVolume": "cL",
+   "volume": 1200
+ },
+ {
+   "nomTaille": "Nabuchodonosor",
+   "uniteVolume": "cL",
+   "volume": 1500
+ },
+ {
+   "nomTaille": "Melchior",
+   "uniteVolume": "cL",
+   "volume": 1800
+ }
+]

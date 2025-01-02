@@ -1,0 +1,1850 @@
+[
+ {
+   "nomVignoble": "Altenberg de Bergheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Altenberg de Wolxheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Altenberg de Bergbieten",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Altenberg de Pfaffenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Altenberg de Serilhac",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Altenberg de Wolxheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Brand de Turckheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Brand de Zellenberg",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Bruderthal de Molsheim-Mutzig",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Eichberg de Eguisheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Florimont de Ingersheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Frankstein de Dambach-la-Ville",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Froehn de Rodern",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Geisberg de Ribeauvillé",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Gloeckelberg de Rodern",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Goldert de Gueberschwihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Hatschbourg de Sigolsheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Hengst de Wintzenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kaefferkopf de Ammerschwihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kanzlerberg de Bergheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kirchberg de Barr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kirchberg de Ribeauvillé",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kirchberg de Barr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kitterlé de Guebwiller",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Kitterlé de Katzenthal",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Klevener de Heiligenstein",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Mambourg de Sigolsheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Mandelberg de Mittelwihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Marckrain de Katzenthal",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Moenchberg de Andlau",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Muenchberg de Nothalten",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Ollwiller de Wuenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Osterberg de Ribeauvillé",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Osterberg de Béblenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Pfersigberg de Eguisheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Pfingstberg de Orschwihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Praelatenberg de Katzenthal",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Praelatenberg de Andlau",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Rangen de Thann",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Rangen de Thann-Cernay",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Rosacker de Hunawihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Saering de Guebwiller",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Schlossberg de Kaysersberg",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Schlossberg de Kientzheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Sommerberg de Niedermorschwihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Sonnenglanz de Beblenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Sonnenglanz de Nothalten",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Sporen de Riquewihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Steinert de Gueberschwihr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Steingrubler de Gertwiller",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Steingrubler de Barr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Steinklotz de Marlenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Steinklotz de Barr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Stierkopf de Wintzenheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Vorbourg de Rouffach",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Wiebelsberg de Andlau",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Winzenberg de Blienschwiller",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Zinnkoepflé de Westhalten",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Zotzenberg de Mittelbergheim",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Zotzenberg de Barr",
+   "typeVignoble": "Grand Cru d'Alsace",
+   "typeParent": "region",
+   "nomParent": "Alsace"
+ },
+ {
+   "nomVignoble": "Gorges",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Clisson",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Le Pallet",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Goulaine",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Château-Thébaud",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Monnières - Saint-Fiacre",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Mouzillon - Tillières",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
+   "nomVignoble": "Au Closeau",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Au-dessus des Malconsorts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Aux Beaux Bruns",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Aux Brulées",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Aux Echanges",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Aux Malconsorts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Aux Raignots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Beauroy",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Bel Air",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Berdiot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Beugnons",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Butteaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Carelle sous la Chapelle",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Champ Toizeau",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Champans",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Champeaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Champonnet",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Chapelot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Chatains",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Chaume de Talvat",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Chazelle",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Cherbaudes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Clos de l'Audignac",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos de la Barre",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos de la Bousse-d'Or",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos de la Cave des Ducs",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos de la Chapelle",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos de la Commaraine",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Clos de Verger",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Clos des 60 ouvrées",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos des Chênes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos des Ducs",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos des Epeneaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Clos des Réas",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Clos des Varoilles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Clos du Château des Ducs",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos du Verseuil",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Clos Prieur",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Clos Saint-Jacques",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Combe au Moine",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Cornevent",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Côte de Bréchain",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte de Cuisy",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte de Fontenay",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte de Jouan",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte de Léchet",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte de Savant",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte de Vaubarousse",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Côte des Prés-Girots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Craipillot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Creux de Beaux Champs",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Cros Parantoux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Derrière la Grange",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Derrière Saint-Jean",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "En Chevret",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "En Ergot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "En Largillière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "En Orveaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Estournelles-Saint-Jacques",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Fonteny",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Forêts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Fourchaume",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Frémiets",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Grand cru classé",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Saint-Emilion grand cru"
+ },
+ {
+   "nomVignoble": "hors d'âge",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Banyuls grand cru"
+ },
+ {
+   "nomVignoble": "Issarts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "L'Epaule",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "L'Homme Mort",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "La Bossière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "La Chanière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "La Combe d'Orveau",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "La Condemine du Vieux Château",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "La Croix Rameau",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "La Garenne ou sur la Garenne",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "La Gigotte",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "La Grande Pièce",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "La Moullière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "La Perrière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "La Platière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "La Refène",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Lassolle",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Lavaut Saint-Jacques",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Le Clos Chaudron",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Le Clos Micot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Le Cloux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Le Clouzot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Le Ronceret",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Le Vieux Château",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Amoureuses",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Angles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Les Arvelets",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Bassets",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Baudes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Beauregards",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Les Beaux Champs",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Beaux Monts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Les Bertins",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Bonneveaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Bordes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Borniques",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Bouchots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Brouillards",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Les Burnins",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Carrières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Cazetiers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Les Chabiots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Chaniots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Chanlins-Bas",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Chaponnières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Charmes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Charmots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Chatelots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Chaumelottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Coères",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Combes Dessus",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Combottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Corbeaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Les Coudrettes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Craboulettes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Croix Noires",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Epinottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Les Feusselottes ou Les Feusselotes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Fremiers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Fuées",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Garchères",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Gaudichots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Les Goulots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Les Gouresses",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Grands Epenots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Groseilles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Hauts Doix",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Jardins",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Jarolières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Las",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Lavrottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Lurets",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Les Lys",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Les Macles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Maroques",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Mitans",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Les Noirots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Paquiers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Petis Monts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Les Petits Epenots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Pézerolles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Pidances",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Plantes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Platières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Poutures",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Resses",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Rugiens Bas",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Rugiens Hauts",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Saussilles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Sentiers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Suchots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Les Treuffères",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Véroilles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Vignes Derrière",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Vignes des Prés",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Vignes longues",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Mélinots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Mont de Milieu",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Mont Laurent",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Montcuchot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Montée de Tonnerre",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Montmains",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Montorge",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Morein",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Petite Chapelle",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Petits Cazetiers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Pied d'Aloup",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Pitures Dessus",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Poissenot",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Premier grand cru classé",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Saint-Emilion grand cru"
+ },
+ {
+   "nomVignoble": "rancio",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Banyuls grand cru"
+ },
+ {
+   "nomVignoble": "rancio hors d'âge",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Banyuls grand cru"
+ },
+ {
+   "nomVignoble": "Robardelle",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Roncières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Saint-Ytages",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Sainte-Morille",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Santenots",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Sécher",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Sous les Feilles",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Taille Pieds",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Troesmes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vaillons",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vau de Vey",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vau Ligneau",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vaucoupin",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vaugiraut",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vaulorent",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vaupulent",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vaux Ragons",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Vigne du soleil",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Vignes Couland",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Vignes Saint-Pierre",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Vignes sur le Cloux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Vosgros",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Aux Combottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Aux Combottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Hameau de Blagny",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "Hameau de Blagny",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Puligny-Montrachet"
+ },
+ {
+   "nomVignoble": "La Jeunellotte",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "La Jeunellotte",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Meursault"
+ },
+ {
+   "nomVignoble": "La Pièce sous le Bois",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "La Pièce sous le Bois",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Meursault"
+ },
+ {
+   "nomVignoble": "Sous Blagny",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "Sous Blagny",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Meursault"
+ },
+ {
+   "nomVignoble": "Sous le Dos d'Ane",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "Sous le Dos d'Ane",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Meursault"
+ },
+ {
+   "nomVignoble": "Sous le Puits",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Blagny"
+ },
+ {
+   "nomVignoble": "Sous le Puits",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Puligny-Montrachet"
+ },
+ {
+   "nomVignoble": "La Romanée",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chassagne-Montrachet"
+ },
+ {
+   "nomVignoble": "La Romanée",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Les Boucherottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Beaune"
+ },
+ {
+   "nomVignoble": "Les Boucherottes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Les Caillerets",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Meursault"
+ },
+ {
+   "nomVignoble": "Les Caillerets",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Les Chaumes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chassagne-Montrachet"
+ },
+ {
+   "nomVignoble": "Les Chaumes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Vosne-Romanée"
+ },
+ {
+   "nomVignoble": "Les Cras",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Cras",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Meursault"
+ },
+ {
+   "nomVignoble": "Les Fourneaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chablis"
+ },
+ {
+   "nomVignoble": "Les Fourneaux",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Mercurey"
+ },
+ {
+   "nomVignoble": "Les Gruenchers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Chambolle-Musigny"
+ },
+ {
+   "nomVignoble": "Les Gruenchers",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Morey-Saint-Denis"
+ },
+ {
+   "nomVignoble": "Clos du Chapitre",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Aloxe-Corton"
+ },
+ {
+   "nomVignoble": "Clos du Chapitre",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Fixin"
+ },
+ {
+   "nomVignoble": "Clos du Chapitre",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Gevrey-Chambertin"
+ },
+ {
+   "nomVignoble": "Les Combes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Givry"
+ },
+ {
+   "nomVignoble": "Les Combes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Combes",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Saint-Aubin"
+ },
+ {
+   "nomVignoble": "Le Village",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Monthélie"
+ },
+ {
+   "nomVignoble": "Le Village",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Morey-Saint-Denis"
+ },
+ {
+   "nomVignoble": "Le Village",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Pommard"
+ },
+ {
+   "nomVignoble": "Le Village",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Volnay"
+ },
+ {
+   "nomVignoble": "Les Perrières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Beaune"
+ },
+ {
+   "nomVignoble": "Les Perrières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Montagny"
+ },
+ {
+   "nomVignoble": "Les Perrières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Nuits-Saint-Georges"
+ },
+ {
+   "nomVignoble": "Les Perrières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Puligny-Montrachet"
+ },
+ {
+   "nomVignoble": "Les Perrières",
+   "typeVignoble": "Climat",
+   "typeParent": "appellation",
+   "nomParent": "Saint-Aubin"
+ }
+]

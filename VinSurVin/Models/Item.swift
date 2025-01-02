@@ -1,10 +1,3 @@
-//
-//  Item.swift
-//  VinSurVin
-//
-//  Created by Thomas Pelletier on 01/01/2025.
-//
-
 import Foundation
 import SwiftData
 

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SettingsView: View {
+struct ReglagesView: View {
     var body: some View {
         Text("Mes réglages")
             .font(.title)
@@ -9,5 +9,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    ReglagesView()
 }
