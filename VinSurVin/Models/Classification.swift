@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 
+// Déclaration de l'entité 'Classification' dans laquelle seront stockées les données
 @Model
 class Classification {
     // Déclaration des attributs de l'entité
@@ -18,4 +19,10 @@ class Classification {
         self.provenance = provenance
         self.vins = []
     }
+}
+
+// Déclaration de la structure 'ClassificationCodable' qui va servir de réceptacle intermédiaire aux données contenues dans le fichier JSON
+struct ClassificationCodable: Codable {
+    var nomClassification: String
+    var parent: String
 }

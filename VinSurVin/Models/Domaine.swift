@@ -1,13 +1,16 @@
 import Foundation
 import SwiftData
 
+// Déclaration de l'entité 'Domaine' dans laquelle seront stockées les données
+@Model
 class Domaine {
     // Déclaration des attributs de l'entité
     var nomDomaine: String
     
-    // Déclaration du lien n -> 1 avec l'entité 'Provenance'
+    // Déclaration des relations n -> 1 de l'entité
     var provenance: Provenance?
-    // Déclaration de la relation 1 -> n avec l'entité 'Vin'
+    
+    // Déclaration des relations 1 -> n de l'entité
     @Relationship(deleteRule: .cascade) var vins: [Vin]
     
     // Initialisation de l'entité

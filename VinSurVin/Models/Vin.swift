@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 
+// Déclaration de l'entité 'Vin' dans laquelle seront stockées les données
 @Model
 class Vin {
     // Déclaration des attributs de l'entité

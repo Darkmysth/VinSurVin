@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 
+// Déclaration de l'entité 'Bouteille' dans laquelle seront stockées les données
 @Model
 class Bouteille {
     // Déclaration des attributs de l'entité

@@ -3,9 +3,15 @@ import SwiftData
 
 @main
 struct VinSurVinApp: App {
+    // Déclaration du container qui sera utilisé pour agir sur la base de données
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Bouteille.self,
+            Classification.self,
+            Domaine.self,
+            Provenance.self,
+            Taille.self,
+            Vin.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -17,7 +23,6 @@ struct VinSurVinApp: App {
     }()
 
     var body: some Scene {
-        #if os(iOS)
         WindowGroup {
             TabView {
                 ContentView()
@@ -28,21 +33,27 @@ struct VinSurVinApp: App {
                     .tabItem {
                         Label("Fonctionnalités", systemImage: "square.grid.3x3")
                     }
+                ReferentielsView()
+                    .tabItem {
+                        Label("Référentiels", systemImage: "chart.bar.horizontal.page")
+                    }
                 ReglagesView()
                     .tabItem {
                         Label("Réglages", systemImage: "gear")
                     }
             }
-        }
-        .modelContainer(sharedModelContainer)
-        #elseif os(macOS)
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(sharedModelContainer)
-        Settings {
-            SettingsView()
-        }
-        #endif
+            .onAppear {
+                // Appel de la méthode pour injecter les données
+                injectInitialDataIfNeeded()
+            }
+            // Injection du ModelContainer dans l'environnement <=> donc dans toutes les vues de l'application étant donné qu'elles partent toutes d'ici
+            .modelContainer(sharedModelContainer)        }
+    }
+    
+    // Méthode pour injecter les données initiales au lancement de l'application
+    private func injectInitialDataIfNeeded() {
+        
+        let context = sharedModelContainer.mainContext
+        JSONDataImporter.insertInitialDataIfNeeded(context: context)
     }
 }
