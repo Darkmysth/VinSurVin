@@ -505,19 +505,9 @@
    "parent": "Sauternes et Barsac"
  },
  {
-   "nomProvenance": "Patrimonioe",
-   "typeProvenance": "appellation",
-   "parent": "Patrimonio"
- },
- {
    "nomProvenance": "Patrimonio",
    "typeProvenance": "appellation",
    "parent": "Patrimonio"
- },
- {
-   "nomProvenance": "Calvie",
-   "typeProvenance": "appellation",
-   "parent": "Calvi"
  },
  {
    "nomProvenance": "Calvi",
@@ -525,19 +515,9 @@
    "parent": "Calvi"
  },
  {
-   "nomProvenance": "Ajaccioe",
-   "typeProvenance": "appellation",
-   "parent": "Ajaccio"
- },
- {
    "nomProvenance": "Ajaccio",
    "typeProvenance": "appellation",
    "parent": "Ajaccio"
- },
- {
-   "nomProvenance": "Sartènee",
-   "typeProvenance": "appellation",
-   "parent": "Sartène"
  },
  {
    "nomProvenance": "Sartène",
@@ -545,34 +525,14 @@
    "parent": "Sartène"
  },
  {
-   "nomProvenance": "Figarie",
-   "typeProvenance": "appellation",
-   "parent": "Figari"
- },
- {
    "nomProvenance": "Figari",
    "typeProvenance": "appellation",
    "parent": "Figari"
  },
  {
-   "nomProvenance": "Porto-Vecchioe",
-   "typeProvenance": "appellation",
-   "parent": "Porto-Vecchio"
- },
- {
    "nomProvenance": "Porto-Vecchio",
    "typeProvenance": "appellation",
    "parent": "Porto-Vecchio"
- },
- {
-   "nomProvenance": "Bonifacio",
-   "typeProvenance": "appellation",
-   "parent": "Bonifacio"
- },
- {
-   "nomProvenance": "Coteaux du Cap Corsee",
-   "typeProvenance": "appellation",
-   "parent": "Cap Corse"
  },
  {
    "nomProvenance": "Coteaux du Cap Corse",
@@ -583,11 +543,6 @@
    "nomProvenance": "Muscat du Cap Corse",
    "typeProvenance": "appellation",
    "parent": "Cap Corse"
- },
- {
-   "nomProvenance": "Vin de Corsee",
-   "typeProvenance": "appellation",
-   "parent": "Corse"
  },
  {
    "nomProvenance": "Vin de Corse",

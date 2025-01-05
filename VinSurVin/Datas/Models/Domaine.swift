@@ -8,15 +8,16 @@ class Domaine {
     var nomDomaine: String
     
     // Déclaration des relations n -> 1 de l'entité
-    var provenance: Provenance?
+    var provenance: Provenance
     
     // Déclaration des relations 1 -> n de l'entité
     @Relationship(deleteRule: .cascade) var vins: [Vin]
     
     // Initialisation de l'entité
-    init(nomDomaine: String, provenance: Provenance? = nil) {
+    init(nomDomaine: String, provenance: Provenance) {
         self.nomDomaine = nomDomaine
         self.provenance = provenance
         self.vins = []
     }
 }
+

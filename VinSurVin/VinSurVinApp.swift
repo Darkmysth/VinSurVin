@@ -11,7 +11,8 @@ struct VinSurVinApp: App {
             Domaine.self,
             Provenance.self,
             Taille.self,
-            Vin.self
+            Vin.self,
+            Vignoble.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -54,6 +55,7 @@ struct VinSurVinApp: App {
     private func injectInitialDataIfNeeded() {
         
         let context = sharedModelContainer.mainContext
+        JSONDataImporter.deleteAllEntities(context: context)
         JSONDataImporter.insertInitialDataIfNeeded(context: context)
     }
 }

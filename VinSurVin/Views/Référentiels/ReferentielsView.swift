@@ -4,13 +4,34 @@ import SwiftData
 struct ReferentielsView: View {
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
-                // Lien vers la vue de gestion des Provenances
-                NavigationLink(destination: ReferentielProvenancesView()) {
+                // Lien vers la vue de gestion des Pays
+                NavigationLink(destination: ReferentielPaysView()) {
                     HStack {
                         Image(systemName: "globe.europe.africa")
-                        Text("Provenances")
+                        Text("Pays")
+                    }
+                }
+                // Lien vers la vue de gestion des Régions
+                NavigationLink(destination: ReferentielRegionsView()) {
+                    HStack {
+                        Image(systemName: "globe.europe.africa")
+                        Text("Régions")
+                    }
+                }
+                // Lien vers la vue de gestion des Sous-régions
+                NavigationLink(destination: ReferentielSousRegionsView()) {
+                    HStack {
+                        Image(systemName: "globe.europe.africa")
+                        Text("Sous-régions")
+                    }
+                }
+                // Lien vers la vue de gestion des Appellations
+                NavigationLink(destination: ReferentielAppellationsView()) {
+                    HStack {
+                        Image(systemName: "globe.europe.africa")
+                        Text("Appellations")
                     }
                 }
                 // Lien vers la vue de gestion des Tailles
@@ -27,7 +48,7 @@ struct ReferentielsView: View {
                         Text("Classifications")
                     }
                 }
-                // Lien vers la vue de gestion des Classifications
+                // Lien vers la vue de gestion des Vignobles
                 NavigationLink(destination: ReferentielVignoblesView()) {
                     HStack {
                         Image(systemName: "star")

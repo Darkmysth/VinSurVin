@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 
+// Déclaration de l'entité 'Vignoble' dans laquelle seront stockées les données
 @Model
 class Vignoble {
     // Déclaration des attributs de l'entité
@@ -8,10 +9,10 @@ class Vignoble {
     var typeVignoble: String
     
     // Déclaration des relations n -> 1 de l'entité
-    var provenance: Provenance?
+    var provenance: Provenance
 
     // Initialisation d'une instance de l'entité
-    init(nomVignoble: String, typeVignoble: String, provenance: Provenance? = nil) {
+    init(nomVignoble: String, typeVignoble: String, provenance: Provenance) {
         self.nomVignoble = nomVignoble
         self.typeVignoble = typeVignoble
         self.provenance = provenance
@@ -22,4 +23,6 @@ class Vignoble {
 struct VignobleCodable: Codable {
     var nomVignoble: String
     var typeVignoble: String
+    var typeParent: String
+    var nomParent: String
 }

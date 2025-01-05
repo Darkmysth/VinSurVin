@@ -14,6 +14,9 @@ class Provenance {
     @Relationship(deleteRule: .cascade) var vins: [Vin]
     @Relationship(deleteRule: .cascade) var vignobles: [Vignoble]
     
+    // Déclaration de la relation vers le parent (une provenance peut avoir un parent)
+    @Relationship(deleteRule: .nullify) var parent: Provenance?  // Parent facultatif
+    
     // Initialisation d'une instance de l'entité
     init(nomProvenance: String, typeProvenance: String) {
         self.nomProvenance = nomProvenance
@@ -22,6 +25,7 @@ class Provenance {
         self.domaines = []
         self.vins = []
         self.vignobles = []
+        self.parent = nil
     }
 }
 
@@ -29,5 +33,5 @@ class Provenance {
 struct ProvenanceCodable: Codable {
     var nomProvenance: String
     var typeProvenance: String
-    var parent: String
+    var parent: String?
 }

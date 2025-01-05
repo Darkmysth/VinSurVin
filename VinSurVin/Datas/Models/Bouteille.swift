@@ -11,11 +11,11 @@ class Bouteille {
     var dateConsommationMax: Date
     
     // Déclaration des relations n -> 1 de l'entité
-    var taille: Taille?
-    var vin: Vin?
+    var taille: Taille
+    var vin: Vin
 
     // Initialisation d'une instance de l'entité
-    init(quantiteBouteilles: Int, millesime: Int, dateConsommationMin: Date, dateConsommationMax: Date, taille: Taille? = nil, vin: Vin? = nil) {
+    init(quantiteBouteilles: Int, millesime: Int, dateConsommationMin: Date, dateConsommationMax: Date, taille: Taille, vin: Vin) {
         self.quantiteBouteilles = quantiteBouteilles
         self.millesime = millesime
         self.dateConsommationMin = dateConsommationMin
