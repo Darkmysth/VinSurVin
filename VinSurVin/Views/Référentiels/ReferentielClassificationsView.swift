@@ -2,7 +2,10 @@ import SwiftUI
 import SwiftData
 
 struct ReferentielClassificationsView: View {
-    @Query private var classifications: [Classification]
+    @Query(sort: [
+        SortDescriptor(\Classification.provenance.nomProvenance, order: .forward),
+        SortDescriptor(\Classification.nomClassification, order: .forward)
+        ]) private var classifications: [Classification]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
     
@@ -19,15 +22,13 @@ struct ReferentielClassificationsView: View {
         NavigationStack {
             List {
                 ForEach(filteredClassifications) {classification in
-                    Text(classification.nomClassification)
+                    HStack {
+                        Text(classification.nomClassification)
+                    }
                 }
             }
             .navigationTitle("Classifications")
             .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
     }
-}
-
-#Preview {
-    ReferentielClassificationsView()
 }

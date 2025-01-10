@@ -26,9 +26,13 @@ struct VinSurVinApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
+                HomeView()
                     .tabItem {
                         Label("Accueil", systemImage: "house")
+                    }
+                CaveView()
+                    .tabItem {
+                        Label("Ma cave", systemImage: "wineglass")
                     }
                 FonctionnalitesView()
                     .tabItem {
@@ -48,14 +52,15 @@ struct VinSurVinApp: App {
                 injectInitialDataIfNeeded()
             }
             // Injection du ModelContainer dans l'environnement <=> donc dans toutes les vues de l'application étant donné qu'elles partent toutes d'ici
-            .modelContainer(sharedModelContainer)        }
+            .modelContainer(sharedModelContainer)
+        }
     }
     
     // Méthode pour injecter les données initiales au lancement de l'application
     private func injectInitialDataIfNeeded() {
         
         let context = sharedModelContainer.mainContext
-        JSONDataImporter.deleteAllEntities(context: context)
+        //JSONDataImporter.deleteAllEntities(context: context)
         JSONDataImporter.insertInitialDataIfNeeded(context: context)
     }
 }

@@ -2,7 +2,10 @@ import SwiftUI
 import SwiftData
 
 struct ReferentielVignoblesView: View {
-    @Query(sort: \Vignoble.nomVignoble) private var vignobles: [Vignoble]
+    @Query(sort: [
+        SortDescriptor(\Vignoble.typeVignoble, order: .forward),
+        SortDescriptor(\Vignoble.nomVignoble, order: . forward)
+    ]) private var vignobles: [Vignoble]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
     

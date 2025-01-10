@@ -7,10 +7,10 @@ struct JSONDataImporter {
     static func insertInitialDataIfNeeded(context: ModelContext) {
         
         let alreadyImported = UserDefaults.standard.bool(forKey: "InitialDataImported")
-        /*guard !alreadyImported else {
+        guard !alreadyImported else {
             print("Les données initiales ont déjà été importées.")
             return
-        }*/
+        }
         
         // 1 - Chargement des données à partir des fichiers JSON dans la structure codable intermédiaire (déclarée dans le fichier où est déclaré le modèle correspondant)
         let classificationsData: [ClassificationCodable] = loadJSON(filename: "Classifications")
@@ -18,26 +18,80 @@ struct JSONDataImporter {
         let taillesData: [TailleCodable] = loadJSON(filename: "Tailles")
         let vignoblesData: [VignobleCodable] = loadJSON(filename: "Vignobles")
         
-        // 2 - Créer un dictionnaire pour accéder facilement à chaque provenance par son nom
-        var provenancesDict: [String: Provenance] = [:]
-        
-        // 3 - Chargement des données à partir de la structure intermédiaire dans la classe stockant les données
+        // 2 - Chargement des données dans l'entité finale à partir de la structure intermédiaire dans la classe stockant les données
             // Provenances.json
-            for provenanceData in provenancesData {
-                let provenance = Provenance(
-                    nomProvenance: provenanceData.nomProvenance,
-                    typeProvenance: provenanceData.typeProvenance
-                )
-                context.insert(provenance)
-                provenancesDict[provenanceData.nomProvenance] = provenance
-            }
-            for provenanceData in provenancesData {
-                if let parentNom = provenanceData.parent,
-                   let parentProvenance = provenancesDict[parentNom] {
-                    let provenance = provenancesDict[provenanceData.nomProvenance]
-                    provenance?.parent = parentProvenance  // Assigner le parent à l'entité correspondante
+                // Définir la hiérarchie des types
+                let hierarchy: [String: String] = [
+                    "appellation": "sousRegion",
+                    "sousRegion": "region",
+                    "region": "pays"
+                ]
+        
+                // Créer un dictionnaire pour accéder facilement à chaque provenance par son nom
+                var provenancesDict: [String: Provenance] = [:]
+        
+                // Insérer les entités sans parent (les racines)
+                for provenanceData in provenancesData where provenanceData.parent?.isEmpty ?? true {
+                    let provenance = Provenance(
+                        nomProvenance: provenanceData.nomProvenance,
+                        typeProvenance: provenanceData.typeProvenance
+                    )
+                    context.insert(provenance)
+                    provenancesDict[provenanceData.nomProvenance] = provenance
                 }
-            }
+        
+                // Fonction pour remonter la hiérarchie si le parent direct n'est pas trouvé
+                func findParent(for provenanceData: ProvenanceCodable, in provenancesDict: [String: Provenance], using hierarchy: [String: String]) -> Provenance? {
+                    var currentType = provenanceData.typeProvenance
+                    var parentNom = provenanceData.parent
+                    
+                    while let parentName = parentNom {
+                        // Recherche un parent dans le dictionnaire
+                        if let parentProvenance = provenancesDict.values.first(where: {
+                            $0.nomProvenance == parentName && $0.typeProvenance == currentType
+                        }) {
+                            return parentProvenance
+                        }
+                        
+                        // Si aucun parent trouvé, remonter dans la hiérarchie
+                        if let nextType = hierarchy[currentType] {
+                            currentType = nextType
+                            parentNom = provenancesDict.values.first(where: {
+                                $0.nomProvenance == parentName && $0.typeProvenance == currentType
+                            })?.nomProvenance
+                        } else {
+                            // Aucun niveau supérieur dans la hiérarchie
+                            break
+                        }
+                    }
+                    
+                    // Aucun parent trouvé
+                    return nil
+                }
+        
+                // Fonction générique pour traiter les relations avec la remontée hiérarchique
+                func assignRelations(for type: String) {
+                    for provenanceData in provenancesData where provenanceData.typeProvenance == type {
+                        if let parentProvenance = findParent(for: provenanceData, in: provenancesDict, using: hierarchy) {
+                            let provenance = Provenance(
+                                nomProvenance: provenanceData.nomProvenance,
+                                typeProvenance: provenanceData.typeProvenance
+                            )
+                            provenance.parent = parentProvenance
+                            context.insert(provenance)
+                            provenancesDict[provenanceData.nomProvenance] = provenance
+                        } else if let parentNom = provenanceData.parent {
+                            print("Aucun parent valide trouvé pour '\(provenanceData.nomProvenance)' avec parent attendu '\(parentNom)'")
+                        }
+                    }
+                }
+
+                // Assigner les relations hiérarchiques
+                assignRelations(for: "pays")
+                assignRelations(for: "region")
+                assignRelations(for: "sousRegion")
+                assignRelations(for: "appellation")
+        
             // Classifications.json
             for classificationData in classificationsData {
                 // Récupérer la provenance associée à partir du dictionnaire
@@ -89,7 +143,7 @@ struct JSONDataImporter {
                 context.insert(vignoble)
             }
         
-        // 4 - Sauvegarde des données
+        // 3 - Sauvegarde des données
         do {
             try context.save()
             print("Données initiales importées avec succès.")
@@ -132,11 +186,12 @@ struct JSONDataImporter {
     // Méthode de suppression des données des entités de la base (pour certains cas où ça peut s'avérer nécessaire)
     static func deleteAllEntities(context: ModelContext) {
         let allEntities: [any PersistentModel.Type] = [
-            //Bouteille.self,
+            Bouteille.self,
             Classification.self,
             Domaine.self,
             Provenance.self,
             Taille.self,
+            Vignoble.self,
             Vin.self
         ]
         

@@ -2,12 +2,17 @@ import SwiftUI
 
 struct FonctionnalitesView: View {
     var body: some View {
-        VStack {
-            Text("Fonctionnalités")
-                .font(.title)
-                .fontWeight(.semibold)
+        NavigationStack {
+            List {
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Fonctionnalités")
+                        .font(.largeTitle)
+                        .bold()
+                }
+            }
         }
-        .padding()
     }
 }
 

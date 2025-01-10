@@ -783,13 +783,13 @@
    "nomVignoble": "Grand cru classé",
    "typeVignoble": "Climat",
    "typeParent": "appellation",
-   "nomParent": "Saint-Emilion grand cru"
+   "nomParent": "Saint-Émilion"
  },
  {
    "nomVignoble": "Hors d'âge",
    "typeVignoble": "Climat",
    "typeParent": "appellation",
-   "nomParent": "Banyuls grand cru"
+   "nomParent": "Banyuls"
  },
  {
    "nomVignoble": "Issarts",
@@ -1443,19 +1443,19 @@
    "nomVignoble": "Premier grand cru classé",
    "typeVignoble": "Climat",
    "typeParent": "appellation",
-   "nomParent": "Saint-Emilion grand cru"
+   "nomParent": "Saint-Émilion"
  },
  {
    "nomVignoble": "rancio",
    "typeVignoble": "Climat",
    "typeParent": "appellation",
-   "nomParent": "Banyuls grand cru"
+   "nomParent": "Banyuls"
  },
  {
    "nomVignoble": "rancio hors d'âge",
    "typeVignoble": "Climat",
    "typeParent": "appellation",
-   "nomParent": "Banyuls grand cru"
+   "nomParent": "Banyuls"
  },
  {
    "nomVignoble": "Robardelle",

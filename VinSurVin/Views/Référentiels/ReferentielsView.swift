@@ -7,31 +7,10 @@ struct ReferentielsView: View {
         NavigationStack {
             List {
                 // Lien vers la vue de gestion des Pays
-                NavigationLink(destination: ReferentielPaysView()) {
+                NavigationLink(destination: ReferentielProvenancesView()) {
                     HStack {
                         Image(systemName: "globe.europe.africa")
-                        Text("Pays")
-                    }
-                }
-                // Lien vers la vue de gestion des Régions
-                NavigationLink(destination: ReferentielRegionsView()) {
-                    HStack {
-                        Image(systemName: "globe.europe.africa")
-                        Text("Régions")
-                    }
-                }
-                // Lien vers la vue de gestion des Sous-régions
-                NavigationLink(destination: ReferentielSousRegionsView()) {
-                    HStack {
-                        Image(systemName: "globe.europe.africa")
-                        Text("Sous-régions")
-                    }
-                }
-                // Lien vers la vue de gestion des Appellations
-                NavigationLink(destination: ReferentielAppellationsView()) {
-                    HStack {
-                        Image(systemName: "globe.europe.africa")
-                        Text("Appellations")
+                        Text("Provenances")
                     }
                 }
                 // Lien vers la vue de gestion des Tailles
@@ -55,7 +34,14 @@ struct ReferentielsView: View {
                         Text("Vignobles")
                     }
                 }
-            }.navigationTitle("Référentiels") // Titre de la vue
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Référentiels")
+                        .font(.largeTitle)
+                        .bold()
+                }
+            }
         }
     }
 }

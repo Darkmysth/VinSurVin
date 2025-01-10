@@ -14,8 +14,13 @@ class Provenance {
     @Relationship(deleteRule: .cascade) var vins: [Vin]
     @Relationship(deleteRule: .cascade) var vignobles: [Vignoble]
     
-    // Déclaration de la relation vers le parent (une provenance peut avoir un parent)
-    @Relationship(deleteRule: .nullify) var parent: Provenance?  // Parent facultatif
+    // Relation vers le parent (facultatif)
+    @Relationship(deleteRule: .nullify) var parent: Provenance?
+    
+    // Relation inverse persistante pour les enfants
+    @Relationship(deleteRule: .nullify, inverse: \Provenance.parent)
+    var enfants: [Provenance]
+    
     
     // Initialisation d'une instance de l'entité
     init(nomProvenance: String, typeProvenance: String) {
@@ -26,7 +31,14 @@ class Provenance {
         self.vins = []
         self.vignobles = []
         self.parent = nil
+        self.enfants = []
     }
+    var enfantArray: [Provenance] {
+        // Filtre les Provenance ayant ce `self` comme parent
+        let allProvenances = try? modelContext?.fetch(FetchDescriptor<Provenance>())
+        return allProvenances?.filter { $0.parent == self } ?? []
+    }
+    
 }
 
 // Déclaration de la structure 'ProvenanceCodable' qui va servir de réceptacle intermédiaire aux données contenues dans le fichier JSON

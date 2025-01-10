@@ -4,9 +4,17 @@ import SwiftData
 struct ReglagesView: View {
     
     var body: some View {
-        Text("Mes réglages")
-            .font(.title)
-            .fontWeight(.semibold)
+        NavigationStack {
+            List {
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Réglages")
+                        .font(.largeTitle)
+                        .bold()
+                }
+            }
+        }
     }
 }
 
