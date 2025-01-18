@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct CaveView: View {
+    @Query private var listeBouteilles: [Bouteille]
     var body: some View {
         NavigationStack {
             List {
@@ -20,6 +21,11 @@ struct CaveView: View {
                     Text("Domaine")
                 }
             }
+            List {
+                ForEach(listeBouteilles) { bouteille in
+                    Text(bouteille.vin.nomVin)
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Ma cave")
@@ -29,8 +35,4 @@ struct CaveView: View {
             }
         }
     }
-}
-
-#Preview {
-    CaveView()
 }

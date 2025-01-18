@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import Foundation
 
 struct AddBouteilleView: View {
     
@@ -17,15 +18,15 @@ struct AddBouteilleView: View {
     // Variables pour stocker les sélections
     @State private var selectedVin: Vin? = nil
     @State private var selectedTaille: Taille? = nil
-    @State private var selectedYear: Int16 = Int16(Calendar.current.component(.year, from: Date()))
-    let years: [Int16] = Array(Int16(1950)...Int16(Calendar.current.component(.year, from: Date())))
-    @State private var selectedQuantite: Int16 = 1
+    @State private var selectedYear: Int = Int(Calendar.current.component(.year, from: Date()))
+    let years: [Int] = Array(Int(1950)...Int(Calendar.current.component(.year, from: Date())))
+    @State private var selectedQuantite: Int = 1
     @State private var selectedConservationMin: Int = 1
     @State private var selectedConservationMax: Int = 1
     @State private var searchText: String = ""
     
     // Accès au contexte de gestion des objets Core Data
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.modelContext) private var context
     
     var isFormComplete: Bool {
         selectedVin != nil && selectedTaille != nil && selectedQuantite > 0 && selectedConservationMin <= selectedConservationMax
@@ -216,7 +217,7 @@ struct AddBouteilleView: View {
                 
                 Section {
                     Button(action: {
-                        //saveBouteille()
+                        saveBouteille()
                         presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Enregistrer")
@@ -227,11 +228,49 @@ struct AddBouteilleView: View {
             .navigationTitle("Nouvelle bouteille")
         }
     }
+    
+    // Fonction pour créer et sauvegarder un nouveau vin
+    private func saveBouteille() {
+        
+        // Créer une nouvelle instance de Bouteille en le rattachant à un vin et une taille
+        let newBouteille = Bouteille(
+            quantiteBouteilles: selectedQuantite,
+            millesime: selectedYear,
+            dateConsommationMin: Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMin)!,
+            dateConsommationMax: Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMax)!,
+            taille: selectedTaille!,
+            vin: selectedVin!
+        )
+        
+        // Ajouter le domaine au contexte
+        context.insert(newBouteille)
+        
+        // Sauvegarder le contexte si nécessaire
+        do {
+            try context.save()
+            print("Vin sauvegardé avec succès.")
+        } catch {
+            print("Erreur lors de la sauvegarde du vin : \(error)")
+        }
+        
+        // Fermer la vue
+        presentationMode.wrappedValue.dismiss()
+    }
 }
 
 // Extension pour formater l'affichage des années sans séparateur de milliers
-extension Int16 {
+extension Int {
     var withoutThousandSeparator: String {
         return String(format: "%d", self)
+    }
+}
+
+extension Date {
+    static func from(day: Int, month: Int, year: Int) -> Date? {
+        var components = DateComponents()
+        components.day = day
+        components.month = month
+        components.year = year
+        return Calendar.current.date(from: components)
     }
 }

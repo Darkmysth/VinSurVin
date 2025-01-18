@@ -26,7 +26,7 @@
         
         // Vérifie si toutes les données sont remplies
         var isFormComplete: Bool {
-            !nomVin.isEmpty && selectedAppellation != nil && selectedDomaine != nil && selectedClassification != nil
+            !nomVin.isEmpty && selectedAppellation != nil && selectedDomaine != nil
         }
         
         var body: some View {
