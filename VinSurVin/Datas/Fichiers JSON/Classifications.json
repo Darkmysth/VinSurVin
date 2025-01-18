@@ -1,94 +1,117 @@
 [
  {
    "nomClassification": "Premier Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Deuxième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Troisième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Quatrième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Cinquième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Premier Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Sauternes et Barsac"
  },
  {
    "nomClassification": "Deuxième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Sauternes et Barsac"
  },
  {
    "nomClassification": "Troisième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Sauternes et Barsac"
  },
  {
    "nomClassification": "Quatrième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Sauternes et Barsac"
  },
  {
    "nomClassification": "Cinquième Grand Cru Classé",
+   "typeParent": "sousRegion",
    "parent": "Sauternes et Barsac"
  },
  {
    "nomClassification": "Cru Bourgeois Exceptionnel",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Cru Bourgeois Supérieur",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Cru Bourgeois",
+   "typeParent": "sousRegion",
    "parent": "Médoc"
  },
  {
    "nomClassification": "Premier Grand Cru Classé A",
+   "typeParent": "appellation",
    "parent": "Saint-Émilion"
  },
  {
    "nomClassification": "Premier Grand Cru Classé B",
+   "typeParent": "appellation",
    "parent": "Saint-Émilion"
  },
  {
    "nomClassification": "Grand Cru Classé",
+   "typeParent": "appellation",
    "parent": "Saint-Émilion"
  },
  {
    "nomClassification": "Grand Cru",
+   "typeParent": "appellation",
    "parent": "Saint-Émilion"
  },
  {
    "nomClassification": "Grand Cru Classé de Graves",
+   "typeParent": "sousRegion",
    "parent": "Graves"
  },
  {
    "nomClassification": "Premier Grand Cru Classé de Graves",
+   "typeParent": "sousRegion",
    "parent": "Graves"
  },
  {
    "nomClassification": "1er Cru",
+   "typeParent": "region",
    "parent": "Bourgogne"
  },
  {
    "nomClassification": "Grand Cru",
+   "typeParent": "region",
    "parent": "Bourgogne"
  },
  {
    "nomClassification": "Grand Cru d'Alsace",
+   "typeParent": "region",
    "parent": "Alsace"
  },
  {
    "nomClassification": "Cru Communal",
+   "typeParent": "appellation",
    "parent": "Muscadet Sèvre-et-Maine"
  }
 ]

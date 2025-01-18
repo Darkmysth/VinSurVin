@@ -21,6 +21,29 @@ class Provenance {
     @Relationship(deleteRule: .nullify, inverse: \Provenance.parent)
     var enfants: [Provenance]
     
+    // Trouve la région parente
+    var regionParente: Provenance? {
+        var current = self
+        while let parent = current.parent {
+            if parent.typeProvenance == "region" {
+                return parent
+            }
+            current = parent
+        }
+        return nil
+    }
+    
+    // Trouve la sous-région parente
+    var sousRegionParente: Provenance? {
+        var current = self
+        while let parent = current.parent {
+            if parent.typeProvenance == "sousRegion" {
+                return parent
+            }
+            current = parent
+        }
+        return nil
+    }
     
     // Initialisation d'une instance de l'entité
     init(nomProvenance: String, typeProvenance: String) {

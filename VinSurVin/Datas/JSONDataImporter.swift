@@ -95,7 +95,8 @@ struct JSONDataImporter {
             // Classifications.json
             for classificationData in classificationsData {
                 // Récupérer la provenance associée à partir du dictionnaire
-                guard let parentProvenance = provenancesDict[classificationData.parent] else {
+                guard let parentProvenance = provenancesDict[classificationData.parent],
+                      parentProvenance.typeProvenance == classificationData.typeParent else {
                     print("Provenance \(classificationData.parent) introuvable pour la classification \(classificationData.nomClassification).")
                     continue
                 }

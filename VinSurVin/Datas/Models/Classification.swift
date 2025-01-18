@@ -24,5 +24,6 @@ class Classification {
 // Déclaration de la structure 'ClassificationCodable' qui va servir de réceptacle intermédiaire aux données contenues dans le fichier JSON
 struct ClassificationCodable: Codable {
     var nomClassification: String
+    var typeParent: String
     var parent: String
 }
