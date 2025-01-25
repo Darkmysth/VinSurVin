@@ -35,11 +35,11 @@ struct SelectDomaineView: View {
                 ForEach(filteredDomaines) { domaine in
                     Button {
                         selectedDomaine = domaine
-                        dismiss()
                     } label: {
                         Text(domaine.nomDomaine)
                     }
                 }
+                .onDelete(perform: deleteDomaine)
             }
         }
         .navigationTitle("Domaines")
@@ -53,10 +53,27 @@ struct SelectDomaineView: View {
             }
         }
         .sheet(isPresented: $isPresentingAddDomaineView) {
-            AddDomaineView(selectedRegion: selectedRegion)
+            AddDomaineView(selectedRegion: selectedRegion, selectedDomaine: $selectedDomaine)
         }
         .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
+        .onChange(of: selectedDomaine) {
+            if selectedDomaine != nil {
+                dismiss()
+            }
+        }
     }
     
+    private func deleteDomaine(at offsets: IndexSet) {
+        for index in offsets {
+            let domaine = filteredDomaines[index]
+            modelContext.delete(domaine) // Supprime l'objet du contexte
+        }
+        
+        do {
+            try modelContext.save() // Sauvegarde les changements
+        } catch {
+            print("Erreur lors de la suppression : \(error)")
+        }
+    }
     
 }

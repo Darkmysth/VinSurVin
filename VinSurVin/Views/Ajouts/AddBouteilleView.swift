@@ -11,11 +11,6 @@ struct AddBouteilleView: View {
     @State private var showQuantite = false
     @State private var showConservation = false
     @State private var shouldRefreshVinList: Bool = false
-    
-    // Permet de revenir à la vue précédente
-    @Environment(\.presentationMode) var presentationMode
-
-    // Variables pour stocker les sélections
     @State private var selectedVin: Vin? = nil
     @State private var selectedTaille: Taille? = nil
     @State private var selectedYear: Int = Int(Calendar.current.component(.year, from: Date()))
@@ -25,11 +20,25 @@ struct AddBouteilleView: View {
     @State private var selectedConservationMax: Int = 1
     @State private var searchText: String = ""
     
+    // Permet de revenir à la vue précédente
+    @Environment(\.presentationMode) var presentationMode
+    
     // Accès au contexte de gestion des objets Core Data
     @Environment(\.modelContext) private var context
     
     var isFormComplete: Bool {
         selectedVin != nil && selectedTaille != nil && selectedQuantite > 0 && selectedConservationMin <= selectedConservationMax
+    }
+    
+    // Initialise la taille par défaut
+    private func initializeDefaultTaille() {
+        if selectedTaille == nil {
+            if let tailleDefaut = try? context.fetch(FetchDescriptor<Taille>(predicate: #Predicate { $0.nomTaille == "Bouteille" })).first {
+                selectedTaille = tailleDefaut
+            } else {
+                print("Erreur : impossible de trouver la taille par défaut.")
+            }
+        }
     }
 
     var body: some View {
@@ -202,7 +211,7 @@ struct AddBouteilleView: View {
                                 .padding(.horizontal)
                             #else
                                 // iOS / iPadOS : Stepper standard
-                                Stepper(value: $selectedConservationMax, in: selectedConservationMin...100) {
+                                Stepper(value: $selectedConservationMax, in: 1...100) {
                                     Text("et \(selectedConservationMax) an(s)")
                                 }
                                 .onChange(of: selectedConservationMax) {
@@ -225,6 +234,7 @@ struct AddBouteilleView: View {
                     .disabled(!isFormComplete)
                 }
             }
+            .onAppear(perform: initializeDefaultTaille) // Initialise la taille par défaut
             .navigationTitle("Nouvelle bouteille")
         }
     }
@@ -239,7 +249,9 @@ struct AddBouteilleView: View {
             dateConsommationMin: Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMin)!,
             dateConsommationMax: Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMax)!,
             taille: selectedTaille!,
-            vin: selectedVin!
+            vin: selectedVin!,
+            context: context
+            
         )
         
         // Ajouter le domaine au contexte

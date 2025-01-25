@@ -7,6 +7,7 @@ struct AddDomaineView: View {
     
     // Création des variables d'état de la vue
     @State private var nomDomaine: String = ""
+    @Binding var selectedDomaine: Domaine?
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -64,6 +65,7 @@ struct AddDomaineView: View {
         do {
             try context.save()
             print("Domaine sauvegardé avec succès.")
+            selectedDomaine = newDomaine
         } catch {
             print("Erreur lors de la sauvegarde du domaine : \(error)")
         }

@@ -68,5 +68,6 @@ class Provenance {
 struct ProvenanceCodable: Codable {
     var nomProvenance: String
     var typeProvenance: String
-    var parent: String?
+    var parent: String
+    var typeParent: String
 }

@@ -9,13 +9,17 @@ class Vignoble {
     var typeVignoble: String
     
     // Déclaration des relations n -> 1 de l'entité
-    var provenance: Provenance
+    @Relationship(deleteRule: .nullify, inverse: \Provenance.vignobles) var provenance: Provenance?
+    
+    // Déclaration des relations 1 -> n de l'entité
+    @Relationship(deleteRule: .cascade) var vins: [Vin]
 
     // Initialisation d'une instance de l'entité
     init(nomVignoble: String, typeVignoble: String, provenance: Provenance) {
         self.nomVignoble = nomVignoble
         self.typeVignoble = typeVignoble
         self.provenance = provenance
+        self.vins = []
     }
 }
 

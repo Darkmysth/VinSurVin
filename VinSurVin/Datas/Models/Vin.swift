@@ -109,15 +109,16 @@ class Vin {
     var caracteristique: Caracteristique
     
     // Déclaration des relations n -> 1 de l'entité
-    var provenance: Provenance
-    var classification: Classification
-    var domaine: Domaine
+    @Relationship(deleteRule: .nullify, inverse: \Provenance.vins) var provenance: Provenance
+    @Relationship(deleteRule: .nullify, inverse: \Classification.vins) var classification: Classification?
+    @Relationship(deleteRule: .nullify, inverse: \Domaine.vins) var domaine: Domaine
+    @Relationship(deleteRule: .nullify, inverse: \Vignoble.vins) var vignoble: Vignoble?
     
-    // Déclaration des relations 1 -> de l'entité
+    // Déclaration des relations 1 -> n de l'entité
     @Relationship(deleteRule: .cascade) var bouteilles: [Bouteille]
     
     // Initialisation de l'entité
-    init(nomVin: String, sucrosite: Sucrosite, couleur: Couleur, caracteristique: Caracteristique, provenance: Provenance, classification: Classification, domaine: Domaine) {
+    init(nomVin: String, sucrosite: Sucrosite, couleur: Couleur, caracteristique: Caracteristique, provenance: Provenance, classification: Classification? = nil, domaine: Domaine, vignoble: Vignoble? = nil) {
         self.nomVin = nomVin
         self.sucrosite = sucrosite
         self.couleur = couleur
@@ -125,6 +126,7 @@ class Vin {
         self.provenance = provenance
         self.classification = classification
         self.domaine = domaine
+        self.vignoble = vignoble
         self.bouteilles = []
     }
 }

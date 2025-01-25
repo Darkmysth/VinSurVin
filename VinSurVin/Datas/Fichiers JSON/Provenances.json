@@ -2,2036 +2,2401 @@
  {
    "nomProvenance": "France",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Italie",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Espagne",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Allemagne",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Chili",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Etats-Unis",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Afrique du Sud",
    "typeProvenance": "pays",
-   "parent": ""
+   "parent": "",
+   "typeParent": ""
  },
  {
    "nomProvenance": "Beaujolais",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Bordeaux",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Bourgogne",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Vallée de la Loire",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Vallée du Rhône",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Provence",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Alsace",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Languedoc-Roussillon",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Jura",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Sud-Ouest",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Corse",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Savoie",
    "typeProvenance": "region",
-   "parent": "France"
+   "parent": "France",
+   "typeParent": "pays"
  },
  {
    "nomProvenance": "Médoc",
    "typeProvenance": "sousRegion",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Entre-deux-Mers",
    "typeProvenance": "sousRegion",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Graves",
    "typeProvenance": "sousRegion",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Blayais",
    "typeProvenance": "sousRegion",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Sauternes et Barsac",
    "typeProvenance": "sousRegion",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Libournais",
    "typeProvenance": "sousRegion",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côte de Beaune",
    "typeProvenance": "sousRegion",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côte de Nuits",
    "typeProvenance": "sousRegion",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côte Chalonnaise",
    "typeProvenance": "sousRegion",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Auxerrois",
    "typeProvenance": "sousRegion",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Mâconnais",
    "typeProvenance": "sousRegion",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Chablisien",
    "typeProvenance": "sousRegion",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Ajaccio",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Patrimonio",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Calvi",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Sartène",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Figari",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Porto-Vecchio",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
+ },
+ {
+   "nomProvenance": "Bonifacio",
+   "typeProvenance": "sousRegion",
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Cap Corse",
    "typeProvenance": "sousRegion",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Languedoc",
    "typeProvenance": "sousRegion",
-   "parent": "Languedoc-Roussillon"
+   "parent": "Languedoc-Roussillon",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Roussillon",
    "typeProvenance": "sousRegion",
-   "parent": "Languedoc-Roussillon"
+   "parent": "Languedoc-Roussillon",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côtes de Provence",
    "typeProvenance": "sousRegion",
-   "parent": "Provence"
+   "parent": "Provence",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Coteaux du Varois",
    "typeProvenance": "sousRegion",
-   "parent": "Provence"
+   "parent": "Provence",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Coteaux d'Aix-en-Provence",
    "typeProvenance": "sousRegion",
-   "parent": "Provence"
+   "parent": "Provence",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Coteaux du Pierrevert",
    "typeProvenance": "sousRegion",
-   "parent": "Provence"
+   "parent": "Provence",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Coteaux de l'avant-pays Savoyard",
    "typeProvenance": "sousRegion",
-   "parent": "Savoie"
+   "parent": "Savoie",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Coteaux de la Combe de Savoie et de la Tarentaise",
    "typeProvenance": "sousRegion",
-   "parent": "Savoie"
+   "parent": "Savoie",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Piémont du Massif Central",
    "typeProvenance": "sousRegion",
-   "parent": "Sud-Ouest"
+   "parent": "Sud-Ouest",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Moyenne Garonne",
    "typeProvenance": "sousRegion",
-   "parent": "Sud-Ouest"
+   "parent": "Sud-Ouest",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bergeracois et Duras",
    "typeProvenance": "sousRegion",
-   "parent": "Sud-Ouest"
+   "parent": "Sud-Ouest",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Piémont Pyrénéen",
    "typeProvenance": "sousRegion",
-   "parent": "Sud-Ouest"
+   "parent": "Sud-Ouest",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Pays Nantais",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée de la Loire"
+   "parent": "Vallée de la Loire",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Anjou",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée de la Loire"
+   "parent": "Vallée de la Loire",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Touraine",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée de la Loire"
+   "parent": "Vallée de la Loire",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Centre",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée de la Loire"
+   "parent": "Vallée de la Loire",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Auvergne",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée de la Loire"
+   "parent": "Vallée de la Loire",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Vallée du Rhône Septentrionale",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée du Rhône"
+   "parent": "Vallée du Rhône",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Vallée du Rhône Méridionale",
    "typeProvenance": "sousRegion",
-   "parent": "Vallée du Rhône"
+   "parent": "Vallée du Rhône",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Alsace",
    "typeProvenance": "appellation",
-   "parent": "Alsace"
+   "parent": "Alsace",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Alsace Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Alsace"
+   "parent": "Alsace",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Crémant d'Alsace",
    "typeProvenance": "appellation",
-   "parent": "Alsace"
+   "parent": "Alsace",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Brouilly",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côte de Brouilly",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Chénas",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Chiroubles",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Fleurie",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Juliénas",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Morgon",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Moulin-à-Vent",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Régnié",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Saint-Amour",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Beaujolais Nouveau",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Beaujolais Villages",
    "typeProvenance": "appellation",
-   "parent": "Beaujolais"
+   "parent": "Beaujolais",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Barsac",
    "typeProvenance": "appellation",
-   "parent": "Sauternes et Barsac"
+   "parent": "Sauternes et Barsac",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bordeaux",
    "typeProvenance": "appellation",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bordeaux Supérieur",
    "typeProvenance": "appellation",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Cadillac",
    "typeProvenance": "appellation",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Clairet",
    "typeProvenance": "appellation",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côtes de Blaye",
    "typeProvenance": "appellation",
-   "parent": "Blayais"
+   "parent": "Blayais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Bourg",
    "typeProvenance": "appellation",
-   "parent": "Blayais"
+   "parent": "Blayais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Castillon",
    "typeProvenance": "appellation",
-   "parent": "Libournais"
+   "parent": "Libournais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Francs",
    "typeProvenance": "appellation",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côtes de Saint-Foy",
    "typeProvenance": "appellation",
-   "parent": "Entre-deux-Mers"
+   "parent": "Entre-deux-Mers",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Saint-Macaire",
    "typeProvenance": "appellation",
-   "parent": "Entre-deux-Mers"
+   "parent": "Entre-deux-Mers",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Entre-Deux-Mers",
    "typeProvenance": "appellation",
-   "parent": "Entre-deux-Mers"
+   "parent": "Entre-deux-Mers",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Fronsac",
    "typeProvenance": "appellation",
-   "parent": "Libournais"
+   "parent": "Libournais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Graves",
    "typeProvenance": "appellation",
-   "parent": "Graves"
+   "parent": "Graves",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Graves de Vayres",
    "typeProvenance": "appellation",
-   "parent": "Graves"
+   "parent": "Graves",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Haut-Benauge",
    "typeProvenance": "appellation",
-   "parent": "Bordeaux"
+   "parent": "Bordeaux",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Haut-Médoc",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Lalande-de-Pomerol",
    "typeProvenance": "appellation",
-   "parent": "Libournais"
+   "parent": "Libournais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Listrac-Médoc",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Margaux",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Médoc",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Moulis-en-Médoc",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pauillac",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pessac-Léognan",
    "typeProvenance": "appellation",
-   "parent": "Graves"
+   "parent": "Graves",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pomerol",
    "typeProvenance": "appellation",
-   "parent": "Libournais"
+   "parent": "Libournais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Émilion",
    "typeProvenance": "appellation",
-   "parent": "Libournais"
+   "parent": "Libournais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Estèphe",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Julien",
    "typeProvenance": "appellation",
-   "parent": "Médoc"
+   "parent": "Médoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Sauternes",
    "typeProvenance": "appellation",
-   "parent": "Sauternes et Barsac"
- },
- {
-   "nomProvenance": "Patrimonioe",
-   "typeProvenance": "appellation",
-   "parent": "Patrimonio"
+   "parent": "Sauternes et Barsac",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Patrimonio",
    "typeProvenance": "appellation",
-   "parent": "Patrimonio"
- },
- {
-   "nomProvenance": "Calvie",
-   "typeProvenance": "appellation",
-   "parent": "Calvi"
+   "parent": "Patrimonio",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Calvi",
    "typeProvenance": "appellation",
-   "parent": "Calvi"
+   "parent": "Calvi",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Ajaccio",
    "typeProvenance": "appellation",
-   "parent": "Ajaccio"
- },
- {
-   "nomProvenance": "Sartènee",
-   "typeProvenance": "appellation",
-   "parent": "Sartène"
+   "parent": "Ajaccio",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Sartène",
    "typeProvenance": "appellation",
-   "parent": "Sartène"
- },
- {
-   "nomProvenance": "Figarie",
-   "typeProvenance": "appellation",
-   "parent": "Figari"
+   "parent": "Sartène",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Figari",
    "typeProvenance": "appellation",
-   "parent": "Figari"
- },
- {
-   "nomProvenance": "Porto-Vecchioe",
-   "typeProvenance": "appellation",
-   "parent": "Porto-Vecchio"
+   "parent": "Figari",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Porto-Vecchio",
    "typeProvenance": "appellation",
-   "parent": "Porto-Vecchio"
+   "parent": "Porto-Vecchio",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bonifacio",
    "typeProvenance": "appellation",
-   "parent": "Bonifacio"
- },
- {
-   "nomProvenance": "Coteaux du Cap Corsee",
-   "typeProvenance": "appellation",
-   "parent": "Cap Corse"
+   "parent": "Bonifacio",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux du Cap Corse",
    "typeProvenance": "appellation",
-   "parent": "Cap Corse"
+   "parent": "Cap Corse",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscat du Cap Corse",
    "typeProvenance": "appellation",
-   "parent": "Cap Corse"
- },
- {
-   "nomProvenance": "Vin de Corsee",
-   "typeProvenance": "appellation",
-   "parent": "Corse"
+   "parent": "Cap Corse",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vin de Corse",
    "typeProvenance": "appellation",
-   "parent": "Corse"
+   "parent": "Corse",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Arbois",
    "typeProvenance": "appellation",
-   "parent": "Jura"
+   "parent": "Jura",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Côtes du Jura",
    "typeProvenance": "appellation",
-   "parent": "Jura"
+   "parent": "Jura",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "L'Étoile",
    "typeProvenance": "appellation",
-   "parent": "Jura"
+   "parent": "Jura",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Château-Chalon",
    "typeProvenance": "appellation",
-   "parent": "Jura"
+   "parent": "Jura",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Macvin du Jura",
    "typeProvenance": "appellation",
-   "parent": "Jura"
+   "parent": "Jura",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Crémant du Jura",
    "typeProvenance": "appellation",
-   "parent": "Jura"
+   "parent": "Jura",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Minervois",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corbières",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Roussillon",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Roussillon Villages",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Fitou",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Chinian",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Faugères",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Limoux",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Maury",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Banyuls",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Collioure",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Languedoce",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Languedoc",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux du Languedoc",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Millau",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Thongue",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pic Saint-Loup",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Terrasses du Larzac",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Saturnin",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "La Clape",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corbières-Boutenac",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Malepère",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscat de Rivesaltes",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscat de St-Jean de Minervois",
    "typeProvenance": "appellation",
-   "parent": "Roussillon"
+   "parent": "Roussillon",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscat de Lunel",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscat de Frontignan",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscat de Mireval",
    "typeProvenance": "appellation",
-   "parent": "Languedoc"
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Provence",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Provence Sainte-Victoire",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Provence Fréjus",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Provence La Londe",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Provence Pierrefeu",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Provence Ste. Baume",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux d'Aix-en-Provence",
    "typeProvenance": "appellation",
-   "parent": "Coteaux d'Aix-en-Provence"
+   "parent": "Coteaux d'Aix-en-Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux Varois en Provence",
    "typeProvenance": "appellation",
-   "parent": "Coteaux du Varois"
+   "parent": "Coteaux du Varois",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Les Baux-de-Provence",
    "typeProvenance": "appellation",
-   "parent": "Coteaux du Varois"
+   "parent": "Coteaux du Varois",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bandole",
    "typeProvenance": "appellation",
-   "parent": "Coteaux du Varois"
+   "parent": "Coteaux du Varois",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bandol",
    "typeProvenance": "appellation",
-   "parent": "Coteaux du Varois"
+   "parent": "Coteaux du Varois",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bellete",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bellet",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
- },
- {
-   "nomProvenance": "Cassise",
-   "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cassis",
    "typeProvenance": "appellation",
-   "parent": "Côtes de Provence"
+   "parent": "Côtes de Provence",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Apremont",
    "typeProvenance": "appellation",
-   "parent": "Coteaux de l'avant-pays Savoyard"
+   "parent": "Coteaux de l'avant-pays Savoyard",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chignin",
    "typeProvenance": "appellation",
-   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise"
+   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chignin-Bergeron",
    "typeProvenance": "appellation",
-   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise"
+   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Roussette de Savoie",
    "typeProvenance": "appellation",
-   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise"
+   "parent": "Coteaux de la Combe de Savoie et de la Tarentaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Seyssel",
    "typeProvenance": "appellation",
-   "parent": "Coteaux de l'avant-pays Savoyard"
+   "parent": "Coteaux de l'avant-pays Savoyard",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bergerac",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Monbazillac",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Montravel",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pécharmant",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saussignac",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Bergerac",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Montravel",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Haut-Montravel",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Rosette",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Madiran",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cahors",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Gaillac",
    "typeProvenance": "appellation",
-   "parent": "Piémont du Massif Central"
+   "parent": "Piémont du Massif Central",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Fronton",
    "typeProvenance": "appellation",
-   "parent": "Piémont du Massif Central"
+   "parent": "Piémont du Massif Central",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Brulhois",
    "typeProvenance": "appellation",
-   "parent": "Piémont du Massif Central"
+   "parent": "Piémont du Massif Central",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Duras",
    "typeProvenance": "appellation",
-   "parent": "Bergeracois et Duras"
+   "parent": "Bergeracois et Duras",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Buzet",
    "typeProvenance": "appellation",
-   "parent": "Moyenne Garonne"
+   "parent": "Moyenne Garonne",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Marmandais",
    "typeProvenance": "appellation",
-   "parent": "Moyenne Garonne"
+   "parent": "Moyenne Garonne",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Béarn",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Irouléguy",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Jurançon Sec",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Jurançon Liquoreux",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pacherenc du Vic-Bilh Sec",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pacherenc du Vic-Bilh Liquoreux",
    "typeProvenance": "appellation",
-   "parent": "Piémont Pyrénéen"
+   "parent": "Piémont Pyrénéen",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de Gascogne",
    "typeProvenance": "appellation",
-   "parent": "Sud-Ouest"
+   "parent": "Sud-Ouest",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Tursan",
    "typeProvenance": "appellation",
-   "parent": "Moyenne Garonne"
+   "parent": "Moyenne Garonne",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Mont",
    "typeProvenance": "appellation",
-   "parent": "Moyenne Garonne"
+   "parent": "Moyenne Garonne",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Tarn",
    "typeProvenance": "appellation",
-   "parent": "Moyenne Garonne"
+   "parent": "Moyenne Garonne",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Marcillac",
    "typeProvenance": "appellation",
-   "parent": "Piémont du Massif Central"
+   "parent": "Piémont du Massif Central",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Entraygues-le-Fel",
    "typeProvenance": "appellation",
-   "parent": "Piémont du Massif Central"
+   "parent": "Piémont du Massif Central",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Estaing",
    "typeProvenance": "appellation",
-   "parent": "Piémont du Massif Central"
+   "parent": "Piémont du Massif Central",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Anjou",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Anjou Villages",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Anjou-Gamay",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Anjou-Villages-Brissac",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cabernet d'Anjou",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Rosé d'Anjou",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Aubigny Sec",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Aubigny Liquoreux",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bonnezeaux",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux du Layon",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux du Layon Villages",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Quarts de Chaume",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Savennières Sec",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Savennières Liquoreux",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Savennières-Roche-aux-Moines Sec",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Savennières-Roche-aux-Moines Liquoreux",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saumur",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saumur-Champigny",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saumur Puy-Notre-Dame",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saumur Brézé",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saumur-Champigny Les Poyeux",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Crémant de Loire d'Anjou",
    "typeProvenance": "appellation",
-   "parent": "Anjou"
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Crémant de Loire du Pays Nantais",
    "typeProvenance": "appellation",
-   "parent": "Pays Nantais"
+   "parent": "Pays Nantais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Crémant de Loire de Touraine",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Amboise",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine Azay-le-Rideau",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Chenonceaux",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Mesland",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Noble Joué",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine Oisly",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Amboise Château de l'Aulee",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Amboise Clos de la Briderie",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vouvray Sec",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vouvray Effervescent",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Montlouis-sur-Loire Sec",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Montlouis-sur-Loire Effervescent",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscadet",
    "typeProvenance": "appellation",
-   "parent": "Pays Nantais"
+   "parent": "Pays Nantais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscadet Sèvre-et-Maine",
    "typeProvenance": "appellation",
-   "parent": "Pays Nantais"
+   "parent": "Pays Nantais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscadet Coteaux de la Loire",
    "typeProvenance": "appellation",
-   "parent": "Pays Nantais"
+   "parent": "Pays Nantais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Muscadet Côtes de Grandlieu",
    "typeProvenance": "appellation",
-   "parent": "Pays Nantais"
+   "parent": "Pays Nantais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pouilly-Fumé",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pouilly-sur-Loire",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Sancerre",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Menetou-Salon",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Reuilly",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux du Giennois",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Coteaux de Tannay",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes de la Charité",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pouilly Fumé",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Sancerre Chavignol",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bourgueil",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Nicolas-de-Bourgueil",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Touraine-Azay-le-Rideau",
    "typeProvenance": "appellation",
-   "parent": "Touraine"
+   "parent": "Touraine",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Quincy",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chinon",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chinon Couly-Dutheil",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chinon La Croix Boissée",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cheverny",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cour-Cheverny",
    "typeProvenance": "appellation",
-   "parent": "Centre"
+   "parent": "Centre",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côte Roannaise",
    "typeProvenance": "appellation",
-   "parent": "Auvergne"
+   "parent": "Auvergne",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Luberon",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes du Ventoux",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côte-Rôtie",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Septentrionale"
+   "parent": "Vallée du Rhône Septentrionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Condrieu",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Septentrionale"
+   "parent": "Vallée du Rhône Septentrionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "St. Joseph",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Septentrionale"
+   "parent": "Vallée du Rhône Septentrionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Hermitage",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Septentrionale"
+   "parent": "Vallée du Rhône Septentrionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Crozes-Hermitage",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Septentrionale"
+   "parent": "Vallée du Rhône Septentrionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cornas",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Septentrionale"
+   "parent": "Vallée du Rhône Septentrionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Châteauneuf-du-Pape",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes-du-Rhône",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes-du-Rhône Villages",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côtes-du-Rhône-Villages Plan de Dieu",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Gigondas",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vacqueyras",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Rasteau",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Beaumes-de-Venise",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Beaumes-de-Venise Muscat",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Lirac",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Tavel",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Cairanne",
    "typeProvenance": "appellation",
-   "parent": "Vallée du Rhône Méridionale"
+   "parent": "Vallée du Rhône Méridionale",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Irancy",
    "typeProvenance": "appellation",
-   "parent": "Auxerrois"
+   "parent": "Auxerrois",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint Bris",
    "typeProvenance": "appellation",
-   "parent": "Auxerrois"
+   "parent": "Auxerrois",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bourgogne Aligoté",
    "typeProvenance": "appellation",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bourgogne",
    "typeProvenance": "appellation",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bourgogne Clairet",
    "typeProvenance": "appellation",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bourgogne Grand Ordinaire",
    "typeProvenance": "appellation",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bourgogne Mousseux",
    "typeProvenance": "appellation",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Bourgogne Passe-Tout-Grains",
    "typeProvenance": "appellation",
-   "parent": "Bourgogne"
+   "parent": "Bourgogne",
+   "typeParent": "region"
  },
  {
    "nomProvenance": "Chablis",
    "typeProvenance": "appellation",
-   "parent": "Chablisien"
+   "parent": "Chablisien",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chablis Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Chablisien"
+   "parent": "Chablisien",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chablis Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Chablisien"
+   "parent": "Chablisien",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Petit Chablis",
    "typeProvenance": "appellation",
-   "parent": "Chablisien"
+   "parent": "Chablisien",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bouzeron",
    "typeProvenance": "appellation",
-   "parent": "Côte Chalonnaise"
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Givry",
    "typeProvenance": "appellation",
-   "parent": "Côte Chalonnaise"
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mercurey",
    "typeProvenance": "appellation",
-   "parent": "Côte Chalonnaise"
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Montagny",
    "typeProvenance": "appellation",
-   "parent": "Côte Chalonnaise"
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Rully",
    "typeProvenance": "appellation",
-   "parent": "Côte Chalonnaise"
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Aloxe-Corton",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Aloxe-Corton Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Auxey-Duresse",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Auxey-Duresse Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bâtard-Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Beaune",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Beaune Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bienvenue-Bâtard-Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Blagny",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Blagny Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chassagne-Montrachet",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chassagne-Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chassagne-Montrachet Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chevalier-Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Criots-Bâtard-Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Meursault",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Meursault Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Monthélie",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Monthélie Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pommard",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pommard Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Puligny-Montrachet",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Puligny-Montrachet Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Puligny-Montrachet Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Rully Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Santenay",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Santenay Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Savigny-lès-Beaune",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Savigny-lès-Beaune Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Volnay",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Volnay Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Aubin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Aubin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Fixin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Fixin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bonnes-Mares",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bonnes-Mares Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Bonnes-Mares Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chambertin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chambertin Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chambertin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chambolle-Musigny",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chambolle-Musigny Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Chambolle-Musigny Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Charmes-Chambertin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Charmes-Chambertin Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Charmes-Chambertin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de la Roche",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de la Roche Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de la Roche Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de Tart",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de Tart Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de Tart Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de Vougeot",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de Vougeot Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos de Vougeot Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos Saint-Denis",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos Saint-Denis Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Clos Saint-Denis Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corton",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corton Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corton Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corton-Charlemagne",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corton-Charlemagne Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Corton-Charlemagne Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Beaune"
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Côte de Nuits Village",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Échézeaux",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Échézeaux Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Échézeaux Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Gevrey-Chambertin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Gevrey-Chambertin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Grands Échézeaux",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Grands Échézeaux Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Grands Échézeaux Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "La Romanée",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "La Romanée Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "La Romanée Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Latricières-Chambertin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Latricières-Chambertin Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Latricières-Chambertin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mazis-Chambertin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mazis-Chambertin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mazoyères-Chambertin",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mazoyères-Chambertin Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Morey-Saint-Denis",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Morey-Saint-Denis Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Musigny",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Musigny Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Musigny Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Nuits-Saint-Georges",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Nuits-Saint-Georges Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Richebourg",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Richebourg Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Richebourg Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Romanée-Saint-Vivant",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Romanée-Saint-Vivant Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Romanée-Saint-Vivant Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vosne-Romanée",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vosne-Romanée Grand Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Vosne-Romanée Premier Cru",
    "typeProvenance": "appellation",
-   "parent": "Côte de Nuits"
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mâcon",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Mâcon Villages",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pouilly-Fuissé",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pouilly-Loché",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Pouilly-Vinzelles",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Saint-Véran",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  },
  {
    "nomProvenance": "Viré-Clessé",
    "typeProvenance": "appellation",
-   "parent": "Mâconnais"
+   "parent": "Mâconnais",
+   "typeParent": "sousRegion"
  }
 ]

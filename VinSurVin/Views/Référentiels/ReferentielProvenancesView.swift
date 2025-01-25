@@ -37,7 +37,7 @@ struct ProvenanceView: View {
 
             // Affiche les enfants si le nœud est développé
             if isExpanded {
-                ForEach(provenance.enfantArray, id: \.nomProvenance) { child in
+                ForEach(provenance.enfantArray.sorted(by: { $0.nomProvenance < $1.nomProvenance }), id: \.nomProvenance) { child in
                     ProvenanceView(provenance: child)
                         .padding(.leading)
                 }

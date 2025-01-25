@@ -8,15 +8,17 @@
         @State private var selectedSucrosite: Sucrosite = .sec
         @State private var selectedCouleur: Couleur = .rouge
         @State private var selectedCaracteristique: Caracteristique = .tranquille
-        @State private var selectedDomaine: Domaine? = nil
-        @State private var selectedAppellation: Provenance? = nil
-        @State private var selectedClassification: Classification? = nil
+        @State private var selectedVignoble: Vignoble? = nil // Variable optionnelle car il est possible de ne pas rattacher de vignoble
+        @State private var selectedDomaine: Domaine? = nil // Variable optionnelle car à l'initialisation de la vue, aucun domaine n'est encore choisi
+        @State private var selectedAppellation: Provenance? = nil // Variable optionnelle car à l'initialisation de la vue, aucune provenance n'est encore choisie
+        @State private var selectedClassification: Classification? = nil // Variable optionnelle car il est possible de ne pas rattacher de classification
         var selectedRegion: Provenance? {
             selectedAppellation?.regionParente
         }
         var selectedSousRegion: Provenance? {
             selectedAppellation?.sousRegionParente
         }
+        @Binding var selectedVin: Vin?
         
         // Accès au contexte SwiftData
         @Environment(\.modelContext) private var context
@@ -47,6 +49,20 @@
                             }
                         }
                         
+                        // Sélection du vignoble
+                        NavigationLink(
+                            destination: {SelectVignobleView(selectedRegion: selectedRegion, selectedSousRegion: selectedSousRegion, selectedAppellation: selectedAppellation, selectedVignoble: $selectedVignoble)},
+                            label: {
+                                HStack {
+                                    Text("Vignoble")
+                                    Spacer()
+                                    Text(selectedVignoble?.nomVignoble ?? "Aucun vignoble sélectionné")
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        )
+                        .disabled(selectedAppellation == nil)
+                        
                         // Sélection du domaine
                         NavigationLink(
                             destination: {SelectDomaineView(selectedRegion: selectedRegion, selectedDomaine: $selectedDomaine)},
@@ -63,7 +79,17 @@
                         
                         // Sélection de la classification
                         NavigationLink(
-                            destination: {SelectClassificationView(selectedRegion: selectedRegion, selectedSousRegion: selectedSousRegion, selectedAppellation: selectedAppellation, selectedClassification: $selectedClassification)},
+                            destination: {
+                                // On teste que les variables de ne sont pas vides par obligation, même si cette ligne est désactivée tant qu'on n'a pas choisi l'appellation
+                                if let region = selectedRegion, let sousRegion = selectedSousRegion, let appellation = selectedAppellation {
+                                    SelectClassificationView(
+                                        selectedRegion: selectedRegion!,
+                                        selectedSousRegion: selectedSousRegion!,
+                                        selectedAppellation: selectedAppellation!,
+                                        selectedClassification: $selectedClassification
+                                    )
+                                }
+                            },
                             label: {
                                 HStack {
                                     Text("Classification")
@@ -145,8 +171,9 @@
                 couleur: selectedCouleur,
                 caracteristique: selectedCaracteristique,
                 provenance: selectedAppellation!, // On force le déballage de 'selectedAppellation' parce qu'on est certain qu'il est renseigné grâce à 'isFormComplete'
-                classification: selectedClassification!, // On force le déballage de 'selectedClassification' parce qu'on est certain qu'il est renseigné grâce à 'isFormComplete'
-                domaine: selectedDomaine! // On force le déballage de 'selectedDomaine' parce qu'on est certain qu'il est renseigné grâce à 'isFormComplete'
+                classification: selectedClassification,
+                domaine: selectedDomaine!, // On force le déballage de 'selectedDomaine' parce qu'on est certain qu'il est renseigné grâce à 'isFormComplete'
+                vignoble: selectedVignoble
             )
             
             // Ajouter le domaine au contexte
@@ -156,6 +183,7 @@
             do {
                 try context.save()
                 print("Vin sauvegardé avec succès.")
+                selectedVin = newVin
             } catch {
                 print("Erreur lors de la sauvegarde du vin : \(error)")
             }

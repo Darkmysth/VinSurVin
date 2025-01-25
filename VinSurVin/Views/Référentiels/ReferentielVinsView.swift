@@ -1,19 +1,17 @@
-import SwiftUI
 import SwiftData
+import SwiftUI
 
-struct SelectVinView: View {
+struct ReferentielVinsView: View {
     @Query(sort: \Vin.nomVin) private var vins: [Vin]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
-    @State private var isPresentingAddVinView = false
-    @Binding var selectedVin: Vin?
-    @Environment(\.dismiss) private var dismiss
  
     // Création d'une propriété calculée qui retourne un tableau de type [Vin] (des vins filtrés selon la recherche de l'utilisateur)
     var filteredVins: [Vin] {
         if searchQuery.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
             return vins
         }
+        // Si la recherche n'est pas vide, alors il n'y a pas encore eu de retour donc on continue le calcul, et retourne le tableau 'vins' mais filtré avec la méthode '.filter' disponible pour toutes les propriétés de type 'tableau'
         return vins.filter { vin in // Rechercher sur toutes les occurrences 'vin' du tableau [vins]
             vin.nomVin.range(of: searchQuery, options: .caseInsensitive) != nil
         }
@@ -23,33 +21,12 @@ struct SelectVinView: View {
         NavigationStack {
             List {
                 ForEach(filteredVins) { vin in
-                    Button {
-                        selectedVin = vin
-                    } label: {
-                        Text(vin.nomVin)
-                    }
+                    Text(vin.nomVin)
                 }
                 .onDelete(perform: deleteVin)
             }
             .navigationTitle("Vins")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isPresentingAddVinView = true // Présenter la vue
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-            .sheet(isPresented: $isPresentingAddVinView) {
-                AddVinView(selectedVin: $selectedVin)
-            }
             .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
-        }
-        .onChange(of: selectedVin) {
-            if selectedVin != nil {
-                dismiss()
-            }
         }
     }
     

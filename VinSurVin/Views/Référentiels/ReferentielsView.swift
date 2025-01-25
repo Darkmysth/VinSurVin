@@ -9,29 +9,61 @@ struct ReferentielsView: View {
                 // Lien vers la vue de gestion des Pays
                 NavigationLink(destination: ReferentielProvenancesView()) {
                     HStack {
-                        Image(systemName: "globe.europe.africa")
+                        ZStack {
+                            Color.clear.frame(width: 40)
+                            Image(systemName: "globe.europe.africa")
+                        }
                         Text("Provenances")
                     }
                 }
                 // Lien vers la vue de gestion des Tailles
                 NavigationLink(destination: ReferentielTaillesView()) {
                     HStack {
-                        Image(systemName: "square.resize.up")
+                        ZStack {
+                            Color.clear.frame(width: 40)
+                            Image(systemName: "square.resize.up")
+                        }
                         Text("Tailles")
                     }
                 }
                 // Lien vers la vue de gestion des Classifications
                 NavigationLink(destination: ReferentielClassificationsView()) {
                     HStack {
-                        Image(systemName: "medal")
+                        ZStack {
+                            Color.clear.frame(width: 40)
+                            Image(systemName: "medal")
+                        }
                         Text("Classifications")
                     }
                 }
                 // Lien vers la vue de gestion des Vignobles
                 NavigationLink(destination: ReferentielVignoblesView()) {
                     HStack {
-                        Image(systemName: "star")
+                        ZStack {
+                            Color.clear.frame(width: 40)
+                            Image(systemName: "star")
+                        }
                         Text("Vignobles")
+                    }
+                }
+                // Lien vers la vue de gestion des Vins
+                NavigationLink(destination: ReferentielVinsView()) {
+                    HStack {
+                        ZStack {
+                            Color.clear.frame(width: 40)
+                            Image(systemName: "bookmark.square.fill")
+                        }
+                        Text("Vins")
+                    }
+                }
+                // Lien vers la vue de gestion des Domaines
+                NavigationLink(destination: ReferentielDomainesView()) {
+                    HStack {
+                        ZStack {
+                            Color.clear.frame(width: 40)
+                            Image(systemName: "house.lodge")
+                        }
+                        Text("Domaines")
                     }
                 }
             }

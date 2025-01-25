@@ -60,7 +60,7 @@ struct VinSurVinApp: App {
     private func injectInitialDataIfNeeded() {
         
         let context = sharedModelContainer.mainContext
-        //JSONDataImporter.deleteAllEntities(context: context)
+        JSONDataImporter.deleteAllEntities(context: context)
         JSONDataImporter.insertInitialDataIfNeeded(context: context)
     }
 }

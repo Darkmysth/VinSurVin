@@ -7,8 +7,8 @@ class Classification {
     // Déclaration des attributs de l'entité
     var nomClassification: String
     
-    // Déclaration du lien n -> 1 avec l'entité 'Provenance'
-    var provenance: Provenance
+    // Déclaration des relations n -> 1 de l'entité
+    @Relationship(deleteRule: .nullify, inverse: \Provenance.classifications) var provenance: Provenance?
     
     // Déclaration de la relation 1 -> n avec l'entité 'Vin'
     @Relationship(deleteRule: .cascade) var vins: [Vin]

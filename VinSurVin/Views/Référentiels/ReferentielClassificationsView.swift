@@ -3,7 +3,7 @@ import SwiftData
 
 struct ReferentielClassificationsView: View {
     @Query(sort: [
-        SortDescriptor(\Classification.provenance.nomProvenance, order: .forward),
+        //SortDescriptor(\Classification.provenance.nomProvenance, order: .forward),
         SortDescriptor(\Classification.nomClassification, order: .forward)
         ]) private var classifications: [Classification]
     @Environment(\.modelContext) var modelContext
