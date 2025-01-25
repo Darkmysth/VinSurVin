@@ -2,10 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct SelectClassificationView: View {
-    let selectedRegion: Provenance
-    let selectedSousRegion: Provenance
-    let selectedAppellation: Provenance
-    @Query(sort: \Classification.nomClassification) private var allClassifications: [Classification]
+    var classificationsByProvenance: [Classification]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
     @Binding var selectedClassification: Classification?
@@ -13,36 +10,12 @@ struct SelectClassificationView: View {
  
     // Création d'une propriété calculée qui retourne un tableau de type [Classification] des classifications filtrées selon la recherche de l'utilisateur
     var filteredClassifications: [Classification] {
-        let classifications = allClassifications.filter { $0.provenance == selectedAppellation }
-        if !classifications.isEmpty {
-            if searchQuery.isEmpty {
-                return classifications
-            }
-            return classifications.filter { classification in
-                classification.nomClassification.range(of: searchQuery, options: .caseInsensitive) != nil
-            }
-        } else {
-            let classifications = allClassifications.filter { $0.provenance == selectedSousRegion }
-            if !classifications.isEmpty {
-                if searchQuery.isEmpty {
-                    return classifications
-                }
-                return classifications.filter { classification in
-                    classification.nomClassification.range(of: searchQuery, options: .caseInsensitive) != nil
-                }
-            } else {
-                let classifications = allClassifications.filter { $0.provenance == selectedRegion }
-                if !classifications.isEmpty {
-                    if searchQuery.isEmpty {
-                        return classifications
-                    }
-                    return classifications.filter { classification in
-                        classification.nomClassification.range(of: searchQuery, options: .caseInsensitive) != nil
-                    }
-                }
-            }
+        if searchQuery.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
+            return classificationsByProvenance
         }
-        return []
+        return classificationsByProvenance.filter { classification in // Rechercher sur toutes les occurrences 'classification' du tableau [classificationsByProvenance]
+            classification.nomClassification.range(of: searchQuery, options: .caseInsensitive) != nil
+        }
     }
     
     var body: some View {

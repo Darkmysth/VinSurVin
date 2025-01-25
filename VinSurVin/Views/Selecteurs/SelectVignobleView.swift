@@ -2,10 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct SelectVignobleView: View {
-    let selectedRegion: Provenance?
-    let selectedSousRegion: Provenance?
-    let selectedAppellation: Provenance?
-    @Query(sort: \Vignoble.nomVignoble) private var allVignobles: [Vignoble]
+    var vignoblesByProvenance: [Vignoble]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
     @Binding var selectedVignoble: Vignoble?
@@ -13,42 +10,12 @@ struct SelectVignobleView: View {
  
     // Création d'une propriété calculée qui retourne un tableau de type [Vignoble] (des vignobles filtrés selon la recherche de l'utilisateur)
     var filteredVignobles: [Vignoble] {
-        if let appellation = selectedAppellation {
-            let vignobles = allVignobles.filter { $0.provenance == appellation }
-            if !vignobles.isEmpty {
-                if searchQuery.isEmpty {
-                    return vignobles
-                }
-                return vignobles.filter { vignoble in
-                    vignoble.nomVignoble.range(of: searchQuery, options: .caseInsensitive) != nil
-                }
-            } else {
-                if let sousRegion = selectedSousRegion {
-                    let vignobles = allVignobles.filter { $0.provenance == sousRegion }
-                    if !vignobles.isEmpty {
-                        if searchQuery.isEmpty {
-                            return vignobles
-                        }
-                        return vignobles.filter { vignoble in
-                            vignoble.nomVignoble.range(of: searchQuery, options: .caseInsensitive) != nil
-                        }
-                    } else {
-                        if let region = selectedRegion {
-                            let vignobles = allVignobles.filter { $0.provenance == region }
-                            if !vignobles.isEmpty {
-                                if searchQuery.isEmpty {
-                                    return vignobles
-                                }
-                                return vignobles.filter { vignoble in
-                                    vignoble.nomVignoble.range(of: searchQuery, options: .caseInsensitive) != nil
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        if searchQuery.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
+            return vignoblesByProvenance
         }
-        return []
+        return vignoblesByProvenance.filter { vignoble in // Rechercher sur toutes les occurrences 'vignoble' du tableau [vignoblesByProvenance]
+            vignoble.nomVignoble.range(of: searchQuery, options: .caseInsensitive) != nil
+        }
     }
     
     var body: some View {

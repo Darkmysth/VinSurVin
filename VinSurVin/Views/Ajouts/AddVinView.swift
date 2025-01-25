@@ -12,12 +12,59 @@
         @State private var selectedDomaine: Domaine? = nil // Variable optionnelle car à l'initialisation de la vue, aucun domaine n'est encore choisi
         @State private var selectedAppellation: Provenance? = nil // Variable optionnelle car à l'initialisation de la vue, aucune provenance n'est encore choisie
         @State private var selectedClassification: Classification? = nil // Variable optionnelle car il est possible de ne pas rattacher de classification
+        @State private var choixClassification = false
+        @State private var choixVignoble = false
+
+        // Déduit la région et la sous-région de l'appellation sélectionnée
         var selectedRegion: Provenance? {
             selectedAppellation?.regionParente
         }
         var selectedSousRegion: Provenance? {
             selectedAppellation?.sousRegionParente
         }
+        
+        // Récupère les classifications et les vignobles éligibles à l'appellation choisie par l'utilisateur
+        @Query(sort: \Classification.nomClassification) private var allClassifications: [Classification]
+        @Query(sort: \Vignoble.nomVignoble) private var allVignobles: [Vignoble]
+        
+        // Création d'une propriété calculée qui retourne un tableau de type [Classification] des classifications filtrées selon la recherche de l'utilisateur
+        var classificationsByProvenance: [Classification] {
+            let classifications = allClassifications.filter { $0.provenance == selectedAppellation }
+            if !classifications.isEmpty {
+                return classifications
+            } else {
+                let classifications = allClassifications.filter { $0.provenance == selectedSousRegion }
+                if !classifications.isEmpty {
+                    return classifications
+                } else {
+                    let classifications = allClassifications.filter { $0.provenance == selectedRegion }
+                    if !classifications.isEmpty {
+                        return classifications
+                    }
+                }
+            }
+            return []
+        }
+        
+        // Création d'une propriété calculée qui retourne un tableau de type [Vignoble] des vignobles filtrés selon la recherche de l'utilisateur
+        var vignoblesByProvenance: [Vignoble] {
+            let vignobles = allVignobles.filter { $0.provenance == selectedAppellation }
+            if !vignobles.isEmpty {
+                return vignobles
+            } else {
+                let vignobles = allVignobles.filter { $0.provenance == selectedSousRegion }
+                if !vignobles.isEmpty {
+                    return vignobles
+                } else {
+                    let vignobles = allVignobles.filter { $0.provenance == selectedRegion }
+                    if !vignobles.isEmpty {
+                        return vignobles
+                    }
+                }
+            }
+            return []
+        }
+
         @Binding var selectedVin: Vin?
         
         // Accès au contexte SwiftData
@@ -50,18 +97,20 @@
                         }
                         
                         // Sélection du vignoble
-                        NavigationLink(
-                            destination: {SelectVignobleView(selectedRegion: selectedRegion, selectedSousRegion: selectedSousRegion, selectedAppellation: selectedAppellation, selectedVignoble: $selectedVignoble)},
-                            label: {
-                                HStack {
-                                    Text("Vignoble")
-                                    Spacer()
-                                    Text(selectedVignoble?.nomVignoble ?? "Aucun vignoble sélectionné")
-                                        .foregroundColor(.gray)
+                        if choixVignoble == true {
+                            NavigationLink(
+                                destination: {SelectVignobleView(vignoblesByProvenance: vignoblesByProvenance, selectedVignoble: $selectedVignoble)},
+                                label: {
+                                    HStack {
+                                        Text("Vignoble")
+                                        Spacer()
+                                        Text(selectedVignoble?.nomVignoble ?? "Aucun vignoble sélectionné")
+                                            .foregroundColor(.gray)
+                                    }
                                 }
-                            }
-                        )
-                        .disabled(selectedAppellation == nil)
+                            )
+                            .disabled(selectedAppellation == nil)
+                        }
                         
                         // Sélection du domaine
                         NavigationLink(
@@ -75,31 +124,23 @@
                                 }
                             }
                         )
-                        .disabled(selectedAppellation == nil) 
+                        .disabled(selectedAppellation == nil)
                         
                         // Sélection de la classification
-                        NavigationLink(
-                            destination: {
-                                // On teste que les variables de ne sont pas vides par obligation, même si cette ligne est désactivée tant qu'on n'a pas choisi l'appellation
-                                if let region = selectedRegion, let sousRegion = selectedSousRegion, let appellation = selectedAppellation {
-                                    SelectClassificationView(
-                                        selectedRegion: selectedRegion!,
-                                        selectedSousRegion: selectedSousRegion!,
-                                        selectedAppellation: selectedAppellation!,
-                                        selectedClassification: $selectedClassification
-                                    )
+                        if choixClassification == true {
+                            NavigationLink(
+                                destination: {SelectClassificationView(classificationsByProvenance: classificationsByProvenance, selectedClassification: $selectedClassification)},
+                                label: {
+                                    HStack {
+                                        Text("Classification")
+                                        Spacer()
+                                        Text(selectedClassification?.nomClassification ?? "Aucune classification sélectionnée")
+                                            .foregroundColor(.gray)
+                                    }
                                 }
-                            },
-                            label: {
-                                HStack {
-                                    Text("Classification")
-                                    Spacer()
-                                    Text(selectedClassification?.nomClassification ?? "Aucune classification sélectionnée")
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                        )
-                        .disabled(selectedAppellation == nil)
+                            )
+                            .disabled(selectedAppellation == nil)
+                        }
                         
                         // Sélection de la sucrosité du vin
                         VStack {
@@ -153,6 +194,10 @@
                         }
                         .disabled(!isFormComplete)
                     }
+                }
+                .onChange(of: selectedAppellation) {
+                    choixClassification = !classificationsByProvenance.isEmpty
+                    choixVignoble = !vignoblesByProvenance.isEmpty
                 }
                 .navigationTitle("Nouveau vin")
                 .navigationBarItems(trailing: Button("Fermer") {
