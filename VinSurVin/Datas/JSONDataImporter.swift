@@ -6,11 +6,11 @@ struct JSONDataImporter {
     // Déclaration d'une méthode d'intégration des données des fichiers JSON qui ne se lance qu'à la 1ère compilation
     static func insertInitialDataIfNeeded(context: ModelContext) {
         
-        /*let alreadyImported = UserDefaults.standard.bool(forKey: "InitialDataImported")
+        let alreadyImported = UserDefaults.standard.bool(forKey: "InitialDataImported")
         guard !alreadyImported else {
             print("Les données initiales ont déjà été importées.")
             return
-        }*/
+        }
         
         // 1 - Chargement des données à partir des fichiers JSON dans la structure codable intermédiaire (déclarée dans le fichier où est déclaré le modèle correspondant)
         let classificationsData: [ClassificationCodable] = loadJSON(filename: "Classifications")

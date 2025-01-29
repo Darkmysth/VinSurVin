@@ -23,6 +23,11 @@ struct VinSurVinApp: App {
         }
     }()
 
+    let gradientColors: [Color] = [
+        .gradientBottom,
+        .gradientTop
+    ]
+    
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -47,6 +52,7 @@ struct VinSurVinApp: App {
                         Label("Réglages", systemImage: "gear")
                     }
             }
+            .background(Gradient(colors: gradientColors))
             .onAppear {
                 // Appel de la méthode pour injecter les données
                 injectInitialDataIfNeeded()
@@ -60,7 +66,7 @@ struct VinSurVinApp: App {
     private func injectInitialDataIfNeeded() {
         
         let context = sharedModelContainer.mainContext
-        JSONDataImporter.deleteAllEntities(context: context)
+        //JSONDataImporter.deleteAllEntities(context: context)
         JSONDataImporter.insertInitialDataIfNeeded(context: context)
     }
 }

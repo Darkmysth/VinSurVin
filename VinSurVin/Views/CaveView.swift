@@ -2,30 +2,24 @@ import SwiftUI
 import SwiftData
 
 struct CaveView: View {
-    @Query private var listeBouteilles: [Bouteille]
+    
+    @Environment(\.modelContext) private var modelContext
+    @StateObject private var viewModel = CaveViewModel()
+
     var body: some View {
         NavigationStack {
             List {
-                HStack {
-                    ZStack {
-                        Color.clear.frame(width: 40)
-                        Image(systemName: "globe.europe.africa")
+                ForEach(viewModel.bouteillesFiltreesParRegion.keys.sorted(), id: \.self) { region in
+                    Section(header: Text(region)) {
+                        ForEach(viewModel.bouteillesFiltreesParRegion[region] ?? [], id: \.self) { bouteille in
+                            HStack {
+                                Text("\(bouteille.vin.provenance.nomProvenance) - \(bouteille.vin.nomVin) - \(bouteille.millesime) (\(bouteille.quantiteBouteilles))")
+                            }
+                        }
                     }
-                    Text("Provenance")
-                }
-                HStack {
-                    ZStack {
-                        Color.clear.frame(width: 40)
-                        Image(systemName: "house.lodge")
-                    }
-                    Text("Domaine")
                 }
             }
-            List {
-                ForEach(listeBouteilles) { bouteille in
-                    Text(bouteille.vin.nomVin)
-                }
-            }
+            .searchable(text: $viewModel.rechercheUtilisateur, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Ma cave")
@@ -33,6 +27,9 @@ struct CaveView: View {
                         .bold()
                 }
             }
+        }
+        .onAppear {
+            viewModel.listeBouteilles(from: modelContext) // Récupère les bouteilles avec SwiftData
         }
     }
 }
