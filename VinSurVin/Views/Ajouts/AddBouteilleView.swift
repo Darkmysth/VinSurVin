@@ -4,6 +4,9 @@ import Foundation
 
 struct AddBouteilleView: View {
     
+    // Relie cette vue avec son ViewModel
+    @StateObject private var viewModel = AddBouteilleViewModel()
+    
     // Prépare les variables d'état recueillant les saisies de l'utilisateur
     @State private var showVin = false
     @State private var showTaille = false
@@ -11,13 +14,7 @@ struct AddBouteilleView: View {
     @State private var showQuantite = false
     @State private var showConservation = false
     @State private var shouldRefreshVinList: Bool = false
-    @State private var selectedVin: Vin? = nil
-    @State private var selectedTaille: Taille? = nil
-    @State private var selectedYear: Int = Int(Calendar.current.component(.year, from: Date()))
     let years: [Int] = Array(Int(1950)...Int(Calendar.current.component(.year, from: Date())))
-    @State private var selectedQuantite: Int = 1
-    @State private var selectedConservationMin: Int = 1
-    @State private var selectedConservationMax: Int = 1
     @State private var searchText: String = ""
     
     // Permet de revenir à la vue précédente
@@ -26,15 +23,11 @@ struct AddBouteilleView: View {
     // Accès au contexte de gestion des objets Core Data
     @Environment(\.modelContext) private var context
     
-    var isFormComplete: Bool {
-        selectedVin != nil && selectedTaille != nil && selectedQuantite > 0 && selectedConservationMin <= selectedConservationMax
-    }
-    
     // Initialise la taille par défaut
     private func initializeDefaultTaille() {
-        if selectedTaille == nil {
+        if viewModel.selectedTaille == nil {
             if let tailleDefaut = try? context.fetch(FetchDescriptor<Taille>(predicate: #Predicate { $0.nomTaille == "Bouteille" })).first {
-                selectedTaille = tailleDefaut
+                viewModel.selectedTaille = tailleDefaut
             } else {
                 print("Erreur : impossible de trouver la taille par défaut.")
             }
@@ -47,21 +40,21 @@ struct AddBouteilleView: View {
                 Section(header: Text("Détails de la bouteille")) {
                     
                     // Sélection du vin de la bouteille
-                    NavigationLink(destination: SelectVinView(selectedVin: $selectedVin)) {
+                    NavigationLink(destination: SelectVinView(selectedVin: $viewModel.selectedVin)) {
                         HStack {
                             Text("Vin")
                             Spacer()
-                            Text(selectedVin?.nomVin ?? "Aucun vin sélectionné")
+                            Text(viewModel.selectedVin?.nomVin ?? "Aucun vin sélectionné")
                                 .foregroundColor(.gray)
                         }
                     }
                     
                     // Sélection de la taille de la bouteille (demi-bouteille, 75 cL, magnum, etc.)
-                    NavigationLink(destination: SelectTailleView(selectedTaille: $selectedTaille)) {
+                    NavigationLink(destination: SelectTailleView(selectedTaille: $viewModel.selectedTaille)) {
                         HStack {
                             Text("Taille")
                             Spacer()
-                            Text(selectedTaille?.nomTaille ?? "Aucune taille sélectionnée")
+                            Text(viewModel.selectedTaille?.nomTaille ?? "Aucune taille sélectionnée")
                                 .foregroundColor(.gray)
                         }
                     }
@@ -69,10 +62,10 @@ struct AddBouteilleView: View {
                     // Sélection du millésime de la bouteille
                     VStack {
                         HStack {
-                            Text("Millésime \(selectedYear.withoutThousandSeparator)")
+                            Text("Millésime \(viewModel.selectedYear.withoutThousandSeparator)")
                             Spacer()
                         }
-                        Picker("Millésime", selection: $selectedYear) {
+                        Picker("Millésime", selection: $viewModel.selectedYear) {
                             ForEach(years, id: \.self) { year in
                                 Text(year.withoutThousandSeparator).tag(year)
                             }
@@ -121,8 +114,8 @@ struct AddBouteilleView: View {
                             }
                         #else
                             // iOS / iPadOS : Stepper standard
-                            Stepper(value: $selectedQuantite, in: 1...100) {
-                                Text("\(selectedQuantite) bouteille(s)")
+                        Stepper(value: $viewModel.selectedQuantite, in: 1...100) {
+                            Text("\(viewModel.selectedQuantite) bouteille(s)")
                             }
                         #endif
                     }
@@ -137,10 +130,10 @@ struct AddBouteilleView: View {
                             #if os(tvOS)
                                 // tvOS : Boutons Incrémenter/Décrémenter
                                 Button(action: {
-                                    if selectedConservationMin > 0 {
-                                        selectedConservationMin -= 1
-                                        if selectedConservationMin > selectedConservationMax {
-                                            selectedConservationMax = selectedConservationMin
+                                    if viewModel.selectedConservationMin > 0 {
+                                        viewModel.selectedConservationMin -= 1
+                                        if viewModel.selectedConservationMin > viewModel.selectedConservationMax {
+                                            viewModel.selectedConservationMax = viewModel.selectedConservationMin
                                         }
                                     }
                                 }) {
@@ -150,13 +143,13 @@ struct AddBouteilleView: View {
                                 .buttonStyle(.plain)
                                 .padding(.horizontal)
                                 
-                                Text("Entre \(selectedConservationMin) an(s)")
+                            Text("Entre \(viewModel.selectedConservationMin) an(s)")
                                 
                                 Button(action: {
-                                    if selectedConservationMin < 100 {
-                                        selectedConservationMin += 1
-                                        if selectedConservationMin > selectedConservationMax {
-                                            selectedConservationMax = selectedConservationMin
+                                    if viewModel.selectedConservationMin < 100 {
+                                        viewModel.selectedConservationMin += 1
+                                        if viewModel.selectedConservationMin > viewModel.selectedConservationMax {
+                                            viewModel.selectedConservationMax = viewModel.selectedConservationMin
                                         }
                                     }
                                 }) {
@@ -167,12 +160,12 @@ struct AddBouteilleView: View {
                                 .padding(.horizontal)
                             #else
                                 // iOS / iPadOS : Stepper standard
-                                Stepper(value: $selectedConservationMin, in: 0...100) {
-                                    Text("Entre \(selectedConservationMin) an(s)")
+                            Stepper(value: $viewModel.selectedConservationMin, in: 0...100) {
+                                Text("Entre \(viewModel.selectedConservationMin) an(s)")
                                 }
-                                .onChange(of: selectedConservationMin) {
-                                    if selectedConservationMin > selectedConservationMax {
-                                        selectedConservationMax = selectedConservationMin
+                            .onChange(of: viewModel.selectedConservationMin) {
+                                if viewModel.selectedConservationMin > viewModel.selectedConservationMax {
+                                    viewModel.selectedConservationMax = viewModel.selectedConservationMin
                                     }
                                 }
                             #endif
@@ -181,10 +174,10 @@ struct AddBouteilleView: View {
                             #if os(tvOS)
                                 // tvOS : Boutons Incrémenter/Décrémenter
                                 Button(action: {
-                                    if selectedConservationMax > selectedConservationMin {
-                                        selectedConservationMax -= 1
-                                        if selectedConservationMax < selectedConservationMin {
-                                            selectedConservationMin = selectedConservationMax
+                                    if viewModel.selectedConservationMax > viewModel.selectedConservationMin {
+                                        viewModel.selectedConservationMax -= 1
+                                        if viewModel.selectedConservationMax < viewModel.selectedConservationMin {
+                                            viewModel.selectedConservationMin = viewModel.selectedConservationMax
                                         }
                                     }
                                 }) {
@@ -194,13 +187,13 @@ struct AddBouteilleView: View {
                                 .buttonStyle(.plain)
                                 .padding(.horizontal)
                                 
-                                Text("et \(selectedConservationMax) an(s)")
+                            Text("et \(viewModel.selectedConservationMax) an(s)")
                                 
                                 Button(action: {
-                                    if selectedConservationMax < 100 {
-                                        selectedConservationMax += 1
-                                        if selectedConservationMax < selectedConservationMin {
-                                            selectedConservationMin = selectedConservationMax
+                                    if viewModel.selectedConservationMax < 100 {
+                                        viewModel.selectedConservationMax += 1
+                                        if viewModel.selectedConservationMax < viewModel.selectedConservationMin {
+                                            viewModel.selectedConservationMin = viewModel.selectedConservationMax
                                         }
                                     }
                                 }) {
@@ -211,12 +204,12 @@ struct AddBouteilleView: View {
                                 .padding(.horizontal)
                             #else
                                 // iOS / iPadOS : Stepper standard
-                                Stepper(value: $selectedConservationMax, in: 1...100) {
-                                    Text("et \(selectedConservationMax) an(s)")
+                            Stepper(value: $viewModel.selectedConservationMax, in: 1...100) {
+                                Text("et \(viewModel.selectedConservationMax) an(s)")
                                 }
-                                .onChange(of: selectedConservationMax) {
-                                    if selectedConservationMax < selectedConservationMin {
-                                        selectedConservationMin = selectedConservationMax
+                            .onChange(of: viewModel.selectedConservationMax) {
+                                if viewModel.selectedConservationMax < viewModel.selectedConservationMin {
+                                    viewModel.selectedConservationMin = viewModel.selectedConservationMax
                                     }
                                 }
                             #endif
@@ -225,48 +218,17 @@ struct AddBouteilleView: View {
                 }
                 
                 Section {
-                    Button(action: {
-                        saveBouteille()
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Enregistrer")
+                    Button("Enregistrer") {
+                        if viewModel.enregistrerBouteille(dans: context) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
-                    .disabled(!isFormComplete)
+                    .disabled(!viewModel.isFormComplete)
                 }
             }
             .onAppear(perform: initializeDefaultTaille) // Initialise la taille par défaut
             .navigationTitle("Nouvelle bouteille")
         }
-    }
-    
-    // Fonction pour créer et sauvegarder un nouveau vin
-    private func saveBouteille() {
-        
-        // Créer une nouvelle instance de Bouteille en le rattachant à un vin et une taille
-        let newBouteille = Bouteille(
-            quantiteBouteilles: selectedQuantite,
-            millesime: selectedYear,
-            dateConsommationMin: Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMin)!,
-            dateConsommationMax: Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMax)!,
-            taille: selectedTaille!,
-            vin: selectedVin!,
-            context: context
-            
-        )
-        
-        // Ajouter le domaine au contexte
-        context.insert(newBouteille)
-        
-        // Sauvegarder le contexte si nécessaire
-        do {
-            try context.save()
-            print("Vin sauvegardé avec succès.")
-        } catch {
-            print("Erreur lors de la sauvegarde du vin : \(error)")
-        }
-        
-        // Fermer la vue
-        presentationMode.wrappedValue.dismiss()
     }
 }
 
@@ -285,4 +247,8 @@ extension Date {
         components.year = year
         return Calendar.current.date(from: components)
     }
+}
+
+#Preview {
+    AddBouteilleView()
 }

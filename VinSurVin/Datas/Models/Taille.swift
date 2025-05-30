@@ -19,6 +19,13 @@ class Taille {
         self.volume = volume
         self.bouteilles = []
     }
+    
+    // Création d'un sample data de tailles utilisé pour les previews
+    static func sampleData() -> [Taille] {
+        [
+            Taille(nomTaille: "Bouteille", uniteVolume: "cL", volume: 75),
+        ]
+    }
 }
 
 // Déclaration de la structure 'TailleCodable' qui va servir de réceptacle intermédiaire aux données contenues dans le fichier JSON

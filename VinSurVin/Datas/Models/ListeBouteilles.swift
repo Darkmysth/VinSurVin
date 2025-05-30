@@ -1,10 +1,11 @@
 import SwiftData
 import SwiftUI
 
-class CaveViewModel: ObservableObject {
+class ListeBouteillesModel: ObservableObject {
     @Published var bouteilles: [Bouteille] = [] // Stocke les bouteilles
     @Published var rechercheUtilisateur: String = ""
 
+    // Récupération de toutes les bouteilles de la cave
     func listeBouteilles(from modelContext: ModelContext) {
         let fetchDescriptor = FetchDescriptor<Bouteille>(
             predicate: #Predicate { bouteille in bouteille.quantiteBouteilles > 0 }
@@ -35,4 +36,6 @@ class CaveViewModel: ObservableObject {
             bouteille.vin.provenance.regionParente?.nomProvenance ?? "Inconnue"
         })
     }
+    
+    
 }

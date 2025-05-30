@@ -152,12 +152,12 @@ struct JSONDataImporter {
     static func deleteAllEntities(context: ModelContext) {
         let allEntities: [any PersistentModel.Type] = [
             Bouteille.self,
-            Classification.self,
-            Domaine.self,
-            Provenance.self,
             Taille.self,
+            Vin.self,
+            Domaine.self,
+            Classification.self,
             Vignoble.self,
-            Vin.self
+            Provenance.self
         ]
         
         for entity in allEntities {

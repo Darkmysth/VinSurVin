@@ -9,7 +9,7 @@ class Vignoble {
     var typeVignoble: String
     
     // Déclaration des relations n -> 1 de l'entité
-    @Relationship(deleteRule: .nullify, inverse: \Provenance.vignobles) var provenance: Provenance?
+    @Relationship(deleteRule: .nullify, inverse: \Provenance.vignobles) var provenance: Provenance
     
     // Déclaration des relations 1 -> n de l'entité
     @Relationship(deleteRule: .cascade) var vins: [Vin]
@@ -20,6 +20,11 @@ class Vignoble {
         self.typeVignoble = typeVignoble
         self.provenance = provenance
         self.vins = []
+    }
+    
+    // Création d'un sample data de vignobles utilisé pour les previews
+    static func sampleData(provenance: Provenance) -> Vignoble {
+        Vignoble(nomVignoble: "Cru La Haye Fouassière", typeVignoble: "Cru Communal", provenance: provenance)
     }
 }
 

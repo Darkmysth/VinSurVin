@@ -25,6 +25,7 @@ struct ReferentielVignoblesView: View {
                     HStack {
                         Text(vignoble.typeVignoble)
                         Text(vignoble.nomVignoble)
+                        Text(vignoble.provenance.nomProvenance)
                     }
                 }
             }
@@ -36,5 +37,6 @@ struct ReferentielVignoblesView: View {
 
 #Preview {
     ReferentielVignoblesView()
+        .modelContainer(SampleData.shared.modelContainer)
 }
 

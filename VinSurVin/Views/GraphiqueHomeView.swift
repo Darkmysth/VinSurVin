@@ -36,3 +36,14 @@ struct GraphiqueHomeView: View {
         }
     }
 }
+
+
+#Preview {
+   GraphiqueHomeView(
+    data: [
+        ("Blanc", 10),
+        ("Rouge", 15),
+        ("Rosé", 3)
+    ]
+   )
+}

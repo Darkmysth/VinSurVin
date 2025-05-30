@@ -19,6 +19,11 @@ class Classification {
         self.provenance = provenance
         self.vins = []
     }
+    
+    // Création d'un sample data de classifications utilisé pour les previews
+    static func sampleData(provenance: Provenance) -> Classification {
+        Classification(nomClassification: "Premier Grand Cru Classé", provenance: provenance)
+    }
 }
 
 // Déclaration de la structure 'ClassificationCodable' qui va servir de réceptacle intermédiaire aux données contenues dans le fichier JSON

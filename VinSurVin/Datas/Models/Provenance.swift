@@ -18,8 +18,7 @@ class Provenance {
     @Relationship(deleteRule: .nullify) var parent: Provenance?
     
     // Relation inverse persistante pour les enfants
-    @Relationship(deleteRule: .nullify, inverse: \Provenance.parent)
-    var enfants: [Provenance]
+    @Relationship(deleteRule: .cascade, inverse: \Provenance.parent) var enfants: [Provenance]
     
     // Propriété calculée permettant de récupérer les parents
         // Pays
@@ -71,6 +70,39 @@ class Provenance {
         // Filtre les Provenance ayant ce `self` comme parent
         let allProvenances = try? modelContext?.fetch(FetchDescriptor<Provenance>())
         return allProvenances?.filter { $0.parent == self } ?? []
+    }
+    
+    // Initialisation du sample de datas
+    static func sampleData() -> Provenance {
+        
+        //Déclaration des différentes instances du sample data
+        let france = Provenance(nomProvenance: "France", typeProvenance: "pays")
+        let loire = Provenance(nomProvenance: "Vallée de la Loire", typeProvenance: "region")
+        let bordeaux = Provenance(nomProvenance: "Bordeaux", typeProvenance: "region")
+        let paysNantais = Provenance(nomProvenance: "Pays Nantais", typeProvenance: "sousRegion")
+        let medoc = Provenance(nomProvenance: "Médoc", typeProvenance: "sousRegion")
+        let muscadet = Provenance(nomProvenance: "Muscadet Sèvre-et-Maine", typeProvenance: "appellation")
+        let pauillac = Provenance(nomProvenance: "Pauillac", typeProvenance: "appellation")
+        
+        // Liens hiérarchiques
+        // Pays <-> Région
+        france.enfants.append(loire)
+        loire.parent = france
+        france.enfants.append(bordeaux)
+        bordeaux.parent = france
+        // Région <-> Sous-région
+        loire.enfants.append(paysNantais)
+        paysNantais.parent = loire
+        bordeaux.enfants.append(medoc)
+        medoc.parent = bordeaux
+        // Sous-région <-> Appellation
+        paysNantais.enfants.append(muscadet)
+        muscadet.parent = paysNantais
+        medoc.enfants.append(pauillac)
+        pauillac.parent = medoc
+        
+        return france
+        
     }
     
 }

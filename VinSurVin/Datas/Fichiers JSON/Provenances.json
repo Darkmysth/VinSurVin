@@ -114,6 +114,12 @@
    "typeParent": "pays"
  },
  {
+   "nomProvenance": "Beaujolais",
+   "typeProvenance": "sousRegion",
+   "parent": "Beaujolais",
+   "typeParent": "region"
+ },
+ {
    "nomProvenance": "Médoc",
    "typeProvenance": "sousRegion",
    "parent": "Bordeaux",

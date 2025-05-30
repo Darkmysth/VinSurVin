@@ -129,4 +129,12 @@ class Vin {
         self.vignoble = vignoble
         self.bouteilles = []
     }
+    
+    // Création d'un sample data de vins utilisé pour les previews
+    static func sampleVinTroisToits(provenance: Provenance, domaine: Domaine) -> Vin {
+        Vin(nomVin: "Les Trois Toits", sucrosite: .sec, couleur: .blanc, caracteristique: .tranquille, provenance: provenance, domaine: domaine)
+    }
+    static func sampleVinLafiteRothschild(provenance: Provenance, domaine: Domaine) -> Vin {
+        Vin(nomVin: "Château Lafite Rothschild", sucrosite: .sec, couleur: .rouge, caracteristique: .tranquille, provenance: provenance, domaine: domaine)
+    }
 }

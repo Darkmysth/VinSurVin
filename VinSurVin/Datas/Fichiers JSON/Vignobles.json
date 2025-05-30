@@ -360,6 +360,12 @@
    "nomParent": "Alsace"
  },
  {
+   "nomVignoble": "La Haye Fouassière",
+   "typeVignoble": "Cru Communal",
+   "typeParent": "appellation",
+   "nomParent": "Muscadet Sèvre-et-Maine"
+ },
+ {
    "nomVignoble": "Gorges",
    "typeVignoble": "Cru Communal",
    "typeParent": "appellation",

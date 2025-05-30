@@ -3,10 +3,12 @@ import SwiftData
 
 struct AddDomaineView: View {
     
+    // Relie cette vue avec son ViewModel
+    @StateObject private var viewModel = AddDomaineViewModel()
+    
     let selectedRegion: Provenance?
     
     // Création des variables d'état de la vue
-    @State private var nomDomaine: String = ""
     @Binding var selectedDomaine: Domaine?
     
     // Accès au contexte SwiftData
@@ -15,27 +17,21 @@ struct AddDomaineView: View {
     // Pour gérer la fermeture de la vue
     @Environment(\.presentationMode) var presentationMode
     
-    // Vérifie si toutes les données sont remplies
-    var isFormComplete: Bool {
-        !nomDomaine.isEmpty
-    }
-    
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Détails du domaine")) {
-                    
                     // Nom du domaine
-                    TextField("Nom", text: $nomDomaine)
+                    TextField("Nom", text: $viewModel.nomDomaine)
                 }
                 
                 Section {
-                    Button(action: {
-                        saveDomaine()
-                    }) {
-                        Text("Enregistrer")
+                    Button("Enregistrer") {
+                        if viewModel.enregistrerDomaine(selectedRegion: selectedRegion, dans: context) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
-                    .disabled(!isFormComplete)
+                    .disabled(!viewModel.isFormComplete)
                 }
             }
             .navigationTitle("Nouveau domaine")
@@ -44,33 +40,8 @@ struct AddDomaineView: View {
             })
         }
     }
-    
-    // Fonction pour créer et sauvegarder un nouveau domaine
-    private func saveDomaine() {
-        guard let region = selectedRegion else {
-            print("Aucune région sélectionnée pour le domaine.")
-            return
-        }
-        
-        // Créer une nouvelle instance de Domaine en le rattachant à une région
-        let newDomaine = Domaine(
-            nomDomaine: nomDomaine,
-            provenance: region
-        )
-        
-        // Ajouter le domaine au contexte
-        context.insert(newDomaine)
-        
-        // Sauvegarder le contexte si nécessaire
-        do {
-            try context.save()
-            print("Domaine sauvegardé avec succès.")
-            selectedDomaine = newDomaine
-        } catch {
-            print("Erreur lors de la sauvegarde du domaine : \(error)")
-        }
-        
-        // Fermer la vue
-        presentationMode.wrappedValue.dismiss()
-    }
+}
+
+#Preview {
+    AddDomaineView(selectedRegion: nil, selectedDomaine: .constant(nil))
 }
