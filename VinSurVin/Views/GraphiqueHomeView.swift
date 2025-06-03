@@ -20,7 +20,8 @@ struct GraphiqueHomeView: View {
                 "Rouge": .red,
                 "Rosé": .pink
             ])
-            .chartLegend(position: .topLeading) // Positionne la légende
+            .chartLegend(position: .top) // Positionne la légende
+            .padding(20)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Accueil")

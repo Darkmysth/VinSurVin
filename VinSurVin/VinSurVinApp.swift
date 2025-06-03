@@ -38,7 +38,7 @@ struct VinSurVinApp: App {
                         .tabItem {
                             Label("Accueil", systemImage: "house")
                         }
-                    CaveView()
+                    BouteillesCaveView()
                         .tabItem {
                             Label("Ma cave", systemImage: "wineglass")
                         }

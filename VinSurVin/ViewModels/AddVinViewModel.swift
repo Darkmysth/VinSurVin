@@ -100,7 +100,7 @@ class AddVinViewModel: ObservableObject {
     }
     
     // Méthode permettant à 'AddVinView' d'enregistrer un nouveau vin
-    func enregistrerVin(dans context: ModelContext) -> Bool {
+    func enregistrerVin(dans context: ModelContext) -> Vin? {
         
         // Vérifie que les données sont bien récupérées de la vue
         guard let sucrosite = selectedSucrosite,
@@ -108,7 +108,7 @@ class AddVinViewModel: ObservableObject {
               let caracteristique = selectedCaracteristique,
               let appellation = selectedAppellation,
               let domaine = selectedDomaine else {
-            return false
+            return nil
         }
         
         let classification = selectedClassification
@@ -132,9 +132,9 @@ class AddVinViewModel: ObservableObject {
         // Sauvegarde le contexte si nécessaire
         do {
             try context.save()
-            return true
+            return nouveauVin
         } catch {
-            return false
+            return nil
         }
     }
 }

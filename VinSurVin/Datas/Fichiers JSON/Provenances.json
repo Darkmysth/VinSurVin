@@ -600,6 +600,12 @@
    "typeParent": "sousRegion"
  },
  {
+   "nomProvenance": "Saint-Émilion Grand Cru",
+   "typeProvenance": "appellation",
+   "parent": "Libournais",
+   "typeParent": "sousRegion"
+ },
+ {
    "nomProvenance": "Saint-Estèphe",
    "typeProvenance": "appellation",
    "parent": "Médoc",
@@ -811,6 +817,12 @@
  },
  {
    "nomProvenance": "Pic Saint-Loup",
+   "typeProvenance": "appellation",
+   "parent": "Languedoc",
+   "typeParent": "sousRegion"
+ },
+ {
+   "nomProvenance": "Picpoul de Pinet",
    "typeProvenance": "appellation",
    "parent": "Languedoc",
    "typeParent": "sousRegion"
@@ -1219,6 +1231,12 @@
  },
  {
    "nomProvenance": "Bonnezeaux",
+   "typeProvenance": "appellation",
+   "parent": "Anjou",
+   "typeParent": "sousRegion"
+ },
+ {
+   "nomProvenance": "Coteaux de Saumur",
    "typeProvenance": "appellation",
    "parent": "Anjou",
    "typeParent": "sousRegion"
@@ -1818,6 +1836,12 @@
    "typeParent": "sousRegion"
  },
  {
+   "nomProvenance": "Bourgogne Côte d'Or",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
+ },
+ {
    "nomProvenance": "Chassagne-Montrachet",
    "typeProvenance": "appellation",
    "parent": "Côte de Beaune",
@@ -1914,6 +1938,12 @@
    "typeParent": "sousRegion"
  },
  {
+   "nomProvenance": "Saint-Romain",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
+ },
+ {
    "nomProvenance": "Santenay",
    "typeProvenance": "appellation",
    "parent": "Côte de Beaune",
@@ -1987,6 +2017,12 @@
  },
  {
    "nomProvenance": "Bonnes-Mares Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Nuits",
+   "typeParent": "sousRegion"
+ },
+ {
+   "nomProvenance": "Bourgogne Côte d'Or",
    "typeProvenance": "appellation",
    "parent": "Côte de Nuits",
    "typeParent": "sousRegion"
@@ -2149,6 +2185,12 @@
  },
  {
    "nomProvenance": "Corton-Charlemagne Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte de Beaune",
+   "typeParent": "sousRegion"
+ },
+ {
+   "nomProvenance": "Chorey-lès-Beaune",
    "typeProvenance": "appellation",
    "parent": "Côte de Beaune",
    "typeParent": "sousRegion"

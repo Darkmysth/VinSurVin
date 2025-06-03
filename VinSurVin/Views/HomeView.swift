@@ -11,12 +11,13 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            NavigationLink(destination: CaveView()) {
+            //NavigationLink(destination: CaveView()) {
                 GraphiqueHomeView(data: viewModel.dataPourGraphique)
                     .onAppear {
                         viewModel.chargerBouteilles(depuis: context)
                     }
-            }
+            //}
+            CaveView()
         }
     }
 }

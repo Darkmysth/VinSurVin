@@ -18,6 +18,19 @@ struct AddVinView: View {
     // Pour gérer la fermeture de la vue
     @Environment(\.presentationMode) var presentationMode
     
+    // Initialise quelques propriétés par défaut
+    private func initialiserValeursDefaut() {
+        if viewModel.selectedSucrosite == nil {
+            viewModel.selectedSucrosite = Sucrosite.sec
+        }
+        if viewModel.selectedCouleur == nil {
+            viewModel.selectedCouleur = Couleur.rouge
+        }
+        if viewModel.selectedCaracteristique == nil {
+            viewModel.selectedCaracteristique = Caracteristique.tranquille
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -130,7 +143,8 @@ struct AddVinView: View {
                 
                 Section {
                     Button("Enregistrer") {
-                        if viewModel.enregistrerVin(dans: context) {
+                        if let nouveauVin = viewModel.enregistrerVin(dans: context) {
+                            selectedVin = nouveauVin
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
@@ -145,6 +159,7 @@ struct AddVinView: View {
                 viewModel.filtrerVignoblesByProvenance()
                 choixVignoble = !viewModel.vignoblesByProvenance.isEmpty
             }
+            .onAppear (perform: initialiserValeursDefaut)
             .navigationTitle("Nouveau vin")
             .navigationBarItems(trailing: Button("Fermer") {
                 presentationMode.wrappedValue.dismiss()

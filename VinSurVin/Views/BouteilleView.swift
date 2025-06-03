@@ -4,7 +4,8 @@ import SwiftData
 struct BouteilleView: View {
     
     // Récupère la bouteille sélectionnée par l'utilisateur
-    let selectedBouteille: Bouteille
+    //let selectedBouteille: Bouteille
+    @Bindable var selectedBouteille: Bouteille
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -12,6 +13,37 @@ struct BouteilleView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section(header: Text("Détails de la bouteille")) {
+                    HStack {
+                        Text("Taille :")
+                        Spacer()
+                        Text("\(selectedBouteille.taille.volume.description) \(selectedBouteille.taille.uniteVolume)")
+                    }
+                    HStack {
+                        Text("Millésime :")
+                        Spacer()
+                        Text("\(selectedBouteille.millesime.description)")
+                    }
+                    HStack {
+                        Text("Stock :")
+                        Stepper(value: $selectedBouteille.quantiteBouteilles, in: 0...100) {
+                            Text("\(selectedBouteille.quantiteBouteilles) bouteille(s)")
+                        }
+                        .onChange(of: selectedBouteille.quantiteBouteilles) { _, _ in
+                            try? context.save()
+                        }
+                    }
+                    VStack {
+                        HStack {
+                            Text("A consommer entre :")
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
+                            Text("\(selectedBouteille.dateConsommationMin.formatJJMMAAAA) et \(selectedBouteille.dateConsommationMax.formatJJMMAAAA)")
+                        }
+                    }
+                }
                 Section(header: Text("Provenance")) {
                     HStack {
                         Text("Pays :")
@@ -72,33 +104,6 @@ struct BouteilleView: View {
                             Text("Classification :")
                             Spacer()
                             Text("\(selectedBouteille.vin.classification?.nomClassification ?? "Classification non renseignée")")
-                        }
-                    }
-                }
-                Section(header: Text("Détails de la bouteille")) {
-                    HStack {
-                        Text("Taille :")
-                        Spacer()
-                        Text("\(selectedBouteille.taille.volume.description) \(selectedBouteille.taille.uniteVolume)")
-                    }
-                    HStack {
-                        Text("Millésime :")
-                        Spacer()
-                        Text("\(selectedBouteille.millesime.description)")
-                    }
-                    HStack {
-                        Text("Stock :")
-                        Spacer()
-                        Text("\(selectedBouteille.quantiteBouteilles)")
-                    }
-                    VStack {
-                        HStack {
-                            Text("A consommer entre :")
-                            Spacer()
-                        }
-                        HStack {
-                            Spacer()
-                            Text("\(selectedBouteille.dateConsommationMin.formatJJMMAAAA) et \(selectedBouteille.dateConsommationMax.formatJJMMAAAA)")
                         }
                     }
                 }

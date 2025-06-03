@@ -27,7 +27,8 @@ struct AddDomaineView: View {
                 
                 Section {
                     Button("Enregistrer") {
-                        if viewModel.enregistrerDomaine(selectedRegion: selectedRegion, dans: context) {
+                        if let nouveauDomaine = viewModel.enregistrerDomaine(selectedRegion: selectedRegion, dans: context) {
+                            selectedDomaine = nouveauDomaine
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
