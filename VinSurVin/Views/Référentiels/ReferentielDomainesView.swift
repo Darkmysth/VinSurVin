@@ -5,6 +5,8 @@ struct ReferentielDomainesView: View {
     @Query(sort: \Domaine.nomDomaine) private var domaines: [Domaine]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
+    // Propriété qui ne sert que pour appeler 'AddDomaineView' mais inutile sinon
+    @State private var domaineTemporaire: Domaine? = nil
  
     // Création d'une propriété calculée qui retourne un tableau de type [Domaine] (des domaines filtrés selon la recherche de l'utilisateur)
     var filteredDomaines: [Domaine] {
@@ -21,11 +23,20 @@ struct ReferentielDomainesView: View {
         NavigationStack {
             List {
                 ForEach(filteredDomaines) { domaine in
-                    Text(domaine.nomDomaine)
+                    Section(header: Text(domaine.provenance.nomProvenance)) {
+                        Text(domaine.nomDomaine)
+                    }
                 }
                 .onDelete(perform: deleteDomaine)
             }
             .navigationTitle("Domaines")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddDomaineView(selectedRegion: nil, selectedDomaine: $domaineTemporaire)) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
             .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
     }

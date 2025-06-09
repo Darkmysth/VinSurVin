@@ -5,6 +5,8 @@ struct ReferentielVinsView: View {
     @Query(sort: \Vin.nomVin) private var vins: [Vin]
     @Environment(\.modelContext) var modelContext
     @State private var searchQuery: String = ""
+    // Propriété qui ne sert que pour appeler 'AddVinView' mais inutile sinon
+    @State private var vinTemporaire: Vin? = nil
  
     // Création d'une propriété calculée qui retourne un tableau de type [Vin] (des vins filtrés selon la recherche de l'utilisateur)
     var filteredVins: [Vin] {
@@ -21,11 +23,20 @@ struct ReferentielVinsView: View {
         NavigationStack {
             List {
                 ForEach(filteredVins) { vin in
-                    Text(vin.nomVin)
+                    Section(header: Text(vin.provenance.regionParente?.nomProvenance ?? "Aucune région")) {
+                        Text(vin.nomVin)
+                    }
                 }
                 .onDelete(perform: deleteVin)
             }
             .navigationTitle("Vins")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) { // Place le bouton à droite
+                    NavigationLink(destination: AddVinView(selectedVin: $vinTemporaire)) {
+                        Image(systemName: "plus") // Icône "+"
+                    }
+                }
+            }
             .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
     }

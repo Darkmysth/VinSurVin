@@ -3,46 +3,56 @@ import SwiftData
 
 struct BouteillesCaveView: View {
     
-    // Requête qui récupère toutes les bouteilles en stock dans la cave
-    @Query(
-        filter: #Predicate<Bouteille> { $0.quantiteBouteilles > 0 },
-        sort: \Bouteille.millesime
-    ) var bouteillesCave: [Bouteille]
+    // Paramètre reçu en entrée de la vue
+    let statutParametre: ConservationViewModel.StatutConservation? = nil
     
-    // Gère les recherches de l'utilisateur
-    @State private var searchQuery: String = ""
-    var bouteillesFiltrees: [Bouteille] {
-        if searchQuery.isEmpty {
-            return bouteillesCave
-        } else {
-            return bouteillesCave.filter {
-                $0.vin.nomVin.lowercased().contains(searchQuery.lowercased()) || $0.millesime.description.lowercased().contains(searchQuery.lowercased())
-            }
-        }
+    // Accès au contexte SwiftData
+    @Environment(\.modelContext) private var context
+    
+    // Relie cette vue avec son ViewModel
+    @StateObject private var viewModel: ConservationViewModel
+    init(viewModel: ConservationViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         NavigationStack {
             List {
-                ForEach(bouteillesFiltrees) { bouteille in
-                    NavigationLink(destination: BouteilleView(selectedBouteille: bouteille)) {
-                        Text("\(bouteille.vin.nomVin) - \(bouteille.millesime.description)")
+                ForEach(viewModel.bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur, id: \.couleur) { section in
+                    Section(header: Text(section.couleur)) {
+                        ForEach(section.bouteilles, id: \.bouteille.id) { bouteille in
+                            NavigationLink(destination: BouteilleView(selectedBouteille: bouteille.bouteille)) {
+                                VStack {
+                                    VStack {
+                                        HStack {
+                                            Text("\(bouteille.bouteille.vin.provenance.nomProvenance)")
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text("\(bouteille.bouteille.vin.nomVin) - \(bouteille.bouteille.millesime.description)")
+                                            Spacer()
+                                        }
+                                    }
+                                    HStack {
+                                        Spacer()
+                                        Text("\(bouteille.bouteille.quantiteBouteilles.description) bouteille(s)")
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Bouteilles en cave")
-                        .font(.largeTitle)
-                        .bold()
-                }
+            .onAppear {
+                viewModel.chargerBouteillesLimiteConservation(from: context)
             }
-            .searchable(text: $searchQuery)
+            .searchable(text: $viewModel.searchQuery)
+            .navigationTitle(viewModel.titre)
         }
     }
 }
 
 #Preview {
-    BouteillesCaveView()
+    BouteillesCaveView(viewModel: ConservationViewModel(statut: nil))
         .modelContainer(SampleData.shared.modelContainer)
 }

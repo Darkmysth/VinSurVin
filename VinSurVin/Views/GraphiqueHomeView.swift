@@ -1,10 +1,12 @@
 import Charts
 import SwiftUI
+import SwiftData
 
 struct GraphiqueHomeView: View {
+    
     let data: [(typeVin: String, quantite: Int)]
     var body: some View {
-        NavigationStack {
+        VStack {
             Chart(data, id: \.typeVin) { typeVin, quantite in
                 SectorMark(
                     angle: .value("Quantité", quantite),
@@ -15,6 +17,7 @@ struct GraphiqueHomeView: View {
                 .cornerRadius(4)
                 .foregroundStyle(by: .value("Vin", typeVin))
             }
+            .frame(height: 350)
             .chartForegroundStyleScale([
                 "Blanc": .yellow,
                 "Rouge": .red,
@@ -22,18 +25,6 @@ struct GraphiqueHomeView: View {
             ])
             .chartLegend(position: .top) // Positionne la légende
             .padding(20)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Accueil")
-                        .font(.largeTitle)
-                        .bold()
-                }
-                ToolbarItem(placement: .navigationBarTrailing) { // Place le bouton à droite
-                    NavigationLink(destination: AddBouteilleView()) {
-                        Image(systemName: "plus") // Icône "+"
-                    }
-                }
-            }
         }
     }
 }

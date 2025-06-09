@@ -22,10 +22,11 @@ struct ReferentielVignoblesView: View {
         NavigationStack {
             List {
                 ForEach(filteredVignobles) { vignoble in
-                    HStack {
-                        Text(vignoble.typeVignoble)
-                        Text(vignoble.nomVignoble)
-                        Text(vignoble.provenance.nomProvenance)
+                    Section(header: Text(vignoble.provenance.nomProvenance)) {
+                        HStack {
+                            Text(vignoble.typeVignoble)
+                            Text(vignoble.nomVignoble)
+                        }
                     }
                 }
             }

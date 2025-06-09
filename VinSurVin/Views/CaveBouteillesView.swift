@@ -3,15 +3,15 @@ import SwiftData
 
 struct CaveBouteillesView: View {
     
+    // Accès au contexte SwiftData
+    @Environment(\.modelContext) private var context
+    
     // Relie cette vue avec son ViewModel
     @StateObject private var viewModel = CaveBouteillesViewModel()
     
     // Récupère la couleur et le vin choisis par l'utilisateur
     let selectedCouleur: Couleur?
     let selectedAppellation: Provenance?
-    
-    // Accès au contexte SwiftData
-    @Environment(\.modelContext) private var context
     
     var body: some View {
         NavigationStack {

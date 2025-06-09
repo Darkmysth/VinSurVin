@@ -9,15 +9,41 @@ struct HomeView: View {
     // Relie cette vue avec son ViewModel
     @StateObject private var viewModel = HomeViewModel()
     
+    // Récupère le stock de bouteilles en cave
+    @Query private var bouteilles: [Bouteille]
+    var nbBouteilles: Int {
+        bouteilles.reduce(0) { $0 + $1.quantiteBouteilles }
+    }
+    
     var body: some View {
         NavigationStack {
-            //NavigationLink(destination: CaveView()) {
-                GraphiqueHomeView(data: viewModel.dataPourGraphique)
-                    .onAppear {
-                        viewModel.chargerBouteilles(depuis: context)
+            ScrollView {
+                VStack {
+                    Text("\(nbBouteilles) bouteille(s)")
+                        .font(.title2)
+                        .foregroundColor(.primary)
+                        .padding()
+                    NavigationLink(destination: CaveView()) {
+                        GraphiqueHomeView(data: viewModel.dataPourGraphique)
+                            .onAppear {
+                                viewModel.chargerBouteilles(depuis: context)
+                            }
                     }
-            //}
-            CaveView()
+                    ConservationHomeView()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Accueil")
+                        .font(.largeTitle)
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) { // Place le bouton à droite
+                    NavigationLink(destination: AddBouteilleView()) {
+                        Image(systemName: "plus") // Icône "+"
+                    }
+                }
+            }
         }
     }
 }

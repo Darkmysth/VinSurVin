@@ -26,6 +26,7 @@ struct CaveView: View {
                     }
                 }
             }
+            .navigationTitle(Text("Ma cave"))
         }
         .onAppear {
             viewModel.chargerCouleursEtRegions(from: context)

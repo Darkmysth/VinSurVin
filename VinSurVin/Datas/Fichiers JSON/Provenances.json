@@ -1578,7 +1578,7 @@
    "typeParent": "sousRegion"
  },
  {
-   "nomProvenance": "St. Joseph",
+   "nomProvenance": "Saint-Joseph",
    "typeProvenance": "appellation",
    "parent": "Vallée du Rhône Septentrionale",
    "typeParent": "sousRegion"
@@ -1758,13 +1758,31 @@
    "typeParent": "sousRegion"
  },
  {
+   "nomProvenance": "Givry Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
+ },
+ {
    "nomProvenance": "Mercurey",
    "typeProvenance": "appellation",
    "parent": "Côte Chalonnaise",
    "typeParent": "sousRegion"
  },
  {
+   "nomProvenance": "Mercurey Premier Cru",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
+ },
+ {
    "nomProvenance": "Montagny",
+   "typeProvenance": "appellation",
+   "parent": "Côte Chalonnaise",
+   "typeParent": "sousRegion"
+ },
+ {
+   "nomProvenance": "Montagny Premier Cru",
    "typeProvenance": "appellation",
    "parent": "Côte Chalonnaise",
    "typeParent": "sousRegion"

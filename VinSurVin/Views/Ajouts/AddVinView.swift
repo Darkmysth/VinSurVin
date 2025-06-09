@@ -170,7 +170,7 @@ struct AddVinView: View {
 
 #Preview {
     // Crée une variable @State pour le binding
-    @State var selectedVin: Vin? = nil
+    @Previewable @State var selectedVin: Vin? = nil
 
     return AddVinView(selectedVin: $selectedVin)
         .modelContainer(SampleData.shared.modelContainer)
