@@ -2242,5 +2242,239 @@
     "typeVignoble": "Climat",
     "typeParent": "appellation",
     "nomParent": "Savigny-lès-Beaune Premier Cru"
+    },
+    {
+    "nomVignoble": "Basses Mourottes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "En Charlemagne",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Hautes Mourottes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "La Vigne-au-Saint",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Le Charlemagne",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Le Clos du Roi",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Le Corton",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Le Meix Lallemand",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Le Rognet et Corton",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Bressandes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Chaumes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Chaumes et la Voierosse",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Combes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Fiètres",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Grandes Lolières",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Grèves",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Languettes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Maréchaudes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Meix",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Moutottes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Paulands",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Perrières",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Pougets",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Renardes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Les Vergennes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Corton Grand Cru"
+    },
+    {
+    "nomVignoble": "Clos des Maréchaudes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Clos du Chapitre",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "La Coutière",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "La Maréchaude",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "La Toppe au Vert",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Chaillots",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Fournières",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Guérets",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Maréchaudes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Moutottes",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Paulands",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Petites Folières",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Valozières",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
+    },
+    {
+    "nomVignoble": "Les Vercots",
+    "typeVignoble": "Climat",
+    "typeParent": "appellation",
+    "nomParent": "Aloxe-Corton Premier Cru"
     }
 ]

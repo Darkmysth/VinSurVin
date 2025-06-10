@@ -17,19 +17,31 @@ struct ConservationHomeView: View {
     var body: some View {
         VStack {
             List {
-                // En déclin
+                // Bouteilles en déclin
                 let declin = viewModel.quantitesParStatut.first(where: { $0.statut == .declin }) ?? .init(statut: .declin, quantite: 0)
                 NavigationLink(destination: ConservationBouteillesView(statut: .declin)) {
                     HStack {
-                        Label("Déclin", systemImage: "exclamationmark.triangle.fill")
+                        Label("Déclin", systemImage: "chart.line.downtrend.xyaxis")
                         Spacer()
                         Text("\(declin.quantite) bouteille(s)")
+                    }
+                }
+                .listRowBackground(Color.red.opacity(0.2))
+                .foregroundColor(.red)
+                
+                // Bouteilles à leur apogée encore 1 an
+                let derniereAnneeApogee = viewModel.quantitesParStatut.first(where: { $0.statut == .derniereAnneeApogee }) ?? .init(statut: .derniereAnneeApogee, quantite: 0)
+                NavigationLink(destination: ConservationBouteillesView(statut: .derniereAnneeApogee)) {
+                    HStack {
+                        Label("Dernière année", systemImage: "exclamationmark.triangle.fill")
+                        Spacer()
+                        Text("\(derniereAnneeApogee.quantite) bouteille(s)")
                     }
                 }
                 .listRowBackground(Color.yellow.opacity(0.2))
                 .foregroundColor(.orange)
                 
-                // À son apogée
+                // Bouteilles à leur apogée
                 let apogee = viewModel.quantitesParStatut.first(where: { $0.statut == .apogee }) ?? .init(statut: .apogee, quantite: 0)
                 NavigationLink(destination: ConservationBouteillesView(statut: .apogee)) {
                     HStack {
@@ -41,7 +53,7 @@ struct ConservationHomeView: View {
                 .listRowBackground(Color.green.opacity(0.2))
                 .foregroundColor(.green)
                 
-                // À conserver
+                // Bouteilles à conserver
                 let conservation = viewModel.quantitesParStatut.first(where: { $0.statut == .conservation }) ?? .init(statut: .conservation, quantite: 0)
                 NavigationLink(destination: ConservationBouteillesView(statut: .conservation)) {
                     HStack {

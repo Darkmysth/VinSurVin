@@ -8,6 +8,7 @@ class ConservationViewModel: ObservableObject {
     enum StatutConservation {
         case conservation
         case apogee
+        case derniereAnneeApogee
         case declin
     }
     // Création de la structure du tableau qui sera renvoyé par la fonction de chargement des bouteilles
@@ -21,6 +22,10 @@ class ConservationViewModel: ObservableObject {
         let statut: StatutConservation
         let quantite: Int
     }
+    
+    // Propriétés permettant de gérer les dates
+    let componentDay = DateComponents(day: 1)
+    let calendar = Calendar.current
     
     // Création des variables qui seront envoyées à la vue
     @Published var searchQuery: String = ""
@@ -43,8 +48,10 @@ class ConservationViewModel: ObservableObject {
                 let statut: StatutConservation
                 if maintenant < bouteille.dateConsommationMin {
                     statut = .conservation
-                } else if maintenant <= bouteille.dateConsommationMax {
+                } else if let unAnAvantApogeeMax = calendar.date(byAdding: .year, value: -1, to: bouteille.dateConsommationMax), maintenant <= unAnAvantApogeeMax {
                     statut = .apogee
+                } else if maintenant <= bouteille.dateConsommationMax {
+                    statut = .derniereAnneeApogee
                 } else {
                     statut = .declin
                 }
@@ -97,6 +104,8 @@ class ConservationViewModel: ObservableObject {
             return "Bouteilles à conserver"
         case .apogee:
             return "Bouteilles à leur apogée"
+        case .derniereAnneeApogee:
+            return "Bouteilles dans leur dernière année"
         case .declin:
             return "Bouteilles en declin"
         case .none:
