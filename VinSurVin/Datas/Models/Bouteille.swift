@@ -10,18 +10,23 @@ class Bouteille {
     var dateConsommationMin: Date
     var dateConsommationMax: Date
     
+    // Déclaration de la propriété dédiée à la photo de la bouteille
+    @Attribute(.externalStorage) // Permet de stocker les données volumineuses dans un fichier séparé de la base de données principale pour optimiser les performances
+    var photo: Data?
+    
     // Déclaration des relations n -> 1 de l'entité
     @Relationship(deleteRule: .nullify, inverse: \Taille.bouteilles) var taille: Taille
     @Relationship(deleteRule: .nullify, inverse: \Vin.bouteilles) var vin: Vin
     
     // Initialisation d'une instance de l'entité
-    init(quantiteBouteilles: Int, millesime: Int, dateConsommationMin: Date, dateConsommationMax: Date, taille: Taille, vin: Vin) {
+    init(quantiteBouteilles: Int, millesime: Int, dateConsommationMin: Date, dateConsommationMax: Date, taille: Taille, vin: Vin, photo: Data? = nil) {
         self.quantiteBouteilles = quantiteBouteilles
         self.millesime = millesime
         self.dateConsommationMin = dateConsommationMin
         self.dateConsommationMax = dateConsommationMax
         self.taille = taille
         self.vin = vin
+        self.photo = photo
     }
     
     // Création d'un sample data de bouteilles utilisé pour les previews

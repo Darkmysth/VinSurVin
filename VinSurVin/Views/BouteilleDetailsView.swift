@@ -1,18 +1,38 @@
 import SwiftUI
 import SwiftData
 
-struct BouteilleView: View {
+struct BouteilleDetailsView: View {
+    
+    // Relie cette vue avec son ViewModel
+    @StateObject private var viewModel = DetourageViewModel()
     
     // Récupère la bouteille sélectionnée par l'utilisateur
-    //let selectedBouteille: Bouteille
     @Bindable var selectedBouteille: Bouteille
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
     
+    // États pour gérer l'affichage de l'appareil photo
+    @State private var showingCamera = false
+    @State private var inputImage: UIImage?
+    
     var body: some View {
         NavigationStack {
             List {
+                Section("Photo") {
+                    // Affiche la photo si elle existe
+                    if let photoData = selectedBouteille.photo, let uiImage = UIImage(data: photoData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                    // Le bouton pour prendre ou changer la photo
+                    Button(selectedBouteille.photo == nil ? "Ajouter une photo" : "Changer la photo") {
+                        selectedBouteille.photo = nil
+                        self.showingCamera = true
+                    }
+                }
                 Section(header: Text("Détails de la bouteille")) {
                     HStack {
                         Text("Taille :")
@@ -109,6 +129,23 @@ struct BouteilleView: View {
                 }
             }
             .navigationTitle(selectedBouteille.vin.nomVin + " - " + selectedBouteille.millesime.description)
+            .sheet(isPresented: $showingCamera) {
+                // Affiche la vue de l'appareil photo
+                ImagePicker(image: $inputImage)
+            }
+            // Quand une image a été prise, lance le traitement
+            .onChange(of: inputImage) { _, newImage in
+                guard let image = newImage else { return }
+                viewModel.removeBackground(from: image)
+                
+            }
+            // Quand l’image détourée est prête, on la sauvegarde dans SwiftData
+            .onChange(of: viewModel.imageDetouree) { _, nouvelleImage in
+                if let imageFinale = nouvelleImage {
+                    selectedBouteille.photo = imageFinale.jpegData(compressionQuality: 0.8)
+                    try? context.save()
+                }
+            }
         }
     }
 }
@@ -122,6 +159,6 @@ extension Date {
 }
 
 #Preview {
-    BouteilleView(selectedBouteille: SampleData.shared.bouteilleTroisToits2024)
+    BouteilleDetailsView(selectedBouteille: SampleData.shared.bouteilleTroisToits2024)
         .modelContainer(SampleData.shared.modelContainer)
 }

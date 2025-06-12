@@ -22,7 +22,7 @@ struct ConservationBouteillesView: View {
             ForEach(viewModel.bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur, id: \.couleur) { section in
                 Section(header: Text(section.couleur)) {
                     ForEach(section.bouteilles, id: \.bouteille.id) { bouteille in
-                        NavigationLink(destination: BouteilleView(selectedBouteille: bouteille.bouteille)) {
+                        NavigationLink(destination: BouteilleDetailsView(selectedBouteille: bouteille.bouteille)) {
                             VStack {
                                 VStack {
                                     HStack {

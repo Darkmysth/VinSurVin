@@ -6,6 +6,7 @@ struct AddBouteilleView: View {
     
     // Relie cette vue avec son ViewModel
     @StateObject private var viewModel = AddBouteilleViewModel()
+    @StateObject private var detourageViewModel = DetourageViewModel()
     
     // Prépare les variables d'état recueillant les saisies de l'utilisateur
     @State private var showVin = false
@@ -16,6 +17,8 @@ struct AddBouteilleView: View {
     @State private var shouldRefreshVinList: Bool = false
     let years: [Int] = Array(Int(1950)...Int(Calendar.current.component(.year, from: Date())))
     @State private var searchText: String = ""
+    @State private var showingCamera = false
+    @State private var inputImage: UIImage?
     
     // Permet de revenir à la vue précédente
     @Environment(\.presentationMode) var presentationMode
@@ -70,13 +73,7 @@ struct AddBouteilleView: View {
                                 Text(year.withoutThousandSeparator).tag(year)
                             }
                         }
-                        #if os(tvOS)
-                            // Style adapté pour tvOS (par défaut, sans WheelPickerStyle)
-                            .pickerStyle(.automatic)
-                        #else
-                            // Style roue pour iOS
-                            .pickerStyle(WheelPickerStyle())
-                        #endif
+                        .pickerStyle(WheelPickerStyle())
                     }
                     
                     // Sélection de la quantité de bouteilles ajoutées
@@ -85,39 +82,9 @@ struct AddBouteilleView: View {
                             Text("Quantité")
                             Spacer()
                         }
-                        #if os(tvOS)
-                            // tvOS : Boutons Incrémenter/Décrémenter
-                            HStack {
-                                Button(action: {
-                                    if selectedQuantite > 1 {
-                                        selectedQuantite -= 1
-                                    }
-                                }) {
-                                    Image(systemName: "minus.circle")
-                                        .font(.title)
-                                }
-                                .buttonStyle(.plain)
-                                .padding(.horizontal)
-                                
-                                Text("\(selectedQuantite) bouteille(s)")
-                                
-                                Button(action: {
-                                    if selectedQuantite < 100 {
-                                        selectedQuantite += 1
-                                    }
-                                }) {
-                                    Image(systemName: "plus.circle")
-                                        .font(.title)
-                                }
-                                .buttonStyle(.plain)
-                                .padding(.horizontal)
-                            }
-                        #else
-                            // iOS / iPadOS : Stepper standard
                         Stepper(value: $viewModel.selectedQuantite, in: 1...100) {
                             Text("\(viewModel.selectedQuantite) bouteille(s)")
                             }
-                        #endif
                     }
                     
                     // Sélection de la durée de conservation de la bouteille (en attendant un algorithme ou une requête vers Apple Intelligence ou ChatGPT
@@ -127,39 +94,6 @@ struct AddBouteilleView: View {
                             Spacer()
                         }
                         HStack {
-                            #if os(tvOS)
-                                // tvOS : Boutons Incrémenter/Décrémenter
-                                Button(action: {
-                                    if viewModel.selectedConservationMin > 0 {
-                                        viewModel.selectedConservationMin -= 1
-                                        if viewModel.selectedConservationMin > viewModel.selectedConservationMax {
-                                            viewModel.selectedConservationMax = viewModel.selectedConservationMin
-                                        }
-                                    }
-                                }) {
-                                    Image(systemName: "minus.circle")
-                                        .font(.title)
-                                }
-                                .buttonStyle(.plain)
-                                .padding(.horizontal)
-                                
-                            Text("Entre \(viewModel.selectedConservationMin) an(s)")
-                                
-                                Button(action: {
-                                    if viewModel.selectedConservationMin < 100 {
-                                        viewModel.selectedConservationMin += 1
-                                        if viewModel.selectedConservationMin > viewModel.selectedConservationMax {
-                                            viewModel.selectedConservationMax = viewModel.selectedConservationMin
-                                        }
-                                    }
-                                }) {
-                                    Image(systemName: "plus.circle")
-                                        .font(.title)
-                                }
-                                .buttonStyle(.plain)
-                                .padding(.horizontal)
-                            #else
-                                // iOS / iPadOS : Stepper standard
                             Stepper(value: $viewModel.selectedConservationMin, in: 0...100) {
                                 Text("Entre \(viewModel.selectedConservationMin) an(s)")
                                 }
@@ -168,42 +102,8 @@ struct AddBouteilleView: View {
                                     viewModel.selectedConservationMax = viewModel.selectedConservationMin
                                     }
                                 }
-                            #endif
                         }
                         HStack {
-                            #if os(tvOS)
-                                // tvOS : Boutons Incrémenter/Décrémenter
-                                Button(action: {
-                                    if viewModel.selectedConservationMax > viewModel.selectedConservationMin {
-                                        viewModel.selectedConservationMax -= 1
-                                        if viewModel.selectedConservationMax < viewModel.selectedConservationMin {
-                                            viewModel.selectedConservationMin = viewModel.selectedConservationMax
-                                        }
-                                    }
-                                }) {
-                                    Image(systemName: "minus.circle")
-                                        .font(.title)
-                                }
-                                .buttonStyle(.plain)
-                                .padding(.horizontal)
-                                
-                            Text("et \(viewModel.selectedConservationMax) an(s)")
-                                
-                                Button(action: {
-                                    if viewModel.selectedConservationMax < 100 {
-                                        viewModel.selectedConservationMax += 1
-                                        if viewModel.selectedConservationMax < viewModel.selectedConservationMin {
-                                            viewModel.selectedConservationMin = viewModel.selectedConservationMax
-                                        }
-                                    }
-                                }) {
-                                    Image(systemName: "plus.circle")
-                                        .font(.title)
-                                }
-                                .buttonStyle(.plain)
-                                .padding(.horizontal)
-                            #else
-                                // iOS / iPadOS : Stepper standard
                             Stepper(value: $viewModel.selectedConservationMax, in: 1...100) {
                                 Text("et \(viewModel.selectedConservationMax) an(s)")
                                 }
@@ -212,9 +112,22 @@ struct AddBouteilleView: View {
                                     viewModel.selectedConservationMin = viewModel.selectedConservationMax
                                     }
                                 }
-                            #endif
                         }
-                    }         
+                    }
+                    // Sélection de la photo de la bouteille
+                    Section() {
+                        // Affiche la photo si elle existe
+                        if let image = detourageViewModel.imageDetouree {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                        // Le bouton pour prendre ou changer la photo
+                        Button(detourageViewModel.imageDetouree == nil ? "Ajouter une photo" : "Changer la photo") {
+                         self.showingCamera = true
+                         }
+                    }
                 }
                 
                 Section {
@@ -228,6 +141,18 @@ struct AddBouteilleView: View {
             }
             .onAppear(perform: initializeDefaultTaille) // Initialise la taille par défaut
             .navigationTitle("Nouvelle bouteille")
+            .sheet(isPresented: $showingCamera) {
+                ImagePicker(image: $inputImage)
+            }
+            .onChange(of: inputImage) { _, newImage in
+                guard let newImage else {
+                    return
+                }
+                detourageViewModel.removeBackground(from: newImage)
+            }
+            .onChange(of: detourageViewModel.imageDetouree) { _, nouvelleImage in
+                viewModel.selectedPhoto = nouvelleImage
+            }
         }
     }
 }

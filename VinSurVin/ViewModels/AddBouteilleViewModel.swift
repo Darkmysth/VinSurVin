@@ -11,6 +11,7 @@ class AddBouteilleViewModel: ObservableObject {
     @Published var selectedConservationMin: Int = 0
     @Published var selectedConservationMax: Int = 1
     @Published var selectedYear: Int = Int(Calendar.current.component(.year, from: Date()))
+    @Published var selectedPhoto: UIImage?
     
     // Déclare une propriété calculée exposée à la vue 'AddBouteilleView' servant à tester si le formulaire d'ajout de bouteille est valide
     var isFormComplete: Bool {
@@ -35,6 +36,11 @@ class AddBouteilleViewModel: ObservableObject {
             taille: taille,
             vin: vin
         )
+        
+        // S'il y a une photo détourée, on l'enregistre
+        if let image = selectedPhoto {
+            nouvelleBouteille.photo = image.jpegData(compressionQuality: 0.8)
+        }
         
         // Ajoute la nouvelle bouteille au contexte
         context.insert(nouvelleBouteille)

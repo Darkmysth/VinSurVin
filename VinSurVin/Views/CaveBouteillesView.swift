@@ -19,7 +19,7 @@ struct CaveBouteillesView: View {
                 ForEach(viewModel.vinsEtBouteilles) { vinGroup in
                     Section(header: Text(vinGroup.vin?.nomVin ?? "Aucun vin lié à la bouteille")) {
                         ForEach(vinGroup.bouteilles) { bouteilleRecap in
-                            NavigationLink(destination: BouteilleView(selectedBouteille: bouteilleRecap.bouteille)) {
+                            NavigationLink(destination: BouteilleDetailsView(selectedBouteille: bouteilleRecap.bouteille)) {
                                 HStack {
                                     Text("Millésime \(bouteilleRecap.bouteille.millesime.description)")
                                     Spacer()
