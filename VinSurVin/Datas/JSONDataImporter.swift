@@ -207,7 +207,7 @@ struct JSONDataImporter {
     // Méthode de suppression des données des entités de la base (pour certains cas où ça peut s'avérer nécessaire)
     static func deleteAllEntities(context: ModelContext) {
         let allEntities: [any PersistentModel.Type] = [
-            Bouteille.self,
+            Millesime.self,
             Taille.self,
             Vin.self,
             Domaine.self,

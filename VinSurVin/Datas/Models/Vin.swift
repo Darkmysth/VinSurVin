@@ -115,7 +115,7 @@ class Vin {
     @Relationship(deleteRule: .nullify, inverse: \Vignoble.vins) var vignoble: Vignoble?
     
     // Déclaration des relations 1 -> n de l'entité
-    @Relationship(deleteRule: .cascade) var bouteilles: [Bouteille]
+    @Relationship(deleteRule: .cascade) var millesimes: [Millesime]
     
     // Initialisation de l'entité
     init(nomVin: String, sucrosite: Sucrosite, couleur: Couleur, caracteristique: Caracteristique, provenance: Provenance, classification: Classification? = nil, domaine: Domaine, vignoble: Vignoble? = nil) {
@@ -127,7 +127,7 @@ class Vin {
         self.classification = classification
         self.domaine = domaine
         self.vignoble = vignoble
-        self.bouteilles = []
+        self.millesimes = []
     }
     
     // Création d'un sample data de vins utilisé pour les previews

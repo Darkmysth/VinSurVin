@@ -10,9 +10,9 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     
     // Récupère le stock de bouteilles en cave
-    @Query private var bouteilles: [Bouteille]
+    @Query private var millesimes: [Millesime]
     var nbBouteilles: Int {
-        bouteilles.reduce(0) { $0 + $1.quantiteBouteilles }
+        millesimes.reduce(0) { $0 + $1.quantiteBouteilles }
     }
     
     var body: some View {
@@ -26,7 +26,7 @@ struct HomeView: View {
                     NavigationLink(destination: CaveView()) {
                         GraphiqueHomeView(data: viewModel.dataPourGraphique)
                             .onAppear {
-                                viewModel.chargerBouteilles(depuis: context)
+                                viewModel.chargerMillesimes(depuis: context)
                             }
                     }
                     ConservationHomeView()
@@ -39,7 +39,7 @@ struct HomeView: View {
                         .bold()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) { // Place le bouton à droite
-                    NavigationLink(destination: AddBouteilleView()) {
+                    NavigationLink(destination: AddMillesimeView()) {
                         Image(systemName: "plus") // Icône "+"
                     }
                 }

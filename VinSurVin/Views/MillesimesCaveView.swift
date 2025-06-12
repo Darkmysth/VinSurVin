@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-struct BouteillesCaveView: View {
+struct MillesimesCaveView: View {
     
     // Paramètre reçu en entrée de la vue
     let statutParametre: ConservationViewModel.StatutConservation? = nil
@@ -18,24 +18,24 @@ struct BouteillesCaveView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur, id: \.couleur) { section in
+                ForEach(viewModel.millesimesFiltreesSelonStatutAvecRechercheGroupeesParCouleur, id: \.couleur) { section in
                     Section(header: Text(section.couleur)) {
-                        ForEach(section.bouteilles, id: \.bouteille.id) { bouteille in
-                            NavigationLink(destination: BouteilleDetailsView(selectedBouteille: bouteille.bouteille)) {
+                        ForEach(section.millesimes, id: \.millesime.id) { millesime in
+                            NavigationLink(destination: MillesimeDetailsView(selectedMillesime: millesime.millesime)) {
                                 VStack {
                                     VStack {
                                         HStack {
-                                            Text("\(bouteille.bouteille.vin.provenance.nomProvenance)")
+                                            Text("\(millesime.millesime.vin.provenance.nomProvenance)")
                                             Spacer()
                                         }
                                         HStack {
-                                            Text("\(bouteille.bouteille.vin.nomVin) - \(bouteille.bouteille.millesime.description)")
+                                            Text("\(millesime.millesime.vin.nomVin) - \(millesime.millesime.anneeMillesime.description)")
                                             Spacer()
                                         }
                                     }
                                     HStack {
                                         Spacer()
-                                        Text("\(bouteille.bouteille.quantiteBouteilles.description) bouteille(s)")
+                                        Text("\(millesime.millesime.quantiteBouteilles.description) bouteille(s)")
                                     }
                                 }
                             }
@@ -44,7 +44,7 @@ struct BouteillesCaveView: View {
                 }
             }
             .onAppear {
-                viewModel.chargerBouteillesLimiteConservation(from: context)
+                viewModel.chargerMillesimesLimiteConservation(from: context)
             }
             .searchable(text: $viewModel.searchQuery)
             .navigationTitle(viewModel.titre)
@@ -53,6 +53,6 @@ struct BouteillesCaveView: View {
 }
 
 #Preview {
-    BouteillesCaveView(viewModel: ConservationViewModel(statut: nil))
+    MillesimesCaveView(viewModel: ConservationViewModel(statut: nil))
         .modelContainer(SampleData.shared.modelContainer)
 }

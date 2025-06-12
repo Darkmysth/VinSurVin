@@ -3,16 +3,16 @@ import SwiftData
 
 @MainActor
 class HomeViewModel: ObservableObject {
-    @Published var listBouteilles: [Bouteille] = []
+    @Published var listeMillesimes: [Millesime] = []
     
     // Méthode pour charger les bouteilles depuis SwiftData
-    func chargerBouteilles(depuis context: ModelContext) {
-        let fetch = FetchDescriptor<Bouteille>()
+    func chargerMillesimes(depuis context: ModelContext) {
+        let fetch = FetchDescriptor<Millesime>()
         do {
-            listBouteilles = try context.fetch(fetch)
+            listeMillesimes = try context.fetch(fetch)
         } catch {
-            print("Erreur de chargement des bouteilles : \(error)")
-            listBouteilles = []
+            print("Erreur de chargement des millésimes : \(error)")
+            listeMillesimes = []
         }
     }
     
@@ -20,9 +20,9 @@ class HomeViewModel: ObservableObject {
     var dataPourGraphique: [(typeVin: String, quantite: Int)] {
         var counts: [String: Int] = [:]
         
-        for bouteille in listBouteilles {
-            let couleur = bouteille.vin.couleur.nomCouleur
-            counts[couleur, default: 0] += bouteille.quantiteBouteilles
+        for millesime in listeMillesimes {
+            let couleur = millesime.vin.couleur.nomCouleur
+            counts[couleur, default: 0] += millesime.quantiteBouteilles
         }
         
         return counts.map { (typeVin: $0.key, quantite: $0.value) }

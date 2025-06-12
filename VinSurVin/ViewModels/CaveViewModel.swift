@@ -21,20 +21,20 @@ class CaveViewModel: ObservableObject {
     func chargerCouleursEtRegions(from context: ModelContext) {
         couleursEtRegions = []
         
-        let predicate = #Predicate<Bouteille> { $0.quantiteBouteilles > 0 }
-        let fetchDescriptor = FetchDescriptor<Bouteille>(predicate: predicate)
+        let predicate = #Predicate<Millesime> { $0.quantiteBouteilles > 0 }
+        let fetchDescriptor = FetchDescriptor<Millesime>(predicate: predicate)
         
         do {
-            let bouteilles = try context.fetch(fetchDescriptor)
+            let millesimes = try context.fetch(fetchDescriptor)
             
-            let grouped = Dictionary(grouping: bouteilles) { $0.vin.couleur }
+            let grouped = Dictionary(grouping: millesimes) { $0.vin.couleur }
             
-            for (couleur, bouteillesDeLaCouleur) in grouped {
+            for (couleur, millesimesDeLaCouleur) in grouped {
                 var regionMap: [Provenance: Int] = [:]
                 
-                for bouteille in bouteillesDeLaCouleur {
-                    if let region = bouteille.vin.provenance.regionParente {
-                        regionMap[region, default: 0] += bouteille.quantiteBouteilles
+                for millesime in millesimesDeLaCouleur {
+                    if let region = millesime.vin.provenance.regionParente {
+                        regionMap[region, default: 0] += millesime.quantiteBouteilles
                     }
                 }
                 
@@ -51,16 +51,16 @@ class CaveViewModel: ObservableObject {
         }
     }
     
-    @Published var listeBouteilles: [Bouteille] = []
+    @Published var listeMillesimes: [Millesime] = []
     
-    // Méthode pour charger les bouteilles depuis SwiftData
-    func chargerBouteilles(depuis context: ModelContext) {
-        let fetch = FetchDescriptor<Bouteille>()
+    // Méthode pour charger les millesimes depuis SwiftData
+    func chargerMillesimes(depuis context: ModelContext) {
+        let fetch = FetchDescriptor<Millesime>()
         do {
-            listeBouteilles = try context.fetch(fetch)
+            listeMillesimes = try context.fetch(fetch)
         } catch {
-            print("Erreur de chargement des bouteilles : \(error)")
-            listeBouteilles = []
+            print("Erreur de chargement des millesimes : \(error)")
+            listeMillesimes = []
         }
     }
     
@@ -68,9 +68,9 @@ class CaveViewModel: ObservableObject {
     var dataPourGraphique: [(typeVin: String, quantite: Int)] {
         var counts: [String: Int] = [:]
         
-        for bouteille in listeBouteilles {
-            let couleur = bouteille.vin.couleur.nomCouleur
-            counts[couleur, default: 0] += bouteille.quantiteBouteilles
+        for millesime in listeMillesimes {
+            let couleur = millesime.vin.couleur.nomCouleur
+            counts[couleur, default: 0] += millesime.quantiteBouteilles
         }
         
         return counts.map { (typeVin: $0.key, quantite: $0.value) }

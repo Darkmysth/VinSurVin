@@ -2,9 +2,9 @@ import SwiftUI
 import SwiftData
 
 @MainActor
-class AddBouteilleViewModel: ObservableObject {
+class AddMillesimeViewModel: ObservableObject {
     
-    // Déclare les propriétés qui seront exposées à la vue 'AddBouteilleView'
+    // Déclare les propriétés qui seront exposées à la vue 'AddMillesimeView'
     @Published var selectedVin: Vin?
     @Published var selectedTaille: Taille?
     @Published var selectedQuantite: Int = 1
@@ -13,12 +13,12 @@ class AddBouteilleViewModel: ObservableObject {
     @Published var selectedYear: Int = Int(Calendar.current.component(.year, from: Date()))
     @Published var selectedPhoto: UIImage?
     
-    // Déclare une propriété calculée exposée à la vue 'AddBouteilleView' servant à tester si le formulaire d'ajout de bouteille est valide
+    // Déclare une propriété calculée exposée à la vue 'AddMillesimeView' servant à tester si le formulaire d'ajout de millésime est valide
     var isFormComplete: Bool {
         selectedVin != nil && selectedTaille != nil && selectedQuantite > 0 && selectedConservationMin <= selectedConservationMax
     }
     
-    func enregistrerBouteille(dans context: ModelContext) -> Bool {
+    func enregistrerMillesime(dans context: ModelContext) -> Bool {
         guard let vin = selectedVin,
               let taille = selectedTaille,
               let dateMin = Date.from(day: 1, month: 1, year: selectedYear + selectedConservationMin),
@@ -27,10 +27,10 @@ class AddBouteilleViewModel: ObservableObject {
             return false
         }
 
-        // Crée la nouvelle bouteille
-        let nouvelleBouteille = Bouteille(
+        // Crée le nouveau millésime
+        let nouveauMillesime = Millesime(
+            anneeMillesime: selectedYear,
             quantiteBouteilles: selectedQuantite,
-            millesime: selectedYear,
             dateConsommationMin: dateMin,
             dateConsommationMax: dateMax,
             taille: taille,
@@ -39,11 +39,11 @@ class AddBouteilleViewModel: ObservableObject {
         
         // S'il y a une photo détourée, on l'enregistre
         if let image = selectedPhoto {
-            nouvelleBouteille.photo = image.jpegData(compressionQuality: 0.8)
+            nouveauMillesime.photo = image.jpegData(compressionQuality: 0.8)
         }
         
-        // Ajoute la nouvelle bouteille au contexte
-        context.insert(nouvelleBouteille)
+        // Ajoute le nouveau millésime au contexte
+        context.insert(nouveauMillesime)
         
         // Sauvegarde le contexte si nécessaire
         do {

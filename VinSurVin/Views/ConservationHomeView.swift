@@ -19,7 +19,7 @@ struct ConservationHomeView: View {
             List {
                 // Bouteilles en déclin
                 let declin = viewModel.quantitesParStatut.first(where: { $0.statut == .declin }) ?? .init(statut: .declin, quantite: 0)
-                NavigationLink(destination: ConservationBouteillesView(statut: .declin)) {
+                NavigationLink(destination: ConservationMillesimesView(statut: .declin)) {
                     HStack {
                         Label("Déclin", systemImage: "chart.line.downtrend.xyaxis")
                         Spacer()
@@ -31,7 +31,7 @@ struct ConservationHomeView: View {
                 
                 // Bouteilles à leur apogée encore 1 an
                 let derniereAnneeApogee = viewModel.quantitesParStatut.first(where: { $0.statut == .derniereAnneeApogee }) ?? .init(statut: .derniereAnneeApogee, quantite: 0)
-                NavigationLink(destination: ConservationBouteillesView(statut: .derniereAnneeApogee)) {
+                NavigationLink(destination: ConservationMillesimesView(statut: .derniereAnneeApogee)) {
                     HStack {
                         Label("Dernière année", systemImage: "exclamationmark.triangle.fill")
                         Spacer()
@@ -43,7 +43,7 @@ struct ConservationHomeView: View {
                 
                 // Bouteilles à leur apogée
                 let apogee = viewModel.quantitesParStatut.first(where: { $0.statut == .apogee }) ?? .init(statut: .apogee, quantite: 0)
-                NavigationLink(destination: ConservationBouteillesView(statut: .apogee)) {
+                NavigationLink(destination: ConservationMillesimesView(statut: .apogee)) {
                     HStack {
                         Label("Apogée", systemImage: "checkmark.circle.fill")
                         Spacer()
@@ -55,7 +55,7 @@ struct ConservationHomeView: View {
                 
                 // Bouteilles à conserver
                 let conservation = viewModel.quantitesParStatut.first(where: { $0.statut == .conservation }) ?? .init(statut: .conservation, quantite: 0)
-                NavigationLink(destination: ConservationBouteillesView(statut: .conservation)) {
+                NavigationLink(destination: ConservationMillesimesView(statut: .conservation)) {
                     HStack {
                         Label("Conservation", systemImage: "hourglass")
                         Spacer()
@@ -69,7 +69,7 @@ struct ConservationHomeView: View {
             .scrollDisabled(true)
         }
         .onAppear{
-            viewModel.chargerBouteillesLimiteConservation(from: context)
+            viewModel.chargerMillesimesLimiteConservation(from: context)
         }
     }
 }

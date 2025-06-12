@@ -11,13 +11,13 @@ class ConservationViewModel: ObservableObject {
         case derniereAnneeApogee
         case declin
     }
-    // Création de la structure du tableau qui sera renvoyé par la fonction de chargement des bouteilles
-    struct LimiteConservationBouteille {
-        let bouteille: Bouteille
+    // Création de la structure du tableau qui sera renvoyé par la fonction de chargement des millésimes
+    struct LimiteConservationMillesime {
+        let millesime: Millesime
         let statut: StatutConservation
     }
     
-    // Création de la structure utilisée pour afficher le stock de bouteilles par statut de conservation
+    // Création de la structure utilisée pour afficher le stock de millésimes par statut de conservation
     struct QuantiteParStatut {
         let statut: StatutConservation
         let quantite: Int
@@ -29,7 +29,7 @@ class ConservationViewModel: ObservableObject {
     
     // Création des variables qui seront envoyées à la vue
     @Published var searchQuery: String = ""
-    @Published private(set) var bouteillesFiltreesSelonStatut: [LimiteConservationBouteille] = []
+    @Published private(set) var millesimesFiltreesSelonStatut: [LimiteConservationMillesime] = []
     
     // Création de la propriété correspondant au paramètre envoyé à l'ouverture de la vue
     private let statutFiltre: StatutConservation?
@@ -37,63 +37,63 @@ class ConservationViewModel: ObservableObject {
         self.statutFiltre = statut
     }
     
-    // Méthode chargeant toutes les bouteilles en stock avec leur statut de conservation
-    func chargerBouteillesLimiteConservation(from context: ModelContext) {
+    // Méthode chargeant tous les millésimes en stock avec leur statut de conservation
+    func chargerMillesimesLimiteConservation(from context: ModelContext) {
         do {
-            let listeBouteilles = try context.fetch(FetchDescriptor<Bouteille>(
-                predicate: #Predicate<Bouteille> { $0.quantiteBouteilles > 0 }
+            let listeMillesimes = try context.fetch(FetchDescriptor<Millesime>(
+                predicate: #Predicate<Millesime> { $0.quantiteBouteilles > 0 }
             ))
-            let listeBouteillesAvecStatut = listeBouteilles.map { bouteille -> LimiteConservationBouteille in
+            let listeMillesimesAvecStatut = listeMillesimes.map { millesime -> LimiteConservationMillesime in
                 let maintenant = Date()
                 let statut: StatutConservation
-                if maintenant < bouteille.dateConsommationMin {
+                if maintenant < millesime.dateConsommationMin {
                     statut = .conservation
-                } else if let unAnAvantApogeeMax = calendar.date(byAdding: .year, value: -1, to: bouteille.dateConsommationMax), maintenant <= unAnAvantApogeeMax {
+                } else if let unAnAvantApogeeMax = calendar.date(byAdding: .year, value: -1, to: millesime.dateConsommationMax), maintenant <= unAnAvantApogeeMax {
                     statut = .apogee
-                } else if maintenant <= bouteille.dateConsommationMax {
+                } else if maintenant <= millesime.dateConsommationMax {
                     statut = .derniereAnneeApogee
                 } else {
                     statut = .declin
                 }
-                return LimiteConservationBouteille(bouteille: bouteille, statut: statut)
+                return LimiteConservationMillesime(millesime: millesime, statut: statut)
             }
-            let listeBouteillesFiltreesSelonStatut = statutFiltre != nil
-                ? listeBouteillesAvecStatut.filter { $0.statut == statutFiltre }
-                : listeBouteillesAvecStatut
-            self.bouteillesFiltreesSelonStatut = listeBouteillesFiltreesSelonStatut
+            let listeMillesimesFiltreesSelonStatut = statutFiltre != nil
+                ? listeMillesimesAvecStatut.filter { $0.statut == statutFiltre }
+                : listeMillesimesAvecStatut
+            self.millesimesFiltreesSelonStatut = listeMillesimesFiltreesSelonStatut
         } catch {
             print("Erreur : \(error)")
         }
     }
     
-    // Propriété calculée permettant d'afficher le stock de bouteilles par statut de conservation
+    // Propriété calculée permettant d'afficher le stock de millésimes par statut de conservation
     var quantitesParStatut: [QuantiteParStatut] {
-        let grouped = Dictionary(grouping: bouteillesFiltreesSelonStatut) { $0.statut }
-        return grouped.map { (statut, bouteilles) in
-            let total = bouteilles.reduce(0) { $0 + $1.bouteille.quantiteBouteilles }
+        let grouped = Dictionary(grouping: millesimesFiltreesSelonStatut) { $0.statut }
+        return grouped.map { (statut, millesimes) in
+            let total = millesimes.reduce(0) { $0 + $1.millesime.quantiteBouteilles }
             return QuantiteParStatut(statut: statut, quantite: total)
         }
     }
     
-    var bouteillesFiltreesSelonStatutAvecRecherche: [LimiteConservationBouteille] {
+    var millesimesFiltreesSelonStatutAvecRecherche: [LimiteConservationMillesime] {
         guard !searchQuery.isEmpty else {
-            return bouteillesFiltreesSelonStatut
+            return millesimesFiltreesSelonStatut
         }
         let recherche = searchQuery.lowercased()
-        return bouteillesFiltreesSelonStatut.filter {
-            let b = $0.bouteille
+        return millesimesFiltreesSelonStatut.filter {
+            let b = $0.millesime
             return b.vin.nomVin.lowercased().contains(recherche)
-                || b.millesime.description.lowercased().contains(recherche)
+                || b.anneeMillesime.description.lowercased().contains(recherche)
                 || b.vin.provenance.nomProvenance.lowercased().contains(recherche)
                 || b.vin.provenance.sousRegionParente?.nomProvenance.lowercased().contains(recherche) == true
                 || b.vin.provenance.regionParente?.nomProvenance.lowercased().contains(recherche) == true
         }
     }
     
-    var bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur: [(couleur: String, bouteilles: [LimiteConservationBouteille])] {
-        let groupes = Dictionary(grouping: bouteillesFiltreesSelonStatutAvecRecherche) { $0.bouteille.vin.couleur.nomCouleur }
+    var millesimesFiltreesSelonStatutAvecRechercheGroupeesParCouleur: [(couleur: String, millesimes: [LimiteConservationMillesime])] {
+        let groupes = Dictionary(grouping: millesimesFiltreesSelonStatutAvecRecherche) { $0.millesime.vin.couleur.nomCouleur }
         return groupes
-            .map { (key, value) in (couleur: key, bouteilles: value) }
+            .map { (key, value) in (couleur: key, millesimes: value) }
             .sorted { $0.couleur < $1.couleur }
     }
     

@@ -2,16 +2,16 @@ import SwiftUI
 import SwiftData
 import Foundation
 
-struct AddBouteilleView: View {
+struct AddMillesimeView: View {
     
     // Relie cette vue avec son ViewModel
-    @StateObject private var viewModel = AddBouteilleViewModel()
+    @StateObject private var viewModel = AddMillesimeViewModel()
     @StateObject private var detourageViewModel = DetourageViewModel()
     
     // Prépare les variables d'état recueillant les saisies de l'utilisateur
     @State private var showVin = false
     @State private var showTaille = false
-    @State private var showMillesime = false
+    @State private var showAnneeMillesime = false
     @State private var showQuantite = false
     @State private var showConservation = false
     @State private var shouldRefreshVinList: Bool = false
@@ -29,7 +29,7 @@ struct AddBouteilleView: View {
     // Initialise la taille par défaut
     private func initializeDefaultTaille() {
         if viewModel.selectedTaille == nil {
-            if let tailleDefaut = try? context.fetch(FetchDescriptor<Taille>(predicate: #Predicate { $0.nomTaille == "Bouteille" })).first {
+            if let tailleDefaut = try? context.fetch(FetchDescriptor<Taille>(predicate: #Predicate { $0.nomTaille == "Millésime" })).first {
                 viewModel.selectedTaille = tailleDefaut
             } else {
                 print("Erreur : impossible de trouver la taille par défaut.")
@@ -40,9 +40,9 @@ struct AddBouteilleView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Détails de la bouteille")) {
+                Section(header: Text("Détails du millésime")) {
                     
-                    // Sélection du vin de la bouteille
+                    // Sélection du vin du millésime
                     NavigationLink(destination: SelectVinView(selectedVin: $viewModel.selectedVin)) {
                         HStack {
                             Text("Vin")
@@ -52,7 +52,7 @@ struct AddBouteilleView: View {
                         }
                     }
                     
-                    // Sélection de la taille de la bouteille (demi-bouteille, 75 cL, magnum, etc.)
+                    // Sélection de la taille du millésime (demi-bouteille, 75 cL, magnum, etc.)
                     NavigationLink(destination: SelectTailleView(selectedTaille: $viewModel.selectedTaille)) {
                         HStack {
                             Text("Taille")
@@ -62,13 +62,13 @@ struct AddBouteilleView: View {
                         }
                     }
                     
-                    // Sélection du millésime de la bouteille
+                    // Sélection de l'année du millésime
                     VStack {
                         HStack {
-                            Text("Millésime \(viewModel.selectedYear.withoutThousandSeparator)")
+                            Text("Année \(viewModel.selectedYear.withoutThousandSeparator)")
                             Spacer()
                         }
-                        Picker("Millésime", selection: $viewModel.selectedYear) {
+                        Picker("Année", selection: $viewModel.selectedYear) {
                             ForEach(years, id: \.self) { year in
                                 Text(year.withoutThousandSeparator).tag(year)
                             }
@@ -87,7 +87,7 @@ struct AddBouteilleView: View {
                             }
                     }
                     
-                    // Sélection de la durée de conservation de la bouteille (en attendant un algorithme ou une requête vers Apple Intelligence ou ChatGPT
+                    // Sélection de la durée de conservation du millésime (en attendant un algorithme ou une requête vers Apple Intelligence ou ChatGPT
                     VStack {
                         HStack {
                             Text("Durée de conservation")
@@ -114,7 +114,7 @@ struct AddBouteilleView: View {
                                 }
                         }
                     }
-                    // Sélection de la photo de la bouteille
+                    // Sélection de la photo de la bouteille du millésime
                     Section() {
                         // Affiche la photo si elle existe
                         if let image = detourageViewModel.imageDetouree {
@@ -132,7 +132,7 @@ struct AddBouteilleView: View {
                 
                 Section {
                     Button("Enregistrer") {
-                        if viewModel.enregistrerBouteille(dans: context) {
+                        if viewModel.enregistrerMillesime(dans: context) {
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
@@ -140,7 +140,7 @@ struct AddBouteilleView: View {
                 }
             }
             .onAppear(perform: initializeDefaultTaille) // Initialise la taille par défaut
-            .navigationTitle("Nouvelle bouteille")
+            .navigationTitle("Nouveau millésime")
             .sheet(isPresented: $showingCamera) {
                 ImagePicker(image: $inputImage)
             }
@@ -175,5 +175,5 @@ extension Date {
 }
 
 #Preview {
-    AddBouteilleView()
+    AddMillesimeView()
 }

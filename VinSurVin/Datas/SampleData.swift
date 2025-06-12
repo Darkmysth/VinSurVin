@@ -12,7 +12,7 @@ class SampleData {
     var sousRegionPaysNantais: Provenance!
     var appellationMuscadet: Provenance!
     var vinTroisToits: Vin!
-    var bouteilleTroisToits2024: Bouteille!
+    var millesimeTroisToits2024: Millesime!
     var regionBordeaux: Provenance!
     var sousRegionMedoc: Provenance!
     var appellationPauillac: Provenance!
@@ -28,7 +28,7 @@ class SampleData {
     
     private init() {
         let schema = Schema([
-            Bouteille.self,
+            Millesime.self,
             Classification.self,
             Domaine.self,
             Provenance.self,
@@ -92,21 +92,21 @@ class SampleData {
         let vinLafiteRothschild = Vin.sampleVinLafiteRothschild(provenance: pauillac, domaine: domaineRothschild)
         context.insert(vinLafiteRothschild)
         // Création et insertion des bouteilles
-        let bouteilleTroisToits = Bouteille.sampleBouteilleTroisToits(vin: vinTroisToits, taille: taille)
-        context.insert(bouteilleTroisToits)
-        let bouteilleLafiteRothschild = Bouteille.sampleBouteilleLafiteRothschild(vin: vinLafiteRothschild, taille: taille)
-        context.insert(bouteilleLafiteRothschild)
+        let millesimeTroisToits = Millesime.sampleMillesimeTroisToits(vin: vinTroisToits, taille: taille)
+        context.insert(millesimeTroisToits)
+        let millesimeLafiteRothschild = Millesime.sampleMillesimeLafiteRothschild(vin: vinLafiteRothschild, taille: taille)
+        context.insert(millesimeLafiteRothschild)
         
-        // Ajout de la nouvelle bouteille millésime 2025 avec 12 bouteilles
-        self.bouteilleTroisToits2024 = Bouteille(
+        // Ajout du nouveau millésime 2025 avec 12 bouteilles
+        self.millesimeTroisToits2024 = Millesime(
+            anneeMillesime: 2024,
             quantiteBouteilles: 12,
-            millesime: 2024,
             dateConsommationMin: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 1))!,
             dateConsommationMax: Calendar.current.date(from: DateComponents(year: 2028, month: 12, day: 31))!,
             taille: taille,
             vin: vinTroisToits
         )
-        context.insert(bouteilleTroisToits2024)
+        context.insert(millesimeTroisToits2024)
     }
     
     // Création d'une méthode d'insertion récursive spécifique à l'entité 'Provenance'

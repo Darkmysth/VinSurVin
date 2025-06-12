@@ -11,7 +11,7 @@ struct VinSurVinApp: App {
     // Déclaration du container qui sera utilisé pour agir sur la base de données
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Bouteille.self,
+            Millesime.self,
             Classification.self,
             Domaine.self,
             Provenance.self,
@@ -38,7 +38,7 @@ struct VinSurVinApp: App {
                         .tabItem {
                             Label("Accueil", systemImage: "house")
                         }
-                    BouteillesCaveView(viewModel: ConservationViewModel(statut: nil))
+                    MillesimesCaveView(viewModel: ConservationViewModel(statut: nil))
                         .tabItem {
                             Label("Ma cave", systemImage: "wineglass")
                         }

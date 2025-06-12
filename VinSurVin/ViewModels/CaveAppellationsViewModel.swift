@@ -21,23 +21,23 @@ class CaveAppellationsViewModel: ObservableObject {
     func chargerSousRegionsEtAppellations(couleurFiltre: Couleur, regionFiltre: Provenance, from context: ModelContext) {
         sousRegionsEtAppellations = []
         
-        let predicate = #Predicate<Bouteille> { $0.quantiteBouteilles > 0 }
-        let fetchDescriptor = FetchDescriptor<Bouteille>(predicate: predicate)
+        let predicate = #Predicate<Millesime> { $0.quantiteBouteilles > 0 }
+        let fetchDescriptor = FetchDescriptor<Millesime>(predicate: predicate)
         
         do {
-            let listeBouteilles = try context.fetch(fetchDescriptor)
-            let listeBouteillesFiltrees = listeBouteilles.filter {
+            let listeMillesimes = try context.fetch(fetchDescriptor)
+            let listeMillesimesFiltres = listeMillesimes.filter {
                 $0.vin.couleur == couleurFiltre && $0.vin.provenance.regionParente == regionFiltre
             }
             
-            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.vin.provenance.sousRegionParente }
+            let millesimesGroupes = Dictionary(grouping: listeMillesimesFiltres) { $0.vin.provenance.sousRegionParente }
             
-            for (sousRegion, bouteillesDeLaSousRegion) in bouteillesGroupees {
+            for (sousRegion, millesimesDeLaSousRegion) in millesimesGroupes {
                 var appellationMap: [Provenance: Int] = [:]
                 
-                for bouteille in bouteillesDeLaSousRegion {
-                    let appellation = bouteille.vin.provenance
-                    appellationMap[appellation, default: 0] += bouteille.quantiteBouteilles
+                for millesime in millesimesDeLaSousRegion {
+                    let appellation = millesime.vin.provenance
+                    appellationMap[appellation, default: 0] += millesime.quantiteBouteilles
                 }
                 
                 let appellations = appellationMap.map { AppellationRecap(appellation: $0.key, quantite: $0.value) }

@@ -10,20 +10,20 @@ class Taille {
     var volume: Double
     
     // Déclaration des relations 1 -> n de l'entité
-    @Relationship(deleteRule: .cascade) var bouteilles: [Bouteille]
+    @Relationship(deleteRule: .cascade) var millesimes: [Millesime]
 
     // Initialisation d'une instance de l'entité
     init(nomTaille: String, uniteVolume: String, volume: Double) {
         self.nomTaille = nomTaille
         self.uniteVolume = uniteVolume
         self.volume = volume
-        self.bouteilles = []
+        self.millesimes = []
     }
     
     // Création d'un sample data de tailles utilisé pour les previews
     static func sampleData() -> [Taille] {
         [
-            Taille(nomTaille: "Bouteille", uniteVolume: "cL", volume: 75),
+            Taille(nomTaille: "Millesime", uniteVolume: "cL", volume: 75),
         ]
     }
 }
