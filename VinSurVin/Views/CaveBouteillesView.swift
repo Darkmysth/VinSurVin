@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-struct CaveMillesimesView: View {
+struct CaveBouteillesView: View {
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -50,6 +50,6 @@ struct CaveMillesimesView: View {
 }
 
 #Preview {
-    CaveMillesimesView(couleurSelectionnee: .blanc, appellationSelectionnee: SampleData.shared.appellationMuscadet)
+    CaveBouteillesView(couleurSelectionnee: .blanc, appellationSelectionnee: SampleData.shared.appellationMuscadet)
         .modelContainer(SampleData.shared.modelContainer)
 }

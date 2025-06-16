@@ -19,7 +19,7 @@ struct CaveAppellationsView: View {
                 ForEach(viewModel.sousRegionsEtAppellations) { sousRegionGroup in
                     Section(header: Text(sousRegionGroup.sousRegion?.nomProvenance ?? "")) {
                         ForEach(sousRegionGroup.appellations) { appellationRecap in
-                            NavigationLink(destination: CaveMillesimesView(couleurSelectionnee: couleurSelectionnee, appellationSelectionnee: appellationRecap.appellation)) {
+                            NavigationLink(destination: CaveBouteillesView(couleurSelectionnee: couleurSelectionnee, appellationSelectionnee: appellationRecap.appellation)) {
                                 HStack {
                                     Text(appellationRecap.appellation.nomProvenance)
                                     Spacer()

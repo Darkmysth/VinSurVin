@@ -2,14 +2,10 @@ import SwiftUI
 import SwiftData
 import Foundation
 
-struct AddMillesimeView: View {
+struct AjoutBouteilleView: View {
     
     // Relie cette vue avec son ViewModel
-<<<<<<< Updated upstream:VinSurVin/Views/Ajouts/AddMillesimeView.swift
-    @StateObject private var viewModel = AddMillesimeViewModel()
-=======
     @StateObject private var viewModel = AjoutBouteilleViewModel()
->>>>>>> Stashed changes:VinSurVin/Views/Ajouts/AjoutBouteilleView.swift
     @StateObject private var detourageViewModel = DetourageViewModel()
     
     // Prépare les variables d'état recueillant les saisies de l'utilisateur
@@ -44,9 +40,9 @@ struct AddMillesimeView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Détails du millésime")) {
+                Section(header: Text("Détails de la bouteille")) {
                     
-                    // Sélection du vin du millésime
+                    // Sélection du vin de la bouteille
                     NavigationLink(destination: SelectVinView(vinSelectionne: $viewModel.vinSelectionne)) {
                         HStack {
                             Text("Vin")
@@ -56,7 +52,7 @@ struct AddMillesimeView: View {
                         }
                     }
                     
-                    // Sélection de la taille du millésime (demi-bouteille, 75 cL, magnum, etc.)
+                    // Sélection de la taille de la bouteille (demi-bouteille, 75 cL, magnum, etc.)
                     NavigationLink(destination: SelectTailleView(tailleSelectionnee: $viewModel.tailleSelectionnee)) {
                         HStack {
                             Text("Taille")
@@ -66,7 +62,7 @@ struct AddMillesimeView: View {
                         }
                     }
                     
-                    // Sélection de l'année du millésime
+                    // Sélection du millésime
                     VStack {
                         HStack {
                             Text("Année \(viewModel.anneeSelectionnee.withoutThousandSeparator)")
@@ -91,7 +87,7 @@ struct AddMillesimeView: View {
                             }
                     }
                     
-                    // Sélection de la durée de conservation du millésime (en attendant un algorithme ou une requête vers Apple Intelligence ou ChatGPT
+                    // Sélection de la durée de conservation du type de bouteille de ce millésime (en attendant un algorithme ou une requête vers Apple Intelligence ou ChatGPT
                     VStack {
                         HStack {
                             Text("Durée de conservation")
@@ -136,7 +132,7 @@ struct AddMillesimeView: View {
                 
                 Section {
                     Button("Enregistrer") {
-                        if viewModel.enregistrerMillesime(dans: context) {
+                        if viewModel.enregistrerBouteille(dans: context) {
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
@@ -144,15 +140,9 @@ struct AddMillesimeView: View {
                 }
             }
             .onAppear(perform: initializeDefaultTaille) // Initialise la taille par défaut
-<<<<<<< Updated upstream:VinSurVin/Views/Ajouts/AddMillesimeView.swift
-            .navigationTitle("Nouveau millésime")
-            .sheet(isPresented: $showingCamera) {
-                ImagePicker(image: $inputImage)
-=======
             .navigationTitle("Nouvelle bouteille")
             .sheet(isPresented: $afficheCamera) {
                 ImagePicker(image: $imageEnEntree)
->>>>>>> Stashed changes:VinSurVin/Views/Ajouts/AjoutBouteilleView.swift
             }
             .onChange(of: imageEnEntree) { _, newImage in
                 guard let newImage else {
@@ -185,9 +175,5 @@ extension Date {
 }
 
 #Preview {
-<<<<<<< Updated upstream:VinSurVin/Views/Ajouts/AddMillesimeView.swift
-    AddMillesimeView()
-=======
     AjoutBouteilleView()
->>>>>>> Stashed changes:VinSurVin/Views/Ajouts/AjoutBouteilleView.swift
 }

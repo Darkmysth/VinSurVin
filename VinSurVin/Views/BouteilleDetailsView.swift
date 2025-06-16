@@ -1,13 +1,13 @@
 import SwiftUI
 import SwiftData
 
-struct MillesimeDetailsView: View {
+struct BouteilleDetailsView: View {
     
     // Relie cette vue avec son ViewModel
     @StateObject private var viewModel = DetourageViewModel()
     
-    // Récupère le millésime sélectionné par l'utilisateur
-    @Bindable var selectedMillesime: Millesime
+    // Récupère la bouteille sélectionnée par l'utilisateur
+    @Bindable var bouteilleSelectionnee: Bouteille
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -21,41 +21,35 @@ struct MillesimeDetailsView: View {
             List {
                 Section("Photo") {
                     // Affiche la photo si elle existe
-                    if let photoData = selectedMillesime.photo, let uiImage = UIImage(data: photoData) {
+                    if let photoData = bouteilleSelectionnee.photo, let uiImage = UIImage(data: photoData) {
                         Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFit()
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     // Le bouton pour prendre ou changer la photo
-<<<<<<< Updated upstream:VinSurVin/Views/MillesimeDetailsView.swift
-                    Button(selectedMillesime.photo == nil ? "Ajouter une photo" : "Changer la photo") {
-                        selectedMillesime.photo = nil
-                        self.showingCamera = true
-=======
                     Button(bouteilleSelectionnee.photo == nil ? "Ajouter une photo" : "Changer la photo") {
                         bouteilleSelectionnee.photo = nil
                         self.afficheCamera = true
->>>>>>> Stashed changes:VinSurVin/Views/BouteilleDetailsView.swift
                     }
                 }
-                /*Section(header: Text("Détails du millésime")) {
+                Section(header: Text("Détails du millésime")) {
                     HStack {
                         Text("Taille :")
                         Spacer()
-                        Text("\(selectedMillesime.taille.volume.description) \(selectedMillesime.taille.uniteVolume)")
+                        Text("\(bouteilleSelectionnee.taille.volume.description) \(bouteilleSelectionnee.taille.uniteVolume)")
                     }
                     HStack {
                         Text("Année :")
                         Spacer()
-                        Text("\(selectedMillesime.anneeMillesime.description)")
+                        Text("\(bouteilleSelectionnee.millesime.anneeMillesime.description)")
                     }
                     HStack {
                         Text("Stock :")
-                        Stepper(value: $selectedMillesime.quantiteBouteilles, in: 0...100) {
-                            Text("\(selectedMillesime.quantiteBouteilles) bouteille(s)")
+                        Stepper(value: $bouteilleSelectionnee.quantite, in: 0...100) {
+                            Text("\(bouteilleSelectionnee.quantite) bouteille(s)")
                         }
-                        .onChange(of: selectedMillesime.quantiteBouteilles) { _, _ in
+                        .onChange(of: bouteilleSelectionnee.quantite) { _, _ in
                             try? context.save()
                         }
                     }
@@ -66,7 +60,7 @@ struct MillesimeDetailsView: View {
                         }
                         HStack {
                             Spacer()
-                            Text("\(selectedMillesime.dateConsommationMin.formatJJMMAAAA) et \(selectedMillesime.dateConsommationMax.formatJJMMAAAA)")
+                            Text("\(bouteilleSelectionnee.dateConsommationMin.formatJJMMAAAA) et \(bouteilleSelectionnee.dateConsommationMax.formatJJMMAAAA)")
                         }
                     }
                 }
@@ -74,73 +68,68 @@ struct MillesimeDetailsView: View {
                     HStack {
                         Text("Pays :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.provenance.paysParent?.nomProvenance ?? "Pays non renseigné")")
+                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.paysParent?.nomProvenance ?? "Pays non renseigné")")
                     }
                     HStack {
                         Text("Région :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.provenance.regionParente?.nomProvenance ?? "Région non renseignée")")
+                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.regionParente?.nomProvenance ?? "Région non renseignée")")
                     }
                     HStack {
                         Text("Sous-région :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.provenance.sousRegionParente?.nomProvenance ?? "Sous-région non renseignée")")
+                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.sousRegionParente?.nomProvenance ?? "Sous-région non renseignée")")
                     }
                     HStack {
                         Text("Appellation :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.provenance.nomProvenance)")
+                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.nomProvenance)")
                     }
-                    if selectedMillesime.vin.vignoble != nil {
+                    if bouteilleSelectionnee.millesime.vin.vignoble != nil {
                         HStack {
                             Text("Vignoble :")
                             Spacer()
-                            Text("\(selectedMillesime.vin.vignoble?.nomVignoble ?? "Vignoble non renseigné")")
+                            Text("\(bouteilleSelectionnee.millesime.vin.vignoble?.nomVignoble ?? "Vignoble non renseigné")")
                         }
                     }
                     HStack {
                         Text("Domaine :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.domaine.nomDomaine)")
+                        Text("\(bouteilleSelectionnee.millesime.vin.domaine.nomDomaine)")
                     }
                 }
                 Section(header: Text("Détails du vin")) {
                     HStack {
                         Text("Vin :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.nomVin)")
+                        Text("\(bouteilleSelectionnee.millesime.vin.nomVin)")
                     }
                     HStack {
                         Text("Couleur :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.couleur.nomCouleur)")
+                        Text("\(bouteilleSelectionnee.millesime.vin.couleur.nomCouleur)")
                     }
                     HStack {
                         Text("Sucrosité :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.sucrosite.nomSucrosite)")
+                        Text("\(bouteilleSelectionnee.millesime.vin.sucrosite.nomSucrosite)")
                     }
                     HStack {
                         Text("Caractéristique :")
                         Spacer()
-                        Text("\(selectedMillesime.vin.caracteristique.nomCaracteristique)")
+                        Text("\(bouteilleSelectionnee.millesime.vin.caracteristique.nomCaracteristique)")
                     }
-                    if selectedMillesime.vin.classification != nil {
+                    if bouteilleSelectionnee.millesime.vin.classification != nil {
                         HStack {
                             Text("Classification :")
                             Spacer()
-                            Text("\(selectedMillesime.vin.classification?.nomClassification ?? "Classification non renseignée")")
+                            Text("\(bouteilleSelectionnee.millesime.vin.classification?.nomClassification ?? "Classification non renseignée")")
                         }
                     }
-                }*/
+                }
             }
-<<<<<<< Updated upstream:VinSurVin/Views/MillesimeDetailsView.swift
-            .navigationTitle(selectedMillesime.vin.nomVin + " - " + selectedMillesime.anneeMillesime.description)
-            .sheet(isPresented: $showingCamera) {
-=======
             .navigationTitle(bouteilleSelectionnee.millesime.vin.nomVin + " - " + bouteilleSelectionnee.millesime.anneeMillesime.description)
             .sheet(isPresented: $afficheCamera) {
->>>>>>> Stashed changes:VinSurVin/Views/BouteilleDetailsView.swift
                 // Affiche la vue de l'appareil photo
                 ImagePicker(image: $imageEnEntree)
             }
@@ -153,7 +142,7 @@ struct MillesimeDetailsView: View {
             // Quand l’image détourée est prête, on la sauvegarde dans SwiftData
             .onChange(of: viewModel.imageDetouree) { _, nouvelleImage in
                 if let imageFinale = nouvelleImage {
-                    selectedMillesime.photo = imageFinale.jpegData(compressionQuality: 0.8)
+                    bouteilleSelectionnee.photo = imageFinale.jpegData(compressionQuality: 0.8)
                     try? context.save()
                 }
             }
@@ -170,10 +159,6 @@ extension Date {
 }
 
 #Preview {
-<<<<<<< Updated upstream:VinSurVin/Views/MillesimeDetailsView.swift
-    MillesimeDetailsView(selectedMillesime: SampleData.shared.millesimeTroisToits2024)
-=======
     BouteilleDetailsView(bouteilleSelectionnee: SampleData.shared.bouteillesTroisToitsMillesime2024)
->>>>>>> Stashed changes:VinSurVin/Views/BouteilleDetailsView.swift
         .modelContainer(SampleData.shared.modelContainer)
 }

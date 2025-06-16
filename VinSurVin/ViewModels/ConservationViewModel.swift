@@ -12,12 +12,12 @@ class ConservationViewModel: ObservableObject {
         case declin
     }
     // Création de la structure du tableau qui sera renvoyé par la fonction de chargement des millésimes
-    struct LimiteConservationMillesime {
-        let millesime: Millesime
+    struct LimiteConservationBouteille {
+        let bouteille: Bouteille
         let statut: StatutConservation
     }
     
-    // Création de la structure utilisée pour afficher le stock de millésimes par statut de conservation
+    // Création de la structure utilisée pour afficher le stock de bouteilles par statut de conservation
     struct QuantiteParStatut {
         let statut: StatutConservation
         let quantite: Int
@@ -28,13 +28,8 @@ class ConservationViewModel: ObservableObject {
     let calendar = Calendar.current
     
     // Création des variables qui seront envoyées à la vue
-<<<<<<< Updated upstream:VinSurVin/ViewModels/ConservationModelView.swift
-    @Published var searchQuery: String = ""
-    @Published private(set) var millesimesFiltreesSelonStatut: [LimiteConservationMillesime] = []
-=======
     @Published var rechercheUtilisateur: String = ""
     @Published private(set) var bouteillesFiltreesSelonStatut: [LimiteConservationBouteille] = []
->>>>>>> Stashed changes:VinSurVin/ViewModels/ConservationViewModel.swift
     
     // Création de la propriété correspondant au paramètre envoyé à l'ouverture de la vue
     private let statutFiltre: StatutConservation?
@@ -42,30 +37,30 @@ class ConservationViewModel: ObservableObject {
         self.statutFiltre = statut
     }
     
-    // Méthode chargeant tous les millésimes en stock avec leur statut de conservation
-    func chargerMillesimesLimiteConservation(from context: ModelContext) {
+    // Méthode chargeant toutes les bouteilles en stock avec leur statut de conservation
+    func chargerBouteillesLimiteConservation(from context: ModelContext) {
         do {
-            let listeMillesimes = try context.fetch(FetchDescriptor<Millesime>(
-                predicate: #Predicate<Millesime> { $0.quantiteBouteilles > 0 }
+            let listeBouteilles = try context.fetch(FetchDescriptor<Bouteille>(
+                predicate: #Predicate<Bouteille> { $0.quantite > 0 }
             ))
-            let listeMillesimesAvecStatut = listeMillesimes.map { millesime -> LimiteConservationMillesime in
+            let listeBouteillesAvecStatut = listeBouteilles.map { bouteille -> LimiteConservationBouteille in
                 let maintenant = Date()
                 let statut: StatutConservation
-                if maintenant < millesime.dateConsommationMin {
+                if maintenant < bouteille.dateConsommationMin {
                     statut = .conservation
-                } else if let unAnAvantApogeeMax = calendar.date(byAdding: .year, value: -1, to: millesime.dateConsommationMax), maintenant <= unAnAvantApogeeMax {
+                } else if let unAnAvantApogeeMax = calendar.date(byAdding: .year, value: -1, to: bouteille.dateConsommationMax), maintenant <= unAnAvantApogeeMax {
                     statut = .apogee
-                } else if maintenant <= millesime.dateConsommationMax {
+                } else if maintenant <= bouteille.dateConsommationMax {
                     statut = .derniereAnneeApogee
                 } else {
                     statut = .declin
                 }
-                return LimiteConservationMillesime(millesime: millesime, statut: statut)
+                return LimiteConservationBouteille(bouteille: bouteille, statut: statut)
             }
-            let listeMillesimesFiltreesSelonStatut = statutFiltre != nil
-                ? listeMillesimesAvecStatut.filter { $0.statut == statutFiltre }
-                : listeMillesimesAvecStatut
-            self.millesimesFiltreesSelonStatut = listeMillesimesFiltreesSelonStatut
+            let listeBouteillesFiltreesSelonStatut = statutFiltre != nil
+                ? listeBouteillesAvecStatut.filter { $0.statut == statutFiltre }
+                : listeBouteillesAvecStatut
+            self.bouteillesFiltreesSelonStatut = listeBouteillesFiltreesSelonStatut
         } catch {
             print("Erreur : \(error)")
         }
@@ -73,27 +68,13 @@ class ConservationViewModel: ObservableObject {
     
     // Propriété calculée permettant d'afficher le stock de millésimes par statut de conservation
     var quantitesParStatut: [QuantiteParStatut] {
-        let grouped = Dictionary(grouping: millesimesFiltreesSelonStatut) { $0.statut }
-        return grouped.map { (statut, millesimes) in
-            let total = millesimes.reduce(0) { $0 + $1.millesime.quantiteBouteilles }
+        let listeBouteillesFiltreesRegroupeesParStatut = Dictionary(grouping: bouteillesFiltreesSelonStatut) { $0.statut }
+        return listeBouteillesFiltreesRegroupeesParStatut.map { (statut, bouteilles) in
+            let total = bouteilles.reduce(0) { $0 + $1.bouteille.quantite }
             return QuantiteParStatut(statut: statut, quantite: total)
         }
     }
-    
-<<<<<<< Updated upstream:VinSurVin/ViewModels/ConservationModelView.swift
-    var millesimesFiltreesSelonStatutAvecRecherche: [LimiteConservationMillesime] {
-        guard !searchQuery.isEmpty else {
-            return millesimesFiltreesSelonStatut
-        }
-        let recherche = searchQuery.lowercased()
-        return millesimesFiltreesSelonStatut.filter {
-            let b = $0.millesime
-            return b.vin.nomVin.lowercased().contains(recherche)
-                || b.anneeMillesime.description.lowercased().contains(recherche)
-                || b.vin.provenance.nomProvenance.lowercased().contains(recherche)
-                || b.vin.provenance.sousRegionParente?.nomProvenance.lowercased().contains(recherche) == true
-                || b.vin.provenance.regionParente?.nomProvenance.lowercased().contains(recherche) == true
-=======
+
     var bouteillesFiltreesSelonStatutAvecRecherche: [LimiteConservationBouteille] {
         guard !rechercheUtilisateur.isEmpty else {
             return bouteillesFiltreesSelonStatut
@@ -106,14 +87,13 @@ class ConservationViewModel: ObservableObject {
             || b.millesime.vin.provenance.nomProvenance.lowercased().contains(recherche)
             || b.millesime.vin.provenance.sousRegionParente?.nomProvenance.lowercased().contains(recherche) == true
             || b.millesime.vin.provenance.regionParente?.nomProvenance.lowercased().contains(recherche) == true
->>>>>>> Stashed changes:VinSurVin/ViewModels/ConservationViewModel.swift
         }
     }
     
-    var millesimesFiltreesSelonStatutAvecRechercheGroupeesParCouleur: [(couleur: String, millesimes: [LimiteConservationMillesime])] {
-        let groupes = Dictionary(grouping: millesimesFiltreesSelonStatutAvecRecherche) { $0.millesime.vin.couleur.nomCouleur }
-        return groupes
-            .map { (key, value) in (couleur: key, millesimes: value) }
+    var bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur: [(couleur: String, bouteilles: [LimiteConservationBouteille])] {
+        let listeBouteilleFiltreesSelonStatutAvecRechercheRegroupeesParCouleur = Dictionary(grouping: bouteillesFiltreesSelonStatutAvecRecherche) { $0.bouteille.millesime.vin.couleur.nomCouleur }
+        return listeBouteilleFiltreesSelonStatutAvecRechercheRegroupeesParCouleur
+            .map { (key, value) in (couleur: key, bouteilles: value) }
             .sorted { $0.couleur < $1.couleur }
     }
     

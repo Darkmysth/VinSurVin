@@ -34,4 +34,3 @@ struct TailleCodable: Codable {
     var uniteVolume: String
     var volume: Double
 }
-
