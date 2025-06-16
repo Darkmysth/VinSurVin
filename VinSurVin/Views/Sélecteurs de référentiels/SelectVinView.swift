@@ -2,34 +2,34 @@ import SwiftUI
 import SwiftData
 
 struct SelectVinView: View {
-    @Query(sort: \Vin.nomVin) private var vins: [Vin]
+    @Query(sort: \Vin.nomVin) private var listeVins: [Vin]
     @Environment(\.modelContext) var modelContext
-    @State private var searchQuery: String = ""
+    @State private var rechercheUtilisateur: String = ""
     @State private var isPresentingAddVinView = false
-    @Binding var selectedVin: Vin?
+    @Binding var vinSelectionne: Vin?
     @Environment(\.dismiss) private var dismiss
  
     // Création d'une propriété calculée qui retourne un tableau de type [Vin] (des vins filtrés selon la recherche de l'utilisateur)
-    var filteredVins: [Vin] {
-        if searchQuery.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
-            return vins
+    var listeVinsFiltree: [Vin] {
+        if rechercheUtilisateur.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
+            return listeVins
         }
-        return vins.filter { vin in // Rechercher sur toutes les occurrences 'vin' du tableau [vins]
-            vin.nomVin.range(of: searchQuery, options: .caseInsensitive) != nil
+        return listeVins.filter { vin in // Rechercher sur toutes les occurrences 'vin' du tableau [vins]
+            vin.nomVin.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
         }
     }
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(filteredVins) { vin in
+                ForEach(listeVinsFiltree) { vin in
                     Button {
-                        selectedVin = vin
+                        vinSelectionne = vin
                     } label: {
                         Text(vin.nomVin)
                     }
                 }
-                .onDelete(perform: deleteVin)
+                .onDelete(perform: supprimerVin)
             }
             .navigationTitle("Vins")
             .toolbar {
@@ -42,20 +42,20 @@ struct SelectVinView: View {
                 }
             }
             .sheet(isPresented: $isPresentingAddVinView) {
-                AddVinView(selectedVin: $selectedVin)
+                AjoutVinView(vinSelectionne: $vinSelectionne)
             }
-            .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
+            .searchable(text: $rechercheUtilisateur, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
-        .onChange(of: selectedVin) {
-            if selectedVin != nil {
+        .onChange(of: vinSelectionne) {
+            if vinSelectionne != nil {
                 dismiss()
             }
         }
     }
     
-    private func deleteVin(at offsets: IndexSet) {
+    private func supprimerVin(at offsets: IndexSet) {
         for index in offsets {
-            let vin = filteredVins[index]
+            let vin = listeVinsFiltree[index]
             modelContext.delete(vin) // Supprime l'objet du contexte
         }
         

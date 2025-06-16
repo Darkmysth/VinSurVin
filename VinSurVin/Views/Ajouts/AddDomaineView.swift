@@ -1,17 +1,17 @@
 import SwiftUI
 import SwiftData
 
-struct AddDomaineView: View {
+struct AjoutDomaineView: View {
     
     // Relie cette vue avec son ViewModel
-    @StateObject private var viewModel = AddDomaineViewModel()
+    @StateObject private var viewModel = AjoutDomaineViewModel()
     
-    // Création des variables de région : 'selectedRegion' est fourni avec l'appel de la vue par 'AddVinView' tandis que 'selectedRegionReferentiel' est utilisée pour l'appel de la vue depuis le menu des référentiels (par défaut à nil)
-    let selectedRegion: Provenance?
-    @State private var selectedRegionReferentiel: Provenance?
+    // Création des variables de région : 'regionSelectionnee' est fourni avec l'appel de la vue par 'AjoutVinView' tandis que 'regionReferentielSelectionnee' est utilisée pour l'appel de la vue depuis le menu des référentiels (par défaut à nil)
+    let regionSelectionnee: Provenance?
+    @State private var regionReferentielSelectionnee: Provenance?
     
     // Création des variables d'état de la vue
-    @Binding var selectedDomaine: Domaine?
+    @Binding var domaineSelectionne: Domaine?
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -26,19 +26,19 @@ struct AddDomaineView: View {
             Form {
                 Section(header: Text("Détails du domaine")) {
                     // Sélection de la région
-                    if let selectedRegion {
+                    if let regionSelectionnee {
                         // Région imposée : affichage simple
                         HStack {
                             Text("Région")
                             Spacer()
-                            Text(selectedRegion.nomProvenance)
+                            Text(regionSelectionnee.nomProvenance)
                                 .foregroundStyle(.secondary)
                         }
                     } else {
                         // Région sélectionnable
                         HStack {
                             Text("Région")
-                            Picker("", selection: $selectedRegionReferentiel) {
+                            Picker("", selection: $regionReferentielSelectionnee) {
                                 ForEach(regions) { region in
                                     Text(region.nomProvenance).tag(region as Provenance?)
                                 }
@@ -52,9 +52,9 @@ struct AddDomaineView: View {
                 
                 Section {
                     Button("Enregistrer") {
-                        let selectedRegionFinale = selectedRegion ?? selectedRegionReferentiel
-                        if let nouveauDomaine = viewModel.enregistrerDomaine(selectedRegion: selectedRegionFinale, dans: context) {
-                            selectedDomaine = nouveauDomaine
+                        let regionSelectionneeFinale = regionSelectionnee ?? regionReferentielSelectionnee
+                        if let nouveauDomaine = viewModel.enregistrerDomaine(regionSelectionnee: regionSelectionneeFinale, dans: context) {
+                            domaineSelectionne = nouveauDomaine
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
@@ -70,5 +70,5 @@ struct AddDomaineView: View {
 }
 
 #Preview {
-    AddDomaineView(selectedRegion: nil, selectedDomaine: .constant(nil))
+    AjoutDomaineView(regionSelectionnee: nil, domaineSelectionne: .constant(nil))
 }

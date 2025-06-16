@@ -2,27 +2,27 @@ import SwiftData
 import SwiftUI
 
 struct SelectDomaineView: View {
-    let selectedRegion: Provenance?
-    @Query(sort: \Domaine.nomDomaine) private var allDomaines: [Domaine]
+    let regionSelectionnee: Provenance?
+    @Query(sort: \Domaine.nomDomaine) private var listeDomaines: [Domaine]
     @Environment(\.modelContext) var modelContext
-    @State private var searchQuery: String = ""
+    @State private var rechercheUtilisateur: String = ""
     @State private var isPresentingAddDomaineView = false
-    @Binding var selectedDomaine: Domaine?
+    @Binding var domaineSelectionne: Domaine?
     @Environment(\.dismiss) private var dismiss
     
     // Domaine filtré par région et recherche
-    var filteredDomaines: [Domaine] {
-        var domaines = allDomaines
+    var listeDomainesFiltree: [Domaine] {
+        var domaines = listeDomaines
         
         // Filtrer par région si une région est sélectionnée
-        if let region = selectedRegion {
+        if let region = regionSelectionnee {
             domaines = domaines.filter { $0.provenance == region }
         }
         
         // Appliquer le filtre de recherche
-        if !searchQuery.isEmpty {
+        if !rechercheUtilisateur.isEmpty {
             domaines = domaines.filter { domaine in
-                domaine.nomDomaine.range(of: searchQuery, options: .caseInsensitive) != nil
+                domaine.nomDomaine.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
             }
         }
         
@@ -32,14 +32,14 @@ struct SelectDomaineView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(filteredDomaines) { domaine in
+                ForEach(listeDomainesFiltree) { domaine in
                     Button {
-                        selectedDomaine = domaine
+                        domaineSelectionne = domaine
                     } label: {
                         Text(domaine.nomDomaine)
                     }
                 }
-                .onDelete(perform: deleteDomaine)
+                .onDelete(perform: supprimerDomaine)
             }
         }
         .navigationTitle("Domaines")
@@ -53,19 +53,19 @@ struct SelectDomaineView: View {
             }
         }
         .sheet(isPresented: $isPresentingAddDomaineView) {
-            AddDomaineView(selectedRegion: selectedRegion, selectedDomaine: $selectedDomaine)
+            AjoutDomaineView(regionSelectionnee: regionSelectionnee, domaineSelectionne: $domaineSelectionne)
         }
-        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
-        .onChange(of: selectedDomaine) {
-            if selectedDomaine != nil {
+        .searchable(text: $rechercheUtilisateur, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
+        .onChange(of: domaineSelectionne) {
+            if domaineSelectionne != nil {
                 dismiss()
             }
         }
     }
     
-    private func deleteDomaine(at offsets: IndexSet) {
+    private func supprimerDomaine(at offsets: IndexSet) {
         for index in offsets {
-            let domaine = filteredDomaines[index]
+            let domaine = listeDomainesFiltree[index]
             modelContext.delete(domaine) // Supprime l'objet du contexte
         }
         

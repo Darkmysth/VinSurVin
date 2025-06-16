@@ -13,12 +13,12 @@ class DetourageViewModel: ObservableObject {
     @Published var imageDetouree: UIImage?
     
     // Point d'entrée : lance la suppression du fond à partir d’une UIImage
-    func removeBackground(from uiImage: UIImage) {
+    func supprimerArrierePlan(from uiImage: UIImage) {
         // Corrige l’orientation de l’image (problème fréquent avec la caméra)
-        let correctedImage = uiImage.fixedOrientation()
+        let imageCorrigee = uiImage.fixedOrientation()
 
         // Conversion en CIImage (format utilisé par CoreImage et Vision)
-        guard let ciImage = CIImage(image: correctedImage) else {
+        guard let ciImage = CIImage(image: imageCorrigee) else {
             print("Impossible de convertir UIImage en CIImage")
             return
         }
@@ -26,21 +26,21 @@ class DetourageViewModel: ObservableObject {
         // Traitement asynchrone
         Task {
             // Création du masque de détourage
-            guard let maskImage = await createMask(from: ciImage) else {
+            guard let maskImage = await creerMasque(from: ciImage) else {
                 print("Échec de création du masque")
                 return
             }
 
             // Application du masque pour obtenir le résultat final
-            let outputImage = applyMask(mask: maskImage, to: ciImage)
+            let outputImage = appliquerMasque(mask: maskImage, to: ciImage)
             
             // Conversion en UIImage affichable dans SwiftUI
-            self.imageDetouree = convertToUIImage(ciImage: outputImage)
+            self.imageDetouree = convertirEnUIImage(ciImage: outputImage)
         }
     }
 
     // Utilise Vision pour générer un masque de premier plan (foreground) à partir de l’image
-    private func createMask(from inputImage: CIImage) async -> CIImage? {
+    private func creerMasque(from inputImage: CIImage) async -> CIImage? {
         let request = VNGenerateForegroundInstanceMaskRequest()
         let handler = VNImageRequestHandler(ciImage: inputImage)
 
@@ -58,7 +58,7 @@ class DetourageViewModel: ObservableObject {
     }
 
     // Applique le masque sur l’image d’origine pour supprimer l’arrière-plan
-    private func applyMask(mask: CIImage, to image: CIImage) -> CIImage {
+    private func appliquerMasque(mask: CIImage, to image: CIImage) -> CIImage {
         let filter = CIFilter.blendWithMask()
         filter.inputImage = image
         filter.maskImage = mask
@@ -67,7 +67,7 @@ class DetourageViewModel: ObservableObject {
     }
 
     // Convertit l’image CoreImage (CIImage) en format UIImage pour SwiftUI
-    private func convertToUIImage(ciImage: CIImage) -> UIImage {
+    private func convertirEnUIImage(ciImage: CIImage) -> UIImage {
         let context = CIContext()
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else {
             fatalError("Échec de création du CGImage")

@@ -12,15 +12,20 @@ class SampleData {
     var sousRegionPaysNantais: Provenance!
     var appellationMuscadet: Provenance!
     var vinTroisToits: Vin!
-    var millesimeTroisToits2024: Millesime!
+    var troisToitsMillesime2024: Millesime!
+    var bouteillesTroisToitsMillesime2024: Bouteille!
     var regionBordeaux: Provenance!
     var sousRegionMedoc: Provenance!
     var appellationPauillac: Provenance!
     var vinLafiteRothschild: Vin!
+    var lafiteRothschildMillesime1999: Millesime!
+    var bouteillesLafiteRothschildMillesime1999: Bouteille!
     var regionBeaujolais: Provenance!
     var sousRegionBeaujolais: Provenance!
     var appellationBeaujolaisVillages: Provenance!
     var vinCroixDeLAnge: Vin!
+    var croixDeLAngeMillesime2020: Millesime!
+    var bouteillesCroixDeLAngeMillesime2020: Bouteille!
     
     var context: ModelContext {
         modelContainer.mainContext
@@ -74,39 +79,51 @@ class SampleData {
         // Création et insertion d'une classification pour le Pauillac
         let classficationPauillac = Classification.sampleData(provenance: pauillac)
         context.insert(classficationPauillac)
+        
         // Création et insertion d'une taille
         let taille = Taille.sampleData().first!
         context.insert(taille)
+        
         // Création et insertion des domaines
         let domaineTroisToits = Domaine.sampleTroisToits(provenance: paysNantais)
         let domaineRothschild = Domaine.sampleRothschild(provenance: medoc)
         context.insert(domaineTroisToits)
         context.insert(domaineRothschild)
+        
         // Création et insertion d'un vignoble
         let vignobleCruHayeFouassiere = Vignoble.sampleData(provenance: paysNantais)
         context.insert(vignobleCruHayeFouassiere)
+        
         // Création et insertion des vins
         let vinTroisToits = Vin.sampleVinTroisToits(provenance: muscadet, domaine: domaineTroisToits)
         context.insert(vinTroisToits)
         self.vinTroisToits = vinTroisToits
         let vinLafiteRothschild = Vin.sampleVinLafiteRothschild(provenance: pauillac, domaine: domaineRothschild)
         context.insert(vinLafiteRothschild)
-        // Création et insertion des bouteilles
-        let millesimeTroisToits = Millesime.sampleMillesimeTroisToits(vin: vinTroisToits, taille: taille)
-        context.insert(millesimeTroisToits)
-        let millesimeLafiteRothschild = Millesime.sampleMillesimeLafiteRothschild(vin: vinLafiteRothschild, taille: taille)
-        context.insert(millesimeLafiteRothschild)
         
-        // Ajout du nouveau millésime 2025 avec 12 bouteilles
-        self.millesimeTroisToits2024 = Millesime(
-            anneeMillesime: 2024,
-            quantiteBouteilles: 12,
+        // Création et insertion des millésimes
+        let troisToitsMillesime2024 = Millesime.sampleTroisToitsMillesime2024(vin: vinTroisToits)
+        context.insert(troisToitsMillesime2024)
+        let lafiteRothschildMillesime1999 = Millesime.sampleLafiteRothschildMillesime1999(vin: vinLafiteRothschild)
+        context.insert(lafiteRothschildMillesime1999)
+        
+        // Création et insertion des bouteilles
+        self.bouteillesTroisToitsMillesime2024 = Bouteille(
+            quantite: 12,
             dateConsommationMin: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 1))!,
             dateConsommationMax: Calendar.current.date(from: DateComponents(year: 2028, month: 12, day: 31))!,
-            taille: taille,
-            vin: vinTroisToits
+            millesime: troisToitsMillesime2024,
+            taille: taille
         )
-        context.insert(millesimeTroisToits2024)
+        context.insert(bouteillesTroisToitsMillesime2024)
+        self.bouteillesLafiteRothschildMillesime1999 = Bouteille(
+            quantite: 6,
+            dateConsommationMin: Calendar.current.date(from: DateComponents(year: 2009, month: 1, day: 1))!,
+            dateConsommationMax: Calendar.current.date(from: DateComponents(year: 2029, month: 12, day: 31))!,
+            millesime: lafiteRothschildMillesime1999,
+            taille: taille
+        )
+        context.insert(bouteillesLafiteRothschildMillesime1999)
     }
     
     // Création d'une méthode d'insertion récursive spécifique à l'entité 'Provenance'

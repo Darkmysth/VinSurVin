@@ -7,21 +7,21 @@ struct ReferentielVignoblesView: View {
         SortDescriptor(\Vignoble.nomVignoble, order: . forward)
     ]) private var vignobles: [Vignoble]
     @Environment(\.modelContext) var modelContext
-    @State private var searchQuery: String = ""
+    @State private var rechercheUtilisateur: String = ""
     
-    var filteredVignobles: [Vignoble] {
-        if searchQuery.isEmpty {
+    var listeVignoblesFiltree: [Vignoble] {
+        if rechercheUtilisateur.isEmpty {
             return vignobles
         }
         return vignobles.filter { vignoble in
-            vignoble.nomVignoble.range(of: searchQuery, options: .caseInsensitive) != nil
+            vignoble.nomVignoble.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
         }
     }
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(filteredVignobles) { vignoble in
+                ForEach(listeVignoblesFiltree) { vignoble in
                     Section(header: Text(vignoble.provenance.nomProvenance)) {
                         HStack {
                             Text(vignoble.typeVignoble)
@@ -31,7 +31,7 @@ struct ReferentielVignoblesView: View {
                 }
             }
             .navigationTitle("Vignobles")
-            .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
+            .searchable(text: $rechercheUtilisateur, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
     }
 }

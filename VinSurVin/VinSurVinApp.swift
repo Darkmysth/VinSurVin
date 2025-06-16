@@ -38,7 +38,7 @@ struct VinSurVinApp: App {
                         .tabItem {
                             Label("Accueil", systemImage: "house")
                         }
-                    MillesimesCaveView(viewModel: ConservationViewModel(statut: nil))
+                    CaveBouteillesView(viewModel: ConservationViewModel(statut: nil))
                         .tabItem {
                             Label("Ma cave", systemImage: "wineglass")
                         }

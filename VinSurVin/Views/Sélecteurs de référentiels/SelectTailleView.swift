@@ -2,28 +2,28 @@ import SwiftUI
 import SwiftData
 
 struct SelectTailleView: View {
-    @Query(sort: \Taille.volume) private var tailles: [Taille]
+    @Query(sort: \Taille.volume) private var listeTailles: [Taille]
     @Environment(\.modelContext) var modelContext
-    @State private var searchQuery: String = ""
-    @Binding var selectedTaille: Taille?
+    @State private var rechercheUtilisateur: String = ""
+    @Binding var tailleSelectionnee: Taille?
     @Environment(\.dismiss) private var dismiss
  
     // Création d'une propriété calculée qui retourne un tableau de type [Taille] (des tailles filtrées selon la recherche de l'utilisateur)
-    var filteredTailles: [Taille] {
-        if searchQuery.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
-            return tailles
+    var listeTaillesFiltree: [Taille] {
+        if rechercheUtilisateur.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
+            return listeTailles
         }
-        return tailles.filter { taille in // Rechercher sur toutes les occurrences 'taille' du tableau [tailles]
-            taille.nomTaille.range(of: searchQuery, options: .caseInsensitive) != nil
+        return listeTailles.filter { taille in // Rechercher sur toutes les occurrences 'taille' du tableau [tailles]
+            taille.nomTaille.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
         }
     }
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(filteredTailles) { taille in
+                ForEach(listeTaillesFiltree) { taille in
                     Button {
-                        selectedTaille = taille
+                        tailleSelectionnee = taille
                         dismiss()
                     } label: {
                         HStack {
@@ -36,7 +36,7 @@ struct SelectTailleView: View {
                 }
             }
             .navigationTitle("Tailles")
-            .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
+            .searchable(text: $rechercheUtilisateur, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
     }
     

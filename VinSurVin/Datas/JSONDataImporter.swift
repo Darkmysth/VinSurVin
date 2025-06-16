@@ -40,15 +40,15 @@ struct JSONDataImporter {
         provenancesEnBase = chargerProvenancesEnBase(context: context)
         // Affecte les relations parent-enfant
         for provenanceData in provenancesData {
-            let childKey = "\(provenanceData.nomProvenance.lowercased())|\(provenanceData.typeProvenance.lowercased())|\(provenanceData.parent.lowercased())|\(provenanceData.typeParent.lowercased())"
-            let parentKey = "\(provenanceData.parent.lowercased())|\(provenanceData.typeParent.lowercased())|||"
+            let cleEnfant = "\(provenanceData.nomProvenance.lowercased())|\(provenanceData.typeProvenance.lowercased())|\(provenanceData.parent.lowercased())|\(provenanceData.typeParent.lowercased())"
+            let cleParent = "\(provenanceData.parent.lowercased())|\(provenanceData.typeParent.lowercased())|||"
 
-            if let child = provenancesEnBaseAvecCle[childKey],
-               let parent = provenancesEnBaseAvecCle[parentKey] ?? provenancesEnBase.first(where: {
+            if let enfant = provenancesEnBaseAvecCle[cleEnfant],
+               let parent = provenancesEnBaseAvecCle[cleParent] ?? provenancesEnBase.first(where: {
                    $0.nomProvenance.lowercased() == provenanceData.parent.lowercased() &&
                    $0.typeProvenance.lowercased() == provenanceData.typeParent.lowercased()
                }) {
-                child.parent = parent
+                enfant.parent = parent
             }
         }
         
@@ -175,7 +175,18 @@ struct JSONDataImporter {
         do {
             return try context.fetch(fetchDescriptor)
         } catch {
-            print("Erreur lors de la récupération des classifications en base : ", error)
+            print("Erreur lors de la récupération des tailles en base : ", error)
+            return []
+        }
+    }
+    
+    // Méthode pour récupérer tous les millésimes en base
+    static func chargerMillesimesEnBase(context: ModelContext) -> [Millesime] {
+        let fetchDescriptor = FetchDescriptor<Millesime>()
+        do {
+            return try context.fetch(fetchDescriptor)
+        } catch {
+            print("Erreur lors de la récupération des millésimes en base : ", error)
             return []
         }
     }
@@ -186,7 +197,7 @@ struct JSONDataImporter {
         do {
             return try context.fetch(fetchDescriptor)
         } catch {
-            print("Erreur lors de la récupération des classifications en base : ", error)
+            print("Erreur lors de la récupération des vignobles en base : ", error)
             return []
         }
     }
@@ -209,6 +220,7 @@ struct JSONDataImporter {
         let allEntities: [any PersistentModel.Type] = [
             Millesime.self,
             Taille.self,
+            Millesime.self,
             Vin.self,
             Domaine.self,
             Classification.self,

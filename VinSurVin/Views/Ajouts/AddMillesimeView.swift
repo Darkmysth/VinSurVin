@@ -5,20 +5,24 @@ import Foundation
 struct AddMillesimeView: View {
     
     // Relie cette vue avec son ViewModel
+<<<<<<< Updated upstream:VinSurVin/Views/Ajouts/AddMillesimeView.swift
     @StateObject private var viewModel = AddMillesimeViewModel()
+=======
+    @StateObject private var viewModel = AjoutBouteilleViewModel()
+>>>>>>> Stashed changes:VinSurVin/Views/Ajouts/AjoutBouteilleView.swift
     @StateObject private var detourageViewModel = DetourageViewModel()
     
     // Prépare les variables d'état recueillant les saisies de l'utilisateur
-    @State private var showVin = false
-    @State private var showTaille = false
-    @State private var showAnneeMillesime = false
-    @State private var showQuantite = false
-    @State private var showConservation = false
+    @State private var afficheVin = false
+    @State private var afficheTaille = false
+    @State private var afficheAnneeMillesime = false
+    @State private var afficheQuantite = false
+    @State private var afficheConservation = false
     @State private var shouldRefreshVinList: Bool = false
     let years: [Int] = Array(Int(1950)...Int(Calendar.current.component(.year, from: Date())))
     @State private var searchText: String = ""
-    @State private var showingCamera = false
-    @State private var inputImage: UIImage?
+    @State private var afficheCamera = false
+    @State private var imageEnEntree: UIImage?
     
     // Permet de revenir à la vue précédente
     @Environment(\.presentationMode) var presentationMode
@@ -28,9 +32,9 @@ struct AddMillesimeView: View {
     
     // Initialise la taille par défaut
     private func initializeDefaultTaille() {
-        if viewModel.selectedTaille == nil {
-            if let tailleDefaut = try? context.fetch(FetchDescriptor<Taille>(predicate: #Predicate { $0.nomTaille == "Millésime" })).first {
-                viewModel.selectedTaille = tailleDefaut
+        if viewModel.tailleSelectionnee == nil {
+            if let tailleDefaut = try? context.fetch(FetchDescriptor<Taille>(predicate: #Predicate { $0.nomTaille == "Bouteille standard" })).first {
+                viewModel.tailleSelectionnee = tailleDefaut
             } else {
                 print("Erreur : impossible de trouver la taille par défaut.")
             }
@@ -43,21 +47,21 @@ struct AddMillesimeView: View {
                 Section(header: Text("Détails du millésime")) {
                     
                     // Sélection du vin du millésime
-                    NavigationLink(destination: SelectVinView(selectedVin: $viewModel.selectedVin)) {
+                    NavigationLink(destination: SelectVinView(vinSelectionne: $viewModel.vinSelectionne)) {
                         HStack {
                             Text("Vin")
                             Spacer()
-                            Text(viewModel.selectedVin?.nomVin ?? "Aucun vin sélectionné")
+                            Text(viewModel.vinSelectionne?.nomVin ?? "Aucun vin sélectionné")
                                 .foregroundColor(.gray)
                         }
                     }
                     
                     // Sélection de la taille du millésime (demi-bouteille, 75 cL, magnum, etc.)
-                    NavigationLink(destination: SelectTailleView(selectedTaille: $viewModel.selectedTaille)) {
+                    NavigationLink(destination: SelectTailleView(tailleSelectionnee: $viewModel.tailleSelectionnee)) {
                         HStack {
                             Text("Taille")
                             Spacer()
-                            Text(viewModel.selectedTaille?.nomTaille ?? "Aucune taille sélectionnée")
+                            Text(viewModel.tailleSelectionnee?.nomTaille ?? "Aucune taille sélectionnée")
                                 .foregroundColor(.gray)
                         }
                     }
@@ -65,10 +69,10 @@ struct AddMillesimeView: View {
                     // Sélection de l'année du millésime
                     VStack {
                         HStack {
-                            Text("Année \(viewModel.selectedYear.withoutThousandSeparator)")
+                            Text("Année \(viewModel.anneeSelectionnee.withoutThousandSeparator)")
                             Spacer()
                         }
-                        Picker("Année", selection: $viewModel.selectedYear) {
+                        Picker("Année", selection: $viewModel.anneeSelectionnee) {
                             ForEach(years, id: \.self) { year in
                                 Text(year.withoutThousandSeparator).tag(year)
                             }
@@ -82,8 +86,8 @@ struct AddMillesimeView: View {
                             Text("Quantité")
                             Spacer()
                         }
-                        Stepper(value: $viewModel.selectedQuantite, in: 1...100) {
-                            Text("\(viewModel.selectedQuantite) bouteille(s)")
+                        Stepper(value: $viewModel.quantiteSelectionnee, in: 1...100) {
+                            Text("\(viewModel.quantiteSelectionnee) bouteille(s)")
                             }
                     }
                     
@@ -94,22 +98,22 @@ struct AddMillesimeView: View {
                             Spacer()
                         }
                         HStack {
-                            Stepper(value: $viewModel.selectedConservationMin, in: 0...100) {
-                                Text("Entre \(viewModel.selectedConservationMin) an(s)")
+                            Stepper(value: $viewModel.conservationMinSelectionnee, in: 0...100) {
+                                Text("Entre \(viewModel.conservationMinSelectionnee) an(s)")
                                 }
-                            .onChange(of: viewModel.selectedConservationMin) {
-                                if viewModel.selectedConservationMin > viewModel.selectedConservationMax {
-                                    viewModel.selectedConservationMax = viewModel.selectedConservationMin
+                            .onChange(of: viewModel.conservationMinSelectionnee) {
+                                if viewModel.conservationMinSelectionnee > viewModel.conservationMaxSelectionnee {
+                                    viewModel.conservationMaxSelectionnee = viewModel.conservationMinSelectionnee
                                     }
                                 }
                         }
                         HStack {
-                            Stepper(value: $viewModel.selectedConservationMax, in: 1...100) {
-                                Text("et \(viewModel.selectedConservationMax) an(s)")
+                            Stepper(value: $viewModel.conservationMaxSelectionnee, in: 1...100) {
+                                Text("et \(viewModel.conservationMaxSelectionnee) an(s)")
                                 }
-                            .onChange(of: viewModel.selectedConservationMax) {
-                                if viewModel.selectedConservationMax < viewModel.selectedConservationMin {
-                                    viewModel.selectedConservationMin = viewModel.selectedConservationMax
+                            .onChange(of: viewModel.conservationMaxSelectionnee) {
+                                if viewModel.conservationMaxSelectionnee < viewModel.conservationMinSelectionnee {
+                                    viewModel.conservationMinSelectionnee = viewModel.conservationMaxSelectionnee
                                     }
                                 }
                         }
@@ -125,7 +129,7 @@ struct AddMillesimeView: View {
                         }
                         // Le bouton pour prendre ou changer la photo
                         Button(detourageViewModel.imageDetouree == nil ? "Ajouter une photo" : "Changer la photo") {
-                         self.showingCamera = true
+                         self.afficheCamera = true
                          }
                     }
                 }
@@ -140,18 +144,24 @@ struct AddMillesimeView: View {
                 }
             }
             .onAppear(perform: initializeDefaultTaille) // Initialise la taille par défaut
+<<<<<<< Updated upstream:VinSurVin/Views/Ajouts/AddMillesimeView.swift
             .navigationTitle("Nouveau millésime")
             .sheet(isPresented: $showingCamera) {
                 ImagePicker(image: $inputImage)
+=======
+            .navigationTitle("Nouvelle bouteille")
+            .sheet(isPresented: $afficheCamera) {
+                ImagePicker(image: $imageEnEntree)
+>>>>>>> Stashed changes:VinSurVin/Views/Ajouts/AjoutBouteilleView.swift
             }
-            .onChange(of: inputImage) { _, newImage in
+            .onChange(of: imageEnEntree) { _, newImage in
                 guard let newImage else {
                     return
                 }
-                detourageViewModel.removeBackground(from: newImage)
+                detourageViewModel.supprimerArrierePlan(from: newImage)
             }
             .onChange(of: detourageViewModel.imageDetouree) { _, nouvelleImage in
-                viewModel.selectedPhoto = nouvelleImage
+                viewModel.photoSelectionnee = nouvelleImage
             }
         }
     }
@@ -165,15 +175,19 @@ extension Int {
 }
 
 extension Date {
-    static func from(day: Int, month: Int, year: Int) -> Date? {
+    static func from(jour: Int, mois: Int, annee: Int) -> Date? {
         var components = DateComponents()
-        components.day = day
-        components.month = month
-        components.year = year
+        components.day = jour
+        components.month = mois
+        components.year = annee
         return Calendar.current.date(from: components)
     }
 }
 
 #Preview {
+<<<<<<< Updated upstream:VinSurVin/Views/Ajouts/AddMillesimeView.swift
     AddMillesimeView()
+=======
+    AjoutBouteilleView()
+>>>>>>> Stashed changes:VinSurVin/Views/Ajouts/AjoutBouteilleView.swift
 }

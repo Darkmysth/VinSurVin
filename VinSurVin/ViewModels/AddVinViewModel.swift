@@ -2,30 +2,28 @@ import SwiftUI
 import SwiftData
 
 @MainActor
-class AddVinViewModel: ObservableObject {
+class AjoutVinViewModel: ObservableObject {
     
     // Déclare les propriétés qui seront exposées à la vue 'AddVinView', toutes les instances de classe sont optionnelles pour ne pas avoir à gérer d'initialiseur
     @Published var nomVin: String = ""
-    @Published var selectedSucrosite: Sucrosite?
-    @Published var selectedCouleur: Couleur?
-    @Published var selectedCaracteristique: Caracteristique?
-    @Published var selectedVignoble: Vignoble?
-    @Published var selectedDomaine: Domaine?
-    @Published var selectedAppellation: Provenance?
-    @Published var selectedClassification: Classification?
-    @Published var allVignobles: [Vignoble] = []
-    @Published var allClassifications: [Classification] = []
-    @Published var vignoblesByProvenance: [Vignoble] = []
-    @Published var classificationsByProvenance: [Classification] = []
-    @Published var hasVignobles: Bool = false
-    @Published var hasClassifications: Bool = false
+    @Published var sucrositeSelectionnee: Sucrosite?
+    @Published var couleurSelectionnee: Couleur?
+    @Published var caracteristiqueSelectionnee: Caracteristique?
+    @Published var vignobleSelectionne: Vignoble?
+    @Published var domaineSelectionne: Domaine?
+    @Published var appellationSelectionnee: Provenance?
+    @Published var classificationSelectionnee: Classification?
+    @Published var listeVignobles: [Vignoble] = []
+    @Published var listeClassifications: [Classification] = []
+    @Published var listeVignoblesRegroupesParProvenance: [Vignoble] = []
+    @Published var listeClassificationsRegroupeesParProvenance: [Classification] = []
     
     // Propriété calculée qui déduit la région et la sous-région de l'appellation sélectionnée
-    var selectedRegion: Provenance? {
-        selectedAppellation?.regionParente
+    var regionSelectionnee: Provenance? {
+        appellationSelectionnee?.regionParente
     }
-    var selectedSousRegion: Provenance? {
-        selectedAppellation?.sousRegionParente
+    var sousRegionSelectionnee: Provenance? {
+        appellationSelectionnee?.sousRegionParente
     }
     
     // Récupère les classifications éligibles à l'appellation choisie par l'utilisateur
@@ -35,27 +33,27 @@ class AddVinViewModel: ObservableObject {
             let fetchDescriptor = FetchDescriptor<Classification>(sortBy: [SortDescriptor(\Classification.nomClassification)])
             do {
                 let results = try context.fetch(fetchDescriptor)
-                allClassifications = results
+                listeClassifications = results
             } catch {
                 print("Erreur : \(error)")
-                allClassifications = []
+                listeClassifications = []
             }
         }
     
         // Méthode qui retourne un tableau de type [Classification] des classifications filtrées selon la recherche de l'utilisateur
-        func filtrerClassificationsByProvenance() {
-            classificationsByProvenance = []
-            let classifications = allClassifications.filter { $0.provenance == selectedAppellation }
+        func filtrerlisteClassificationsRegroupeesParProvenance() {
+            listeClassificationsRegroupeesParProvenance = []
+            let classifications = listeClassifications.filter { $0.provenance == appellationSelectionnee }
             if !classifications.isEmpty {
-                classificationsByProvenance = classifications
+                listeClassificationsRegroupeesParProvenance = classifications
             } else {
-                let classifications = allClassifications.filter { $0.provenance == selectedSousRegion }
+                let classifications = listeClassifications.filter { $0.provenance == sousRegionSelectionnee }
                 if !classifications.isEmpty {
-                    classificationsByProvenance = classifications
+                    listeClassificationsRegroupeesParProvenance = classifications
                 } else {
-                    let classifications = allClassifications.filter { $0.provenance == selectedRegion }
+                    let classifications = listeClassifications.filter { $0.provenance == regionSelectionnee }
                     if !classifications.isEmpty {
-                        classificationsByProvenance = classifications
+                        listeClassificationsRegroupeesParProvenance = classifications
                     }
                 }
             }
@@ -68,27 +66,27 @@ class AddVinViewModel: ObservableObject {
             let fetchDescriptor = FetchDescriptor<Vignoble>(sortBy: [SortDescriptor(\Vignoble.nomVignoble)])
             do {
                 let results = try context.fetch(fetchDescriptor)
-                allVignobles = results
+                listeVignobles = results
             } catch {
                 print("Erreur : \(error)")
-                allVignobles = []
+                listeVignobles = []
             }
         }
         
         // Méthode qui retourne un tableau de type [Vignoble] des vignobles filtrés selon la recherche de l'utilisateur
-        func filtrerVignoblesByProvenance() {
-            vignoblesByProvenance = []
-            let vignobles = allVignobles.filter { $0.provenance == selectedAppellation }
+        func filtrerlisteVignoblesRegroupesParProvenance() {
+            listeVignoblesRegroupesParProvenance = []
+            let vignobles = listeVignobles.filter { $0.provenance == appellationSelectionnee }
             if !vignobles.isEmpty {
-                vignoblesByProvenance = vignobles
+                listeVignoblesRegroupesParProvenance = vignobles
             } else {
-                let vignobles = allVignobles.filter { $0.provenance == selectedSousRegion }
+                let vignobles = listeVignobles.filter { $0.provenance == sousRegionSelectionnee }
                 if !vignobles.isEmpty {
-                    vignoblesByProvenance = vignobles
+                    listeVignoblesRegroupesParProvenance = vignobles
                 } else {
-                    let vignobles = allVignobles.filter { $0.provenance == selectedRegion }
+                    let vignobles = listeVignobles.filter { $0.provenance == regionSelectionnee }
                     if !vignobles.isEmpty {
-                        vignoblesByProvenance = vignobles
+                        listeVignoblesRegroupesParProvenance = vignobles
                     }
                 }
             }
@@ -96,23 +94,23 @@ class AddVinViewModel: ObservableObject {
     
     // Propriété calculée servant à tester si le formulaire d'ajout de vin est valide
     var isFormComplete: Bool {
-        return(!nomVin.isEmpty && selectedAppellation != nil && selectedDomaine != nil)
+        return(!nomVin.isEmpty && appellationSelectionnee != nil && domaineSelectionne != nil)
     }
     
     // Méthode permettant à 'AddVinView' d'enregistrer un nouveau vin
     func enregistrerVin(dans context: ModelContext) -> Vin? {
         
         // Vérifie que les données sont bien récupérées de la vue
-        guard let sucrosite = selectedSucrosite,
-              let couleur = selectedCouleur,
-              let caracteristique = selectedCaracteristique,
-              let appellation = selectedAppellation,
-              let domaine = selectedDomaine else {
+        guard let sucrosite = sucrositeSelectionnee,
+              let couleur = couleurSelectionnee,
+              let caracteristique = caracteristiqueSelectionnee,
+              let appellation = appellationSelectionnee,
+              let domaine = domaineSelectionne else {
             return nil
         }
         
-        let classification = selectedClassification
-        let vignoble = selectedVignoble
+        let classification = classificationSelectionnee
+        let vignoble = vignobleSelectionne
         
         // Crée le nouveau vin
         let nouveauVin = Vin(

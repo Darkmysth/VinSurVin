@@ -13,8 +13,8 @@ struct MillesimeDetailsView: View {
     @Environment(\.modelContext) private var context
     
     // États pour gérer l'affichage de l'appareil photo
-    @State private var showingCamera = false
-    @State private var inputImage: UIImage?
+    @State private var afficheCamera = false
+    @State private var imageEnEntree: UIImage?
     
     var body: some View {
         NavigationStack {
@@ -28,9 +28,15 @@ struct MillesimeDetailsView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     // Le bouton pour prendre ou changer la photo
+<<<<<<< Updated upstream:VinSurVin/Views/MillesimeDetailsView.swift
                     Button(selectedMillesime.photo == nil ? "Ajouter une photo" : "Changer la photo") {
                         selectedMillesime.photo = nil
                         self.showingCamera = true
+=======
+                    Button(bouteilleSelectionnee.photo == nil ? "Ajouter une photo" : "Changer la photo") {
+                        bouteilleSelectionnee.photo = nil
+                        self.afficheCamera = true
+>>>>>>> Stashed changes:VinSurVin/Views/BouteilleDetailsView.swift
                     }
                 }
                 /*Section(header: Text("Détails du millésime")) {
@@ -128,15 +134,20 @@ struct MillesimeDetailsView: View {
                     }
                 }*/
             }
+<<<<<<< Updated upstream:VinSurVin/Views/MillesimeDetailsView.swift
             .navigationTitle(selectedMillesime.vin.nomVin + " - " + selectedMillesime.anneeMillesime.description)
             .sheet(isPresented: $showingCamera) {
+=======
+            .navigationTitle(bouteilleSelectionnee.millesime.vin.nomVin + " - " + bouteilleSelectionnee.millesime.anneeMillesime.description)
+            .sheet(isPresented: $afficheCamera) {
+>>>>>>> Stashed changes:VinSurVin/Views/BouteilleDetailsView.swift
                 // Affiche la vue de l'appareil photo
-                ImagePicker(image: $inputImage)
+                ImagePicker(image: $imageEnEntree)
             }
             // Quand une image a été prise, lance le traitement
-            .onChange(of: inputImage) { _, newImage in
+            .onChange(of: imageEnEntree) { _, newImage in
                 guard let image = newImage else { return }
-                viewModel.removeBackground(from: image)
+                viewModel.supprimerArrierePlan(from: image)
                 
             }
             // Quand l’image détourée est prête, on la sauvegarde dans SwiftData
@@ -159,6 +170,10 @@ extension Date {
 }
 
 #Preview {
+<<<<<<< Updated upstream:VinSurVin/Views/MillesimeDetailsView.swift
     MillesimeDetailsView(selectedMillesime: SampleData.shared.millesimeTroisToits2024)
+=======
+    BouteilleDetailsView(bouteilleSelectionnee: SampleData.shared.bouteillesTroisToitsMillesime2024)
+>>>>>>> Stashed changes:VinSurVin/Views/BouteilleDetailsView.swift
         .modelContainer(SampleData.shared.modelContainer)
 }

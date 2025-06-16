@@ -15,7 +15,7 @@ struct CaveView: View {
                 ForEach(viewModel.couleursEtRegions) { couleurGroup in
                     Section(header: Text(couleurGroup.couleur.nomCouleur)) {
                         ForEach(couleurGroup.regions) { regionRecap in
-                            NavigationLink(destination: CaveAppellationsView(selectedCouleur: couleurGroup.couleur, selectedRegion: regionRecap.region)) {
+                            NavigationLink(destination: CaveAppellationsView(couleurSelectionnee: couleurGroup.couleur, regionSelectionnee: regionRecap.region)) {
                                 HStack {
                                     Text(regionRecap.region.nomProvenance)
                                     Spacer()

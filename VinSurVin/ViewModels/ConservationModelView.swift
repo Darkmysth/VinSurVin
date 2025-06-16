@@ -28,8 +28,13 @@ class ConservationViewModel: ObservableObject {
     let calendar = Calendar.current
     
     // Création des variables qui seront envoyées à la vue
+<<<<<<< Updated upstream:VinSurVin/ViewModels/ConservationModelView.swift
     @Published var searchQuery: String = ""
     @Published private(set) var millesimesFiltreesSelonStatut: [LimiteConservationMillesime] = []
+=======
+    @Published var rechercheUtilisateur: String = ""
+    @Published private(set) var bouteillesFiltreesSelonStatut: [LimiteConservationBouteille] = []
+>>>>>>> Stashed changes:VinSurVin/ViewModels/ConservationViewModel.swift
     
     // Création de la propriété correspondant au paramètre envoyé à l'ouverture de la vue
     private let statutFiltre: StatutConservation?
@@ -75,6 +80,7 @@ class ConservationViewModel: ObservableObject {
         }
     }
     
+<<<<<<< Updated upstream:VinSurVin/ViewModels/ConservationModelView.swift
     var millesimesFiltreesSelonStatutAvecRecherche: [LimiteConservationMillesime] {
         guard !searchQuery.isEmpty else {
             return millesimesFiltreesSelonStatut
@@ -87,6 +93,20 @@ class ConservationViewModel: ObservableObject {
                 || b.vin.provenance.nomProvenance.lowercased().contains(recherche)
                 || b.vin.provenance.sousRegionParente?.nomProvenance.lowercased().contains(recherche) == true
                 || b.vin.provenance.regionParente?.nomProvenance.lowercased().contains(recherche) == true
+=======
+    var bouteillesFiltreesSelonStatutAvecRecherche: [LimiteConservationBouteille] {
+        guard !rechercheUtilisateur.isEmpty else {
+            return bouteillesFiltreesSelonStatut
+        }
+        let recherche = rechercheUtilisateur.lowercased()
+        return bouteillesFiltreesSelonStatut.filter {
+            let b = $0.bouteille
+            return b.millesime.vin.nomVin.lowercased().contains(recherche)
+            || b.millesime.anneeMillesime.description.lowercased().contains(recherche)
+            || b.millesime.vin.provenance.nomProvenance.lowercased().contains(recherche)
+            || b.millesime.vin.provenance.sousRegionParente?.nomProvenance.lowercased().contains(recherche) == true
+            || b.millesime.vin.provenance.regionParente?.nomProvenance.lowercased().contains(recherche) == true
+>>>>>>> Stashed changes:VinSurVin/ViewModels/ConservationViewModel.swift
         }
     }
     

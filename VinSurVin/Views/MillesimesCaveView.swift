@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-struct MillesimesCaveView: View {
+struct CaveBouteillesView: View {
     
     // Paramètre reçu en entrée de la vue
     let statutParametre: ConservationViewModel.StatutConservation? = nil
@@ -46,13 +46,13 @@ struct MillesimesCaveView: View {
             .onAppear {
                 viewModel.chargerMillesimesLimiteConservation(from: context)
             }
-            .searchable(text: $viewModel.searchQuery)
+            .searchable(text: $viewModel.rechercheUtilisateur)
             .navigationTitle(viewModel.titre)
         }
     }
 }
 
 #Preview {
-    MillesimesCaveView(viewModel: ConservationViewModel(statut: nil))
+    CaveBouteillesView(viewModel: ConservationViewModel(statut: nil))
         .modelContainer(SampleData.shared.modelContainer)
 }

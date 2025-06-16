@@ -2,22 +2,22 @@ import SwiftData
 import SwiftUI
 
 @MainActor
-class AddDomaineViewModel: ObservableObject {
+class AjoutDomaineViewModel: ObservableObject {
     
-    // Déclare les propriétés qui seront exposées à la vue 'AddDomaineView', toutes les instances de classe sont optionnelles pour ne pas avoir à gérer d'initialiseur
+    // Déclare les propriétés qui seront exposées à la vue 'AjoutDomaineView', toutes les instances de classe sont optionnelles pour ne pas avoir à gérer d'initialiseur
     @Published var nomDomaine: String = ""
-    @Published var selectedRegion: Provenance?
+    @Published var regionSelectionnee: Provenance?
     
     // Propriété calculée servant à tester si le formulaire d'ajout de domaine est valide
     var isFormComplete: Bool {
         !nomDomaine.isEmpty
     }
     
-    // Méthode permettant à 'AddDomaineView' d'enregistrer un nouveau domaine
-    func enregistrerDomaine(selectedRegion: Provenance?, dans context: ModelContext) -> Domaine? {
+    // Méthode permettant à 'AjoutDomaineView' d'enregistrer un nouveau domaine
+    func enregistrerDomaine(regionSelectionnee: Provenance?, dans context: ModelContext) -> Domaine? {
         
         // Vérifie que les données sont bien récupérées de la vue
-        guard let region = selectedRegion else {
+        guard let region = regionSelectionnee else {
             return nil
         }
         

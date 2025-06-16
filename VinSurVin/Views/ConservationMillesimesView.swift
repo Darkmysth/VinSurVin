@@ -11,7 +11,6 @@ struct ConservationMillesimesView: View {
     
     // Relie cette vue avec son ViewModel
     @StateObject private var viewModel: ConservationViewModel
-    
     init(statut: ConservationViewModel.StatutConservation) {
         self.statutParametre = statut
         _viewModel = StateObject(wrappedValue: ConservationViewModel(statut: statut))
@@ -26,17 +25,37 @@ struct ConservationMillesimesView: View {
                             VStack {
                                 VStack {
                                     HStack {
+<<<<<<< Updated upstream:VinSurVin/Views/ConservationMillesimesView.swift
                                         Text("\(millesime.millesime.vin.provenance.nomProvenance)")
                                         Spacer()
                                     }
                                     HStack {
                                         Text("\(millesime.millesime.vin.nomVin) - \(millesime.millesime.anneeMillesime.description)")
+=======
+                                        Text("\(bouteille.bouteille.millesime.vin.provenance.regionParente?.nomProvenance ?? "")")
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text("\(bouteille.bouteille.millesime.vin.provenance.nomProvenance)")
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text("\(bouteille.bouteille.millesime.vin.nomVin)")
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text("Millésime \(bouteille.bouteille.millesime.anneeMillesime.description) - \(bouteille.bouteille.taille.nomTaille)")
+>>>>>>> Stashed changes:VinSurVin/Views/ConservationBouteillesView.swift
                                         Spacer()
                                     }
                                 }
                                 HStack {
                                     Spacer()
+<<<<<<< Updated upstream:VinSurVin/Views/ConservationMillesimesView.swift
                                     Text("\(millesime.millesime.quantiteBouteilles.description) bouteille(s)")
+=======
+                                    Text("\(bouteille.bouteille.quantite.description) bouteille(s)")
+>>>>>>> Stashed changes:VinSurVin/Views/ConservationBouteillesView.swift
                                 }
                             }
                         }
@@ -47,7 +66,7 @@ struct ConservationMillesimesView: View {
         .onAppear {
             viewModel.chargerMillesimesLimiteConservation(from: context)
         }
-        .searchable(text: $viewModel.searchQuery)
+        .searchable(text: $viewModel.rechercheUtilisateur)
         .navigationTitle(viewModel.titre)
     }
 }

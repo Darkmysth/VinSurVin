@@ -21,23 +21,23 @@ class CaveAppellationsViewModel: ObservableObject {
     func chargerSousRegionsEtAppellations(couleurFiltre: Couleur, regionFiltre: Provenance, from context: ModelContext) {
         sousRegionsEtAppellations = []
         
-        let predicate = #Predicate<Millesime> { $0.quantiteBouteilles > 0 }
-        let fetchDescriptor = FetchDescriptor<Millesime>(predicate: predicate)
+        let predicate = #Predicate<Bouteille> { $0.quantite > 0 }
+        let fetchDescriptor = FetchDescriptor<Bouteille>(predicate: predicate)
         
         do {
-            let listeMillesimes = try context.fetch(fetchDescriptor)
-            let listeMillesimesFiltres = listeMillesimes.filter {
-                $0.vin.couleur == couleurFiltre && $0.vin.provenance.regionParente == regionFiltre
+            let listeBouteilles = try context.fetch(fetchDescriptor)
+            let listeBouteillesFiltrees = listeBouteilles.filter {
+                $0.millesime.vin.couleur == couleurFiltre && $0.millesime.vin.provenance.regionParente == regionFiltre
             }
             
-            let millesimesGroupes = Dictionary(grouping: listeMillesimesFiltres) { $0.vin.provenance.sousRegionParente }
+            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.millesime.vin.provenance.sousRegionParente }
             
-            for (sousRegion, millesimesDeLaSousRegion) in millesimesGroupes {
+            for (sousRegion, bouteillesDeLaSousRegion) in bouteillesGroupees {
                 var appellationMap: [Provenance: Int] = [:]
                 
-                for millesime in millesimesDeLaSousRegion {
-                    let appellation = millesime.vin.provenance
-                    appellationMap[appellation, default: 0] += millesime.quantiteBouteilles
+                for bouteille in bouteillesDeLaSousRegion {
+                    let appellation = bouteille.millesime.vin.provenance
+                    appellationMap[appellation, default: 0] += bouteille.quantite
                 }
                 
                 let appellations = appellationMap.map { AppellationRecap(appellation: $0.key, quantite: $0.value) }

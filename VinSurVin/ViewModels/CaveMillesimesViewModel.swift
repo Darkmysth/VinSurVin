@@ -2,51 +2,50 @@ import SwiftData
 import SwiftUI
 
 @MainActor
-class CaveMillesimesViewModel: ObservableObject {
+class CaveBouteillesViewModel: ObservableObject {
     
-    struct VinEtMillesimes: Identifiable {
+    struct VinEtBouteilles: Identifiable {
         let id = UUID()
         let vin: Vin?
-        let millesimes: [MillesimeRecap]
+        let bouteilles: [BouteilleRecap]
     }
 
-    struct MillesimeRecap: Identifiable {
+    struct BouteilleRecap: Identifiable {
         let id = UUID()
-        let millesime: Millesime
+        let bouteille: Bouteille
         let quantite: Int
     }
     
-    @Published var vinsEtMillesimes: [VinEtMillesimes] = []
+    @Published var vinsEtBouteilles: [VinEtBouteilles] = []
     
-    func chargerVinsEtMillesimes(couleurFiltre: Couleur, appellationFiltre: Provenance, from context: ModelContext) {
-        vinsEtMillesimes = []
+    func chargerVinsEtBouteilles(couleurFiltre: Couleur, appellationFiltre: Provenance, from context: ModelContext) {
+        vinsEtBouteilles = []
         
-        let predicate = #Predicate<Millesime> { $0.quantiteBouteilles > 0 }
-        let fetchDescriptor = FetchDescriptor<Millesime>(predicate: predicate)
+        let predicate = #Predicate<Bouteille> { $0.quantite > 0 }
+        let fetchDescriptor = FetchDescriptor<Bouteille>(predicate: predicate)
         
         do {
-            let listeMillesimes = try context.fetch(fetchDescriptor)
-            let listeMillesimesFiltres = listeMillesimes.filter {
-                $0.vin.couleur == couleurFiltre && $0.vin.provenance == appellationFiltre
+            let listeBouteilles = try context.fetch(fetchDescriptor)
+            let listeBouteillesFiltrees = listeBouteilles.filter {
+                $0.millesime.vin.couleur == couleurFiltre && $0.millesime.vin.provenance == appellationFiltre
             }
             
-            let millesimesGroupes = Dictionary(grouping: listeMillesimesFiltres) { $0.vin }
+            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.millesime.vin }
             
-            for (vin, millesimesDuVin) in millesimesGroupes {
-                var millesimeMap: [Millesime: Int] = [:]
+            for (vin, bouteillesDuVin) in bouteillesGroupees {
+                var bouteilleMap: [Bouteille: Int] = [:]
                 
-                for millesime in millesimesDuVin {
-                    let millesime = millesime
-                    millesimeMap[millesime, default: 0] += millesime.quantiteBouteilles
+                for bouteille in bouteillesDuVin {
+                    bouteilleMap[bouteille, default: 0] += bouteille.quantite
                 }
                 
-                let millesimes = millesimeMap.map { MillesimeRecap(millesime: $0.key, quantite: $0.value) }
-                    .sorted { $0.millesime.anneeMillesime < $1.millesime.anneeMillesime }
+                let bouteilles = bouteilleMap.map { BouteilleRecap(bouteille: $0.key, quantite: $0.value) }
+                    .sorted { $0.bouteille.millesime.anneeMillesime < $1.bouteille.millesime.anneeMillesime }
                 
-                vinsEtMillesimes.append(VinEtMillesimes(vin: vin, millesimes: millesimes))
+                vinsEtBouteilles.append(VinEtBouteilles(vin: vin, bouteilles: bouteilles))
             }
             
-            vinsEtMillesimes.sort { $0.vin?.nomVin ?? "Aucun vin" < $1.vin?.nomVin ?? "Aucun vin" }
+            vinsEtBouteilles.sort { $0.vin?.nomVin ?? "Aucun vin" < $1.vin?.nomVin ?? "Aucun vin" }
 
         } catch {
             print("Erreur : \(error)")

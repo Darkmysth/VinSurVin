@@ -7,8 +7,8 @@ struct CaveAppellationsView: View {
     @StateObject private var viewModel = CaveAppellationsViewModel()
     
     // Récupère la couleur et la région sélectionnées
-    let selectedCouleur: Couleur
-    let selectedRegion: Provenance
+    let couleurSelectionnee: Couleur
+    let regionSelectionnee: Provenance
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -19,7 +19,7 @@ struct CaveAppellationsView: View {
                 ForEach(viewModel.sousRegionsEtAppellations) { sousRegionGroup in
                     Section(header: Text(sousRegionGroup.sousRegion?.nomProvenance ?? "")) {
                         ForEach(sousRegionGroup.appellations) { appellationRecap in
-                            NavigationLink(destination: CaveMillesimesView(selectedCouleur: selectedCouleur, selectedAppellation: appellationRecap.appellation)) {
+                            NavigationLink(destination: CaveMillesimesView(couleurSelectionnee: couleurSelectionnee, appellationSelectionnee: appellationRecap.appellation)) {
                                 HStack {
                                     Text(appellationRecap.appellation.nomProvenance)
                                     Spacer()
@@ -30,15 +30,15 @@ struct CaveAppellationsView: View {
                     }
                 }
             }
-            .navigationTitle(selectedRegion.nomProvenance + " - " + selectedCouleur.nomCouleur)
+            .navigationTitle(regionSelectionnee.nomProvenance + " - " + couleurSelectionnee.nomCouleur)
         }
         .onAppear {
-            viewModel.chargerSousRegionsEtAppellations(couleurFiltre: selectedCouleur, regionFiltre: selectedRegion, from: context)
+            viewModel.chargerSousRegionsEtAppellations(couleurFiltre: couleurSelectionnee, regionFiltre: regionSelectionnee, from: context)
         }
     }
 }
 
 #Preview {
-    CaveAppellationsView(selectedCouleur: .blanc, selectedRegion: SampleData.shared.regionLoire)
+    CaveAppellationsView(couleurSelectionnee: .blanc, regionSelectionnee: SampleData.shared.regionLoire)
         .modelContainer(SampleData.shared.modelContainer)
 }

@@ -1,16 +1,16 @@
 import SwiftUI
 import SwiftData
 
-struct AddVinView: View {
+struct AjoutVinView: View {
     
     // Relie cette vue avec son ViewModel
-    @StateObject private var viewModel = AddVinViewModel()
+    @StateObject private var viewModel = AjoutVinViewModel()
     
     // Création des variables d'état de la vue
     @State private var choixClassification = false
     @State private var choixVignoble = false
 
-    @Binding var selectedVin: Vin?
+    @Binding var vinSelectionne: Vin?
     
     // Accès au contexte SwiftData
     @Environment(\.modelContext) private var context
@@ -20,14 +20,14 @@ struct AddVinView: View {
     
     // Initialise quelques propriétés par défaut
     private func initialiserValeursDefaut() {
-        if viewModel.selectedSucrosite == nil {
-            viewModel.selectedSucrosite = Sucrosite.sec
+        if viewModel.sucrositeSelectionnee == nil {
+            viewModel.sucrositeSelectionnee = Sucrosite.sec
         }
-        if viewModel.selectedCouleur == nil {
-            viewModel.selectedCouleur = Couleur.rouge
+        if viewModel.couleurSelectionnee == nil {
+            viewModel.couleurSelectionnee = Couleur.rouge
         }
-        if viewModel.selectedCaracteristique == nil {
-            viewModel.selectedCaracteristique = Caracteristique.tranquille
+        if viewModel.caracteristiqueSelectionnee == nil {
+            viewModel.caracteristiqueSelectionnee = Caracteristique.tranquille
         }
     }
     
@@ -40,11 +40,11 @@ struct AddVinView: View {
                     TextField("Nom", text: $viewModel.nomVin)
                     
                     // Sélection de l'appellation
-                    NavigationLink(destination: SelectAppellationView(selectedAppellation: $viewModel.selectedAppellation)) {
+                    NavigationLink(destination: SelectAppellationView(appellationSelectionnee: $viewModel.appellationSelectionnee)) {
                         HStack {
                             Text("Appellation")
                             Spacer()
-                            Text(viewModel.selectedAppellation?.nomProvenance ?? "Aucune appellation sélectionnée")
+                            Text(viewModel.appellationSelectionnee?.nomProvenance ?? "Aucune appellation sélectionnée")
                                 .foregroundColor(.gray)
                         }
                     }
@@ -52,47 +52,47 @@ struct AddVinView: View {
                     // Sélection du vignoble
                     if choixVignoble == true {
                         NavigationLink(
-                            destination: {SelectVignobleView(vignoblesByProvenance: viewModel.vignoblesByProvenance, selectedVignoble: $viewModel.selectedVignoble)},
+                            destination: {SelectVignobleView(listeVignoblesRegroupesParProvenance: viewModel.listeVignoblesRegroupesParProvenance, vignobleSelectionne: $viewModel.vignobleSelectionne)},
                             label: {
                                 HStack {
                                     Text("Vignoble")
                                     Spacer()
-                                    Text(viewModel.selectedVignoble?.nomVignoble ?? "Aucun vignoble sélectionné")
+                                    Text(viewModel.vignobleSelectionne?.nomVignoble ?? "Aucun vignoble sélectionné")
                                         .foregroundColor(.gray)
                                 }
                             }
                         )
-                        .disabled(viewModel.selectedAppellation == nil)
+                        .disabled(viewModel.appellationSelectionnee == nil)
                     }
                     
                     // Sélection du domaine
                     NavigationLink(
-                        destination: {SelectDomaineView(selectedRegion: viewModel.selectedRegion, selectedDomaine: $viewModel.selectedDomaine)},
+                        destination: {SelectDomaineView(regionSelectionnee: viewModel.regionSelectionnee, domaineSelectionne: $viewModel.domaineSelectionne)},
                         label: {
                             HStack {
                                 Text("Domaine")
                                 Spacer()
-                                Text(viewModel.selectedDomaine?.nomDomaine ?? "Aucun domaine sélectionné")
+                                Text(viewModel.domaineSelectionne?.nomDomaine ?? "Aucun domaine sélectionné")
                                     .foregroundColor(.gray)
                             }
                         }
                     )
-                    .disabled(viewModel.selectedAppellation == nil)
+                    .disabled(viewModel.appellationSelectionnee == nil)
                     
                     // Sélection de la classification
                     if choixClassification == true {
                         NavigationLink(
-                            destination: {SelectClassificationView(classificationsByProvenance: viewModel.classificationsByProvenance, selectedClassification: $viewModel.selectedClassification)},
+                            destination: {SelectClassificationView(listeClassificationsRegroupeesParProvenance: viewModel.listeClassificationsRegroupeesParProvenance, classificationSelectionnee: $viewModel.classificationSelectionnee)},
                             label: {
                                 HStack {
                                     Text("Classification")
                                     Spacer()
-                                    Text(viewModel.selectedClassification?.nomClassification ?? "Aucune classification sélectionnée")
+                                    Text(viewModel.classificationSelectionnee?.nomClassification ?? "Aucune classification sélectionnée")
                                         .foregroundColor(.gray)
                                 }
                             }
                         )
-                        .disabled(viewModel.selectedAppellation == nil)
+                        .disabled(viewModel.appellationSelectionnee == nil)
                     }
                     
                     // Sélection de la sucrosité du vin
@@ -101,7 +101,7 @@ struct AddVinView: View {
                             Text("Sucrosité")
                             Spacer()
                         }
-                        Picker("", selection: $viewModel.selectedSucrosite) {
+                        Picker("", selection: $viewModel.sucrositeSelectionnee) {
                             ForEach(Sucrosite.allCases) { sucrosite in
                                 Text(sucrosite.nomSucrosite).tag(sucrosite)
                             }
@@ -116,7 +116,7 @@ struct AddVinView: View {
                             Text("Couleur")
                             Spacer()
                         }
-                        Picker("", selection: $viewModel.selectedCouleur) {
+                        Picker("", selection: $viewModel.couleurSelectionnee) {
                             ForEach(Couleur.allCases) { couleur in
                                 Text(couleur.nomCouleur).tag(couleur)
                             }
@@ -131,7 +131,7 @@ struct AddVinView: View {
                             Text("Caractéristique spécifique")
                             Spacer()
                         }
-                        Picker("", selection: $viewModel.selectedCaracteristique) {
+                        Picker("", selection: $viewModel.caracteristiqueSelectionnee) {
                             ForEach(Caracteristique.allCases) { caracteristique in
                                 Text(caracteristique.nomCaracteristique).tag(caracteristique)
                             }
@@ -144,20 +144,20 @@ struct AddVinView: View {
                 Section {
                     Button("Enregistrer") {
                         if let nouveauVin = viewModel.enregistrerVin(dans: context) {
-                            selectedVin = nouveauVin
+                            vinSelectionne = nouveauVin
                             presentationMode.wrappedValue.dismiss()
                         }
                     }
                     .disabled(!viewModel.isFormComplete)
                 }
             }
-            .onChange(of: viewModel.selectedAppellation) {
+            .onChange(of: viewModel.appellationSelectionnee) {
                 viewModel.chargerClassifications(from: context)
-                viewModel.filtrerClassificationsByProvenance()
-                choixClassification = !viewModel.classificationsByProvenance.isEmpty
+                viewModel.filtrerlisteClassificationsRegroupeesParProvenance()
+                choixClassification = !viewModel.listeClassificationsRegroupeesParProvenance.isEmpty
                 viewModel.chargerVignobles(from: context)
-                viewModel.filtrerVignoblesByProvenance()
-                choixVignoble = !viewModel.vignoblesByProvenance.isEmpty
+                viewModel.filtrerlisteVignoblesRegroupesParProvenance()
+                choixVignoble = !viewModel.listeVignoblesRegroupesParProvenance.isEmpty
             }
             .onAppear (perform: initialiserValeursDefaut)
             .navigationTitle("Nouveau vin")
@@ -170,8 +170,8 @@ struct AddVinView: View {
 
 #Preview {
     // Crée une variable @State pour le binding
-    @Previewable @State var selectedVin: Vin? = nil
+    @Previewable @State var vinSelectionne: Vin? = nil
 
-    return AddVinView(selectedVin: $selectedVin)
+    return AjoutVinView(vinSelectionne: $vinSelectionne)
         .modelContainer(SampleData.shared.modelContainer)
 }

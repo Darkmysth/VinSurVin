@@ -2,28 +2,28 @@ import SwiftData
 import SwiftUI
 
 struct SelectVignobleView: View {
-    var vignoblesByProvenance: [Vignoble]
+    var listeVignoblesRegroupesParProvenance: [Vignoble]
     @Environment(\.modelContext) var modelContext
-    @State private var searchQuery: String = ""
-    @Binding var selectedVignoble: Vignoble?
+    @State private var rechercheUtilisateur: String = ""
+    @Binding var vignobleSelectionne: Vignoble?
     @Environment(\.dismiss) private var dismiss
  
     // Création d'une propriété calculée qui retourne un tableau de type [Vignoble] (des vignobles filtrés selon la recherche de l'utilisateur)
-    var filteredVignobles: [Vignoble] {
-        if searchQuery.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
-            return vignoblesByProvenance
+    var listeVignoblesFiltree: [Vignoble] {
+        if rechercheUtilisateur.isEmpty { // Si l'utilisateur n'a rien saisi, alors retourne l'intégralité de la query initiale
+            return listeVignoblesRegroupesParProvenance
         }
-        return vignoblesByProvenance.filter { vignoble in // Rechercher sur toutes les occurrences 'vignoble' du tableau [vignoblesByProvenance]
-            vignoble.nomVignoble.range(of: searchQuery, options: .caseInsensitive) != nil
+        return listeVignoblesRegroupesParProvenance.filter { vignoble in // Rechercher sur toutes les occurrences 'vignoble' du tableau [listeVignoblesRegroupesParProvenance]
+            vignoble.nomVignoble.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
         }
     }
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(filteredVignobles) { vignoble in
+                ForEach(listeVignoblesFiltree) { vignoble in
                     Button {
-                        selectedVignoble = vignoble
+                        vignobleSelectionne = vignoble
                         dismiss()
                     } label: {
                         Text(vignoble.nomVignoble)
@@ -31,7 +31,7 @@ struct SelectVignobleView: View {
                 }
             }
             .navigationTitle("Vignobles")
-            .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
+            .searchable(text: $rechercheUtilisateur, placement: .navigationBarDrawer(displayMode: .always), prompt: "Rechercher")
         }
     }
 }
