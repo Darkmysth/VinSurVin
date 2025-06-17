@@ -27,13 +27,13 @@ class CaveViewModel: ObservableObject {
         do {
             let listeBouteilles = try context.fetch(fetchDescriptor)
             
-            let listeBouteillesGroupees = Dictionary(grouping: listeBouteilles) { $0.millesime.vin.couleur }
+            let listeBouteillesGroupees = Dictionary(grouping: listeBouteilles) { $0.millesime?.vin?.couleur }
             
             for (couleur, bouteillesDeLaCouleur) in listeBouteillesGroupees {
                 var regionMap: [Provenance: Int] = [:]
                 
                 for bouteille in bouteillesDeLaCouleur {
-                    if let region = bouteille.millesime.vin.provenance.regionParente {
+                    if let region = bouteille.millesime?.vin?.provenance.regionParente {
                         regionMap[region, default: 0] += bouteille.quantite
                     }
                 }
@@ -41,7 +41,7 @@ class CaveViewModel: ObservableObject {
                 let regions = regionMap.map { RegionRecap(region: $0.key, quantite: $0.value) }
                     .sorted { $0.region.nomProvenance < $1.region.nomProvenance }
                 
-                couleursEtRegions.append(CouleurEtRegions(couleur: couleur, regions: regions))
+                couleursEtRegions.append(CouleurEtRegions(couleur: couleur!, regions: regions))
             }
             
             couleursEtRegions.sort { $0.couleur.nomCouleur < $1.couleur.nomCouleur }
@@ -69,7 +69,7 @@ class CaveViewModel: ObservableObject {
         var counts: [String: Int] = [:]
         
         for bouteille in listeBouteilles {
-            let couleur = bouteille.millesime.vin.couleur.nomCouleur
+            let couleur = bouteille.millesime?.vin?.couleur.nomCouleur ?? "Couleur inconnue"
             counts[couleur, default: 0] += bouteille.quantite
         }
         

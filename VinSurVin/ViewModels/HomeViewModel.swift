@@ -21,7 +21,7 @@ class HomeViewModel: ObservableObject {
         var counts: [String: Int] = [:]
         
         for bouteille in listeBouteilles {
-            let couleur = bouteille.millesime.vin.couleur.nomCouleur
+            let couleur = bouteille.millesime?.vin?.couleur.nomCouleur ?? "Couleur inconnue"
             counts[couleur, default: 0] += bouteille.quantite
         }
         

@@ -111,7 +111,7 @@ class Vin {
     // Déclaration des relations n -> 1 de l'entité
     @Relationship(deleteRule: .nullify, inverse: \Provenance.vins) var provenance: Provenance
     @Relationship(deleteRule: .nullify, inverse: \Classification.vins) var classification: Classification?
-    @Relationship(deleteRule: .nullify, inverse: \Domaine.vins) var domaine: Domaine
+    @Relationship(deleteRule: .nullify, inverse: \Domaine.vins) var domaine: Domaine?
     @Relationship(deleteRule: .nullify, inverse: \Vignoble.vins) var vignoble: Vignoble?
     
     // Déclaration des relations 1 -> n de l'entité

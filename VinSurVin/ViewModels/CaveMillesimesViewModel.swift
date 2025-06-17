@@ -27,10 +27,10 @@ class CaveBouteillesViewModel: ObservableObject {
         do {
             let listeBouteilles = try context.fetch(fetchDescriptor)
             let listeBouteillesFiltrees = listeBouteilles.filter {
-                $0.millesime.vin.couleur == couleurFiltre && $0.millesime.vin.provenance == appellationFiltre
+                $0.millesime?.vin?.couleur == couleurFiltre && $0.millesime?.vin?.provenance == appellationFiltre
             }
             
-            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.millesime.vin }
+            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.millesime?.vin }
             
             for (vin, bouteillesDuVin) in bouteillesGroupees {
                 var bouteilleMap: [Bouteille: Int] = [:]
@@ -40,7 +40,7 @@ class CaveBouteillesViewModel: ObservableObject {
                 }
                 
                 let bouteilles = bouteilleMap.map { BouteilleRecap(bouteille: $0.key, quantite: $0.value) }
-                    .sorted { $0.bouteille.millesime.anneeMillesime < $1.bouteille.millesime.anneeMillesime }
+                    .sorted { $0.bouteille.millesime?.anneeMillesime ?? 0 < $1.bouteille.millesime?.anneeMillesime ?? 0 }
                 
                 vinsEtBouteilles.append(VinEtBouteilles(vin: vin, bouteilles: bouteilles))
             }

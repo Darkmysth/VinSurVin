@@ -20,11 +20,11 @@ class ReferentielDomainesViewModel: ObservableObject {
         do {
             let listeDomaines = try context.fetch(FetchDescriptor<Domaine>())
             // Regroupement des domaines par région
-            let groupesDomaines = Dictionary(grouping: listeDomaines) { domaine in
+            let listeDomainesRegroupesParRegion = Dictionary(grouping: listeDomaines) { domaine in
                 domaine.provenance.regionParente?.nomProvenance ?? "Région inconnue"
             }
             // Conversion en tableau structuré et trié
-            let listeDomainesParRegion = groupesDomaines
+            let listeDomainesParRegion = listeDomainesRegroupesParRegion
                 .map { (region, domaines) in
                     ListeDomainesParRegion(region: region, listeDomaines: domaines.sorted { $0.nomDomaine < $1.nomDomaine })
                 }

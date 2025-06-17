@@ -25,11 +25,19 @@ struct BouteillesCaveView: View {
                                 VStack {
                                     VStack {
                                         HStack {
-                                            Text("\(bouteille.bouteille.millesime.vin.provenance.nomProvenance)")
+                                            Text("\(bouteille.bouteille.millesime?.vin?.provenance.regionParente?.nomProvenance ?? "Région inconnue")")
                                             Spacer()
                                         }
                                         HStack {
-                                            Text("\(bouteille.bouteille.millesime.vin.nomVin) - \(bouteille.bouteille.millesime.anneeMillesime.description)")
+                                            Text("\(bouteille.bouteille.millesime?.vin?.provenance.nomProvenance ?? "Appellation inconnue")")
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text("\(bouteille.bouteille.millesime?.vin?.nomVin ?? "Vin inconnu")")
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text("Millésime \(bouteille.bouteille.millesime?.anneeMillesime.description ?? "Millésime inconnu")")
                                             Spacer()
                                         }
                                     }

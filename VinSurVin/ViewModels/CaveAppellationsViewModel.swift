@@ -27,17 +27,17 @@ class CaveAppellationsViewModel: ObservableObject {
         do {
             let listeBouteilles = try context.fetch(fetchDescriptor)
             let listeBouteillesFiltrees = listeBouteilles.filter {
-                $0.millesime.vin.couleur == couleurFiltre && $0.millesime.vin.provenance.regionParente == regionFiltre
+                $0.millesime?.vin?.couleur == couleurFiltre && $0.millesime?.vin?.provenance.regionParente == regionFiltre
             }
             
-            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.millesime.vin.provenance.sousRegionParente }
+            let bouteillesGroupees = Dictionary(grouping: listeBouteillesFiltrees) { $0.millesime?.vin?.provenance.sousRegionParente }
             
             for (sousRegion, bouteillesDeLaSousRegion) in bouteillesGroupees {
                 var appellationMap: [Provenance: Int] = [:]
                 
                 for bouteille in bouteillesDeLaSousRegion {
-                    let appellation = bouteille.millesime.vin.provenance
-                    appellationMap[appellation, default: 0] += bouteille.quantite
+                    let appellation = bouteille.millesime?.vin?.provenance
+                    appellationMap[appellation!, default: 0] += bouteille.quantite
                 }
                 
                 let appellations = appellationMap.map { AppellationRecap(appellation: $0.key, quantite: $0.value) }

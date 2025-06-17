@@ -14,7 +14,7 @@ class AjoutDomaineViewModel: ObservableObject {
     }
     
     // Méthode permettant à 'AjoutDomaineView' d'enregistrer un nouveau domaine
-    func enregistrerDomaine(regionSelectionnee: Provenance?, dans context: ModelContext) -> Domaine? {
+    func enregistrerDomaine(dans context: ModelContext) -> Domaine? {
         
         // Vérifie que les données sont bien récupérées de la vue
         guard let region = regionSelectionnee else {

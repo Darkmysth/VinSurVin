@@ -80,20 +80,39 @@ class ConservationViewModel: ObservableObject {
             return bouteillesFiltreesSelonStatut
         }
         let recherche = rechercheUtilisateur.lowercased()
+        
         return bouteillesFiltreesSelonStatut.filter {
             let b = $0.bouteille
-            return b.millesime.vin.nomVin.lowercased().contains(recherche)
-            || b.millesime.anneeMillesime.description.lowercased().contains(recherche)
-            || b.millesime.vin.provenance.nomProvenance.lowercased().contains(recherche)
-            || b.millesime.vin.provenance.sousRegionParente?.nomProvenance.lowercased().contains(recherche) == true
-            || b.millesime.vin.provenance.regionParente?.nomProvenance.lowercased().contains(recherche) == true
+            
+            if let vin = b.millesime?.vin {
+                if vin.nomVin.lowercased().contains(recherche) {
+                    return true
+                }
+                if vin.provenance.nomProvenance.lowercased().contains(recherche) {
+                    return true
+                }
+                if let sousRegion = vin.provenance.sousRegionParente?.nomProvenance,
+                   sousRegion.lowercased().contains(recherche) {
+                    return true
+                }
+                if let region = vin.provenance.regionParente?.nomProvenance,
+                   region.lowercased().contains(recherche) {
+                    return true
+                }
+            }
+            
+            if let annee = b.millesime?.anneeMillesime.description.lowercased(), annee.contains(recherche) {
+                return true
+            }
+            
+            return false
         }
     }
     
     var bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur: [(couleur: String, bouteilles: [LimiteConservationBouteille])] {
-        let listeBouteilleFiltreesSelonStatutAvecRechercheRegroupeesParCouleur = Dictionary(grouping: bouteillesFiltreesSelonStatutAvecRecherche) { $0.bouteille.millesime.vin.couleur.nomCouleur }
+        let listeBouteilleFiltreesSelonStatutAvecRechercheRegroupeesParCouleur = Dictionary(grouping: bouteillesFiltreesSelonStatutAvecRecherche) { $0.bouteille.millesime?.vin?.couleur.nomCouleur }
         return listeBouteilleFiltreesSelonStatutAvecRechercheRegroupeesParCouleur
-            .map { (key, value) in (couleur: key, bouteilles: value) }
+            .map { (key, value) in (couleur: key ?? "Couleur inconnue", bouteilles: value) }
             .sorted { $0.couleur < $1.couleur }
     }
     

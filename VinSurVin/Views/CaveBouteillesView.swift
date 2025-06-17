@@ -19,11 +19,11 @@ struct CaveBouteillesView: View {
                 ForEach(viewModel.vinsEtBouteilles) { vinGroup in
                     Section(header: Text(vinGroup.vin?.nomVin ?? "Aucun vin lié au millésime")) {
                         ForEach(vinGroup.bouteilles) { bouteilleRecap in
-                            NavigationLink(destination: BouteilleDetailsView(bouteilleSelectionnee: bouteilleRecap.bouteille)) {
+                            /*NavigationLink(destination: BouteilleDetailsView(bouteilleSelectionnee: bouteilleRecap.bouteille)) {
                                 HStack {
                                     VStack {
                                         HStack {
-                                            Text("Millésime \(bouteilleRecap.bouteille.millesime.anneeMillesime.description)")
+                                            Text("Millésime \(bouteilleRecap.bouteille.millesime?.anneeMillesime.description)")
                                             Spacer()
                                         }
                                         HStack {
@@ -36,7 +36,7 @@ struct CaveBouteillesView: View {
                                         }
                                     }
                                 }
-                            }
+                            }*/
                         }
                     }
                 }

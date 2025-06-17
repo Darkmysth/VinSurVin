@@ -33,16 +33,16 @@ struct BouteilleDetailsView: View {
                         self.afficheCamera = true
                     }
                 }
-                Section(header: Text("Détails du millésime")) {
+                Section(header: Text("Détails de la bouteille")) {
                     HStack {
                         Text("Taille :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.taille.volume.description) \(bouteilleSelectionnee.taille.uniteVolume)")
+                        Text("\(bouteilleSelectionnee.taille?.volume.description ?? "Volume inconnu") \(bouteilleSelectionnee.taille?.uniteVolume ?? "Unité inconnue")")
                     }
                     HStack {
                         Text("Année :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.anneeMillesime.description)")
+                        Text("\(bouteilleSelectionnee.millesime?.anneeMillesime.description ?? "Année inconnue")")
                     }
                     HStack {
                         Text("Stock :")
@@ -68,67 +68,71 @@ struct BouteilleDetailsView: View {
                     HStack {
                         Text("Pays :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.paysParent?.nomProvenance ?? "Pays non renseigné")")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.provenance.paysParent?.nomProvenance ?? "Pays non renseigné")")
                     }
                     HStack {
                         Text("Région :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.regionParente?.nomProvenance ?? "Région non renseignée")")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.provenance.regionParente?.nomProvenance ?? "Région non renseignée")")
                     }
                     HStack {
                         Text("Sous-région :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.sousRegionParente?.nomProvenance ?? "Sous-région non renseignée")")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.provenance.sousRegionParente?.nomProvenance ?? "Sous-région non renseignée")")
                     }
                     HStack {
                         Text("Appellation :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.provenance.nomProvenance)")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.provenance.nomProvenance ?? "Appellation inconnue")")
                     }
-                    if bouteilleSelectionnee.millesime.vin.vignoble != nil {
+                    if bouteilleSelectionnee.millesime?.vin?.vignoble != nil {
                         HStack {
                             Text("Vignoble :")
                             Spacer()
-                            Text("\(bouteilleSelectionnee.millesime.vin.vignoble?.nomVignoble ?? "Vignoble non renseigné")")
+                            Text("\(bouteilleSelectionnee.millesime?.vin?.vignoble?.nomVignoble ?? "Vignoble non renseigné")")
                         }
                     }
                     HStack {
                         Text("Domaine :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.domaine.nomDomaine)")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.domaine?.nomDomaine ?? "Domaine inconnu")")
                     }
                 }
                 Section(header: Text("Détails du vin")) {
                     HStack {
                         Text("Vin :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.nomVin)")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.nomVin ?? "Vin inconnu")")
                     }
                     HStack {
                         Text("Couleur :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.couleur.nomCouleur)")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.couleur.nomCouleur ?? "Couleur inconnue")")
                     }
                     HStack {
                         Text("Sucrosité :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.sucrosite.nomSucrosite)")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.sucrosite.nomSucrosite ?? "Sucrosité inconnue")")
                     }
                     HStack {
                         Text("Caractéristique :")
                         Spacer()
-                        Text("\(bouteilleSelectionnee.millesime.vin.caracteristique.nomCaracteristique)")
+                        Text("\(bouteilleSelectionnee.millesime?.vin?.caracteristique.nomCaracteristique ?? "Caractéristique inconnue")")
                     }
-                    if bouteilleSelectionnee.millesime.vin.classification != nil {
+                    if bouteilleSelectionnee.millesime?.vin?.classification != nil {
                         HStack {
                             Text("Classification :")
                             Spacer()
-                            Text("\(bouteilleSelectionnee.millesime.vin.classification?.nomClassification ?? "Classification non renseignée")")
+                            Text("\(bouteilleSelectionnee.millesime?.vin?.classification?.nomClassification ?? "Classification non renseignée")")
                         }
                     }
                 }
             }
-            .navigationTitle(bouteilleSelectionnee.millesime.vin.nomVin + " - " + bouteilleSelectionnee.millesime.anneeMillesime.description)
+            .navigationTitle(
+                (bouteilleSelectionnee.millesime?.vin?.nomVin ?? "Vin inconnu")
+                + " - " +
+                (bouteilleSelectionnee.millesime?.anneeMillesime.description ?? "Année inconnue")
+                )
             .sheet(isPresented: $afficheCamera) {
                 // Affiche la vue de l'appareil photo
                 ImagePicker(image: $imageEnEntree)

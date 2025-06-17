@@ -53,7 +53,8 @@ struct AjoutDomaineView: View {
                 Section {
                     Button("Enregistrer") {
                         let regionSelectionneeFinale = regionSelectionnee ?? regionReferentielSelectionnee
-                        if let nouveauDomaine = viewModel.enregistrerDomaine(regionSelectionnee: regionSelectionneeFinale, dans: context) {
+                        viewModel.regionSelectionnee = regionSelectionneeFinale
+                        if let nouveauDomaine = viewModel.enregistrerDomaine(dans: context) {
                             domaineSelectionne = nouveauDomaine
                             presentationMode.wrappedValue.dismiss()
                         }

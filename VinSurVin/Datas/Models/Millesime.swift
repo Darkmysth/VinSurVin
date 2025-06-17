@@ -8,7 +8,7 @@ class Millesime {
     var anneeMillesime: Int
     
     // Déclaration des relations n -> 1 de l'entité
-    @Relationship(deleteRule: .nullify, inverse: \Vin.millesimes) var vin: Vin
+    @Relationship(deleteRule: .nullify, inverse: \Vin.millesimes) var vin: Vin?
     
     // Déclaration des relations 1 -> n de l'entité
     @Relationship(deleteRule: .cascade) var bouteilles: [Bouteille]

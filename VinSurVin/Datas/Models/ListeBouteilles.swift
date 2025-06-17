@@ -23,17 +23,17 @@ class ListeBouteillesModel: ObservableObject {
             return bouteilles
         } else {
             return bouteilles.filter { bouteille in
-                bouteille.millesime.vin.nomVin.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil ||
-                bouteille.millesime.vin.provenance.nomProvenance.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil ||
-                bouteille.millesime.vin.provenance.sousRegionParente?.nomProvenance.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil ||
-                bouteille.millesime.vin.provenance.regionParente?.nomProvenance.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
+                bouteille.millesime?.vin?.nomVin.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil ||
+                bouteille.millesime?.vin?.provenance.nomProvenance.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil ||
+                bouteille.millesime?.vin?.provenance.sousRegionParente?.nomProvenance.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil ||
+                bouteille.millesime?.vin?.provenance.regionParente?.nomProvenance.range(of: rechercheUtilisateur, options: .caseInsensitive) != nil
             }
         }
     }
 
     var bouteillesFiltreesParRegion: [String: [Bouteille]] {
         Dictionary(grouping: bouteillesFiltrees, by: { bouteille in
-            bouteille.millesime.vin.provenance.regionParente?.nomProvenance ?? "Inconnue"
+            bouteille.millesime?.vin?.provenance.regionParente?.nomProvenance ?? "Inconnue"
         })
     }
     

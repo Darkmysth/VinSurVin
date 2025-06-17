@@ -38,7 +38,7 @@ class AjoutBouteilleViewModel: ObservableObject {
 
         let fetch = FetchDescriptor<Millesime>(
             predicate: #Predicate<Millesime> { millesime in
-                millesime.vin.persistentModelID == vinID && millesime.anneeMillesime == annee
+                millesime.vin?.persistentModelID == vinID && millesime.anneeMillesime == annee
             }
         )
         let millesimeTrouve: Millesime?

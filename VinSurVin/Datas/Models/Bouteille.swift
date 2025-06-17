@@ -14,8 +14,8 @@ class Bouteille {
     var photo: Data?
     
     // Déclaration des relations n -> 1 de l'entité
-    @Relationship(deleteRule: .nullify, inverse: \Millesime.bouteilles) var millesime: Millesime
-    @Relationship(deleteRule: .nullify, inverse: \Taille.bouteilles) var taille: Taille
+    @Relationship(deleteRule: .nullify, inverse: \Millesime.bouteilles) var millesime: Millesime?
+    @Relationship(deleteRule: .nullify, inverse: \Taille.bouteilles) var taille: Taille?
     
     // Initialisation d'une instance de l'entité
     init(quantite: Int, dateConsommationMin: Date, dateConsommationMax: Date, photo: Data? = nil, millesime: Millesime, taille: Taille) {
