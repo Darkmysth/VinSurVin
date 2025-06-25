@@ -11,45 +11,51 @@ struct CaveBouteillesView: View {
     
     // Récupère la couleur et le vin choisis par l'utilisateur
     let couleurSelectionnee: Couleur?
-    let appellationSelectionnee: Provenance?
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.vinsEtBouteilles) { vinGroup in
-                    Section(header: Text(vinGroup.vin?.nomVin ?? "Aucun vin lié au millésime")) {
-                        ForEach(vinGroup.bouteilles) { bouteilleRecap in
-                            /*NavigationLink(destination: BouteilleDetailsView(bouteilleSelectionnee: bouteilleRecap.bouteille)) {
-                                HStack {
-                                    VStack {
-                                        HStack {
-                                            Text("Millésime \(bouteilleRecap.bouteille.millesime?.anneeMillesime.description)")
-                                            Spacer()
-                                        }
-                                        HStack {
-                                            Text("\(bouteilleRecap.bouteille.taille.nomTaille)")
-                                            Spacer()
-                                        }
-                                        HStack {
-                                            Spacer()
-                                            Text("\(bouteilleRecap.quantite) bouteille(s)")
+        ScrollView(.vertical) {
+            LazyVStack(alignment: .leading, spacing: 16) {
+                ForEach(viewModel.regionsEtAppellations) { regionGroup in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(regionGroup.region?.nomProvenance ?? "Région inconnue")
+                            .font(.title2)
+                            .bold()
+                            .padding(.horizontal)
+
+                        ForEach(regionGroup.appellations) { appellationGroup in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(appellationGroup.appellation?.nomProvenance ?? "Appellation inconnue")
+                                    .font(.headline)
+                                    .padding(.horizontal)
+
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 12) {
+                                        ForEach(appellationGroup.bouteilles) { recap in
+                                            BouteilleCardView(bouteilleSelectionnee: recap.bouteille)
                                         }
                                     }
+                                    .padding(.horizontal)
                                 }
-                            }*/
+                            }
                         }
                     }
                 }
             }
-            .navigationTitle("\(appellationSelectionnee?.nomProvenance ?? "Aucune appellation") -  \(couleurSelectionnee?.nomCouleur ?? "Aucune couleur")")
+            .padding(.top)
+            .padding(.bottom, 90)
         }
+        .ignoresSafeArea(edges: .bottom)
         .onAppear {
-            viewModel.chargerVinsEtBouteilles(couleurFiltre: couleurSelectionnee!, appellationFiltre: appellationSelectionnee!, from: context)
+            if let couleur = couleurSelectionnee {
+                viewModel.chargerBouteilles(couleurFiltre: couleur, from: context)
+            }
         }
+        .navigationTitle("Bouteilles")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    CaveBouteillesView(couleurSelectionnee: .blanc, appellationSelectionnee: SampleData.shared.appellationMuscadet)
+    CaveBouteillesView(couleurSelectionnee: .blanc)
         .modelContainer(SampleData.shared.modelContainer)
 }

@@ -11,51 +11,38 @@ struct ConservationBouteillesView: View {
     
     // Relie cette vue avec son ViewModel
     @StateObject private var viewModel: ConservationViewModel
+    
+    private let gridColumns = [GridItem(.flexible()), GridItem(.flexible())]
     init(statut: ConservationViewModel.StatutConservation) {
         self.statutParametre = statut
         _viewModel = StateObject(wrappedValue: ConservationViewModel(statut: statut))
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur, id: \.couleur) { section in
-                Section(header: Text(section.couleur)) {
-                    ForEach(section.bouteilles, id: \.bouteille.id) { bouteille in
-                        NavigationLink(destination: BouteilleDetailsView(bouteilleSelectionnee: bouteille.bouteille)) {
-                            VStack {
-                                VStack {
-                                    HStack {
-                                        Text("\(bouteille.bouteille.millesime?.vin?.provenance.regionParente?.nomProvenance ?? "Région inconnue")")
-                                        Spacer()
-                                    }
-                                    HStack {
-                                        Text("\(bouteille.bouteille.millesime?.vin?.provenance.nomProvenance ?? "Appellation inconnue")")
-                                        Spacer()
-                                    }
-                                    HStack {
-                                        Text("\(bouteille.bouteille.millesime?.vin?.nomVin ?? "Vin inconnu")")
-                                        Spacer()
-                                    }
-                                    HStack {
-                                        Text("Millésime \(bouteille.bouteille.millesime?.anneeMillesime.description ?? "Millésime inconnu") - \(bouteille.bouteille.taille?.nomTaille ?? "Taille inconnue")")
-                                        Spacer()
-                                    }
-                                }
-                                HStack {
-                                    Spacer()
-                                    Text("\(bouteille.bouteille.quantite.description) bouteille(s)")
-                                }
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 24) {
+                ForEach(viewModel.bouteillesFiltreesSelonStatutAvecRechercheGroupeesParCouleur, id: \.couleur) { section in
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text(section.couleur)
+                            .font(.title2)
+                            .bold()
+                            .padding(.horizontal)
+                        LazyVGrid(columns: gridColumns, spacing: 16) {
+                            ForEach(section.bouteilles, id: \.bouteille.id) { bouteille in
+                                BouteilleCardView(bouteilleSelectionnee: bouteille.bouteille)
                             }
                         }
+                        .padding(.horizontal)
                     }
                 }
             }
-        }
-        .onAppear {
-            viewModel.chargerBouteillesLimiteConservation(from: context)
+            .padding(.top)
         }
         .searchable(text: $viewModel.rechercheUtilisateur)
         .navigationTitle(viewModel.titre)
+        .onAppear {
+            viewModel.chargerBouteillesLimiteConservation(from: context)
+        }
     }
 }
 

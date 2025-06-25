@@ -3,51 +3,39 @@ import SwiftData
 
 @MainActor
 class CaveViewModel: ObservableObject {
-    
-    struct CouleurEtRegions: Identifiable {
+
+    struct CouleurRecap: Identifiable {
         let id = UUID()
         let couleur: Couleur
-        let regions: [RegionRecap]
-    }
-
-    struct RegionRecap: Identifiable {
-        let id = UUID()
-        let region: Provenance
         let quantite: Int
     }
     
-    @Published var couleursEtRegions: [CouleurEtRegions] = []
+    @Published var couleurs: [CouleurRecap] = []
     
-    func chargerCouleursEtRegions(from context: ModelContext) {
-        couleursEtRegions = []
-        
+    func chargerCouleurs(from context: ModelContext) {
+        couleurs = []
+
         let predicate = #Predicate<Bouteille> { $0.quantite > 0 }
         let fetchDescriptor = FetchDescriptor<Bouteille>(predicate: predicate)
-        
+
         do {
-            let listeBouteilles = try context.fetch(fetchDescriptor)
-            
-            let listeBouteillesGroupees = Dictionary(grouping: listeBouteilles) { $0.millesime?.vin?.couleur }
-            
-            for (couleur, bouteillesDeLaCouleur) in listeBouteillesGroupees {
-                var regionMap: [Provenance: Int] = [:]
-                
-                for bouteille in bouteillesDeLaCouleur {
-                    if let region = bouteille.millesime?.vin?.provenance.regionParente {
-                        regionMap[region, default: 0] += bouteille.quantite
-                    }
-                }
-                
-                let regions = regionMap.map { RegionRecap(region: $0.key, quantite: $0.value) }
-                    .sorted { $0.region.nomProvenance < $1.region.nomProvenance }
-                
-                couleursEtRegions.append(CouleurEtRegions(couleur: couleur!, regions: regions))
+            let bouteilles = try context.fetch(fetchDescriptor)
+
+            let regroupementParCouleur = Dictionary(grouping: bouteilles) {
+                $0.millesime?.vin?.couleur
             }
-            
-            couleursEtRegions.sort { $0.couleur.nomCouleur < $1.couleur.nomCouleur }
+
+            let recap = regroupementParCouleur.compactMap { (couleurOptionnelle, bouteilles) -> CouleurRecap? in
+                guard let couleur = couleurOptionnelle else { return nil }
+                let total = bouteilles.reduce(0) { $0 + $1.quantite }
+                return CouleurRecap(couleur: couleur, quantite: total)
+            }
+
+            self.couleurs = recap.sorted { $0.couleur.nomCouleur < $1.couleur.nomCouleur }
 
         } catch {
-            print("Erreur : \(error)")
+            print("Erreur lors du chargement des couleurs : \(error)")
+            couleurs = []
         }
     }
     
